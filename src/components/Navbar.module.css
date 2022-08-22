@@ -17,6 +17,7 @@
 .links_list {
     display: flex;
     list-style: none;
+    overflow-wrap: normal;
 }
 
 .links_list li {

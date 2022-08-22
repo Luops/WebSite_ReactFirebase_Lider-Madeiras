@@ -43,7 +43,7 @@ const Navbar = () => {
             </li>
           </>
         )}
-
+      
         <li>
           <NavLink to="/about" className={({isActive}) => (isActive ? styles.active : "")}>
             Sobre

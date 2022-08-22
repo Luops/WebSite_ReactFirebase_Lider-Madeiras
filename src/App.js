@@ -51,6 +51,7 @@ function App() {
         <BrowserRouter>
         <Navbar />
           <div className='container'>
+            {/*Routes trás todas as páginas que o usuário logado ou nao pode visualizar*/}
             <Routes>
               <Route 
               path='/' 
@@ -64,7 +65,6 @@ function App() {
               <Route 
               path='/dashboard' 
               element={user ? <Dashboard /> : <Navigate to="/login" />} />
-              
             </Routes>
           </div>
           <Footer />
