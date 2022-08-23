@@ -1,0 +1,13 @@
+.create_product {
+    text-align: center;
+
+}
+
+.create_product h2 {
+    font-size: 2.2em;
+}
+
+.create_product p {
+    color: #aaa;
+    margin-bottom: 2em;
+}

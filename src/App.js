@@ -20,10 +20,12 @@ import About from './pages/about/About';
 import Home from './pages/Home/Home';
 import Login from './pages/Login/Login';
 import Dashboard from './pages/Dashboard/Dashboard';
+import AdicionarProdutos from './pages/Adicionar_produtos/AdicionarProdutos';
 
 
 //CSS
 import './App.css';
+import Adicionar_produtos from './pages/Adicionar_produtos/AdicionarProdutos';
 
 
 
@@ -65,6 +67,9 @@ function App() {
               <Route 
               path='/dashboard' 
               element={user ? <Dashboard /> : <Navigate to="/login" />} />
+              <Route 
+              path='/adicionarProdutos' 
+              element={user ? <AdicionarProdutos /> : <Navigate to="/login" />} />
             </Routes>
           </div>
           <Footer />

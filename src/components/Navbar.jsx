@@ -41,6 +41,11 @@ const Navbar = () => {
               Dashboard
             </NavLink>
             </li>
+            <li>
+            <NavLink to="/adicionarProdutos" className={({isActive}) => (isActive ? styles.active : "")}>
+              Adicionar
+            </NavLink>
+            </li>
           </>
         )}
       
