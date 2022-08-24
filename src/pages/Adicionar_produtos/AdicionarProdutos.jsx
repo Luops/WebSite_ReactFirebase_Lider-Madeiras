@@ -10,9 +10,12 @@ import styles from './AdicionarProdutos.module.css'
 
 const AdicionarProdutos = () => {
   const [title, setTitle] = useState("");
+  const [category, setCategory] = useState("");
   const [image, setImage] = useState("");
   const [body, setBody] = useState("");
   const [price, setPrice] = useState("");
+  const [unity, setUnity] = useState("");
+  const [method, setMethod] = useState("");
   const [formError, setFormError] = useState("");
   
 
@@ -34,16 +37,19 @@ const AdicionarProdutos = () => {
     }
 
     //Checar todos os valores
-    if (!title || !image || !body || !price) {
+    if (!title || !image || !body || !price || !category) {
       setFormError("Por favor preencha todos os campos!")
     }
 
     if (formError) return;
     
-    //registro
+    //registro no banco
     insertDocument({
       title,
+      category,
       price,
+      unity,
+      method,
       body,
       image,
       uid: user.uid,
@@ -74,14 +80,48 @@ const AdicionarProdutos = () => {
         </label>
 
         <label htmlFor="">
-          <span>Preço:</span>
-          <input type="number" 
-          name="price" 
-          id="price" 
+          <span>Categoria:</span>
+          <input type="text" 
+          name="category" 
+          id="category" 
           required 
-          placeholder='Preço do produto..' 
-          onChange={(e) => setPrice(e.target.value)}
-          value={price}/>
+          placeholder='Categoria do produto..' 
+          onChange={(e) => setCategory(e.target.value)}
+          value={category}/>
+        </label>
+
+        <div className={styles.divPriceUnity}>
+          <label htmlFor="">
+            <span>Preço:</span>
+            <input type="text" 
+            name="price" 
+            id="price" 
+            required 
+            placeholder='Preço do produto..' 
+            onChange={(e) => setPrice(e.target.value)}
+            value={price}/>
+          </label>
+          <label htmlFor="">
+            <span>Unidade:</span>
+            <input type="text" 
+            name="unity" 
+            id="unity" 
+            required 
+            placeholder='Unidade a ser vendido..' 
+            onChange={(e) => setUnity(e.target.value)}
+            value={unity}/>
+          </label>
+        </div>
+
+        <label htmlFor="">
+          <span>Método de pagamento:</span>
+          <textarea name="method" 
+          id="method" 
+          required 
+          placeholder='Insira o método de pagamento..'
+          onChange={(e) => setMethod(e.target.value)}
+          value={method}>
+          </textarea>
         </label>
 
         <label htmlFor="">

@@ -1,0 +1,55 @@
+.product_detail {
+    margin-bottom: 2em;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 5px;
+    padding: 0.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 220px;
+}
+
+.product_detail img {
+    max-width: 150px;
+}
+
+.product_detail h2 {
+    margin-bottom: .4em;
+    font-size: 1.05em;
+    align-self: flex-start;
+}
+
+.product_detail .body {
+    font-size: .8em;
+    align-self: flex-start;
+}
+
+.product_detail .payment_method {
+    align-self: flex-start;
+    color: rgb(152, 152, 152);
+    font-size: .8em;
+}
+
+.product_detail .price {
+    font-size: .95em;
+    font-weight: bold;
+    align-self: flex-start;
+    margin-block: 0;
+}
+
+span {
+    font-size: .85em;
+}
+
+.product_detail > :last-child {
+    font-size: .7em;
+    
+}
+
+
+
+
+
+

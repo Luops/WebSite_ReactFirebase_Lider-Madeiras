@@ -11,3 +11,26 @@
     color: #aaa;
     margin-bottom: 2em;
 }
+
+.divPriceUnity {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.divPriceUnity :first-child {
+    width: 50%;
+    padding-right: 1em;
+}
+
+.divPriceUnity :last-child {
+    width: 50%;
+}
+
+.divPriceUnity :first-child input {
+    width: 100%;
+}
+
+.divPriceUnity :last-child input {
+    width: 100%;
+}
