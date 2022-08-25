@@ -5,16 +5,16 @@ import {
     query, 
     orderBy, 
     onSnapshot, 
-    where, 
-    QuerySnapshot
+    where,
 } from "firebase/firestore";
 
-export const useFetchDocumennts = (docCollection, search = null, uid = null) => {
+export const useFetchDocuments = (docCollection, search = null, uid = null) => {
     const [documents, setDocuments] = useState(null);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(null);
 
     const [cancelled, setCancelled] = useState(false);
+
 
     useEffect(() => {
 
@@ -28,14 +28,24 @@ export const useFetchDocumennts = (docCollection, search = null, uid = null) => 
             try {
                 let queryComplex 
 
-                //busca
+                
                 //dashboard
 
-                queryComplex = await query(collectionRef, orderBy("createdAt", "desc"));
+                //busca
+                //Verificar se há uma busca pelo usuário
+                if (search) {
+                    queryComplex = await query(
+                        collectionRef, 
+                        where('category','==', search), 
+                        orderBy('createdAt', 'desc')
+                    );
+                } else {
+                    queryComplex = await query(collectionRef, orderBy("createdAt", "desc"));
+                }
 
-                await onSnapshot(queryComplex, (QuerySnapshot) => {
+                await onSnapshot(queryComplex, (querySnapshot) => {
                     setDocuments(
-                        QuerySnapshot.docs.map((doc) => ({
+                        querySnapshot.docs.map((doc) => ({
                             id: doc.id,
                             ...doc.data(),
                         }))
@@ -62,7 +72,7 @@ export const useFetchDocumennts = (docCollection, search = null, uid = null) => 
 
     return {
         documents, 
-        loading, 
+        loading,
         error
     };
 

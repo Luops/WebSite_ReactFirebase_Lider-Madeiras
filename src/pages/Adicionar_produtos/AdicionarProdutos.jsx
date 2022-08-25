@@ -37,9 +37,11 @@ const AdicionarProdutos = () => {
     }
 
     //Checar todos os valores
-    if (!title || !image || !body || !price || !category) {
+    if (!title || !image || !body || !price || !category || !unity || !method) {
       setFormError("Por favor preencha todos os campos!")
     }
+
+    
 
     if (formError) return;
     

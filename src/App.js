@@ -21,11 +21,12 @@ import Home from './pages/Home/Home';
 import Login from './pages/Login/Login';
 import Dashboard from './pages/Dashboard/Dashboard';
 import AdicionarProdutos from './pages/Adicionar_produtos/AdicionarProdutos';
-
+import Search from './pages/Search/Search';
 
 //CSS
 import './App.css';
-import Adicionar_produtos from './pages/Adicionar_produtos/AdicionarProdutos';
+
+
 
 
 
@@ -61,6 +62,9 @@ function App() {
               <Route 
               path='/about' 
               element={<About />} />
+              <Route 
+              path='/search' 
+              element={<Search />} />
               <Route 
               path='/login' 
               element={!user ? <Login /> : <Navigate to="/" />} />
