@@ -20,17 +20,17 @@ const Search = () => {
     const { documents: products } = useFetchDocuments("products", search); //buscar os produtos que não sao promoções ("products")
 
   return (
-    <div>
+    <div className={styles.search_container}>
         <h2>Search</h2>
         <div>
             {/*Vieram os produtos? se sim (&&) faça o mapeamento deles*/}
             {products && products.length === 0 && (
-                <>
+                <div className={styles.noproducts}>
                     <p>Não foram encontrados produtos a partir da sua busca...</p>
                     <Link to="/" className='btn btn-dark'>
                         Voltar
                     </Link>
-                </>
+                </div>
             )}
             {products && products.map((product) => 
                 <ProductDetail key={product.id} products={product}/>

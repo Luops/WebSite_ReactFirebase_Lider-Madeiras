@@ -31,6 +31,7 @@ const Home = () => {
     }
   }
 
+ 
 
   return (
     <main className={styles.home}>
@@ -48,8 +49,8 @@ const Home = () => {
           <input 
           type="text" 
           placeholder='Busque por categoria...'
-          
-          onChange={(e) => setQuery(e.target.value)}/>
+          onChange={(e) => setQuery(e.target.value[0].toUpperCase()+e.target.value.substring(1))}
+          />
           <button className='btn btn-dark'>Pesquisar</button>
         </form>
         <div className={styles.list_products}>

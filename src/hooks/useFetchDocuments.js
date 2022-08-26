@@ -62,7 +62,7 @@ export const useFetchDocuments = (docCollection, search = null, uid = null) => {
 
         loadData();
 
-    },[docCollection, search, uid, cancelled])
+    },[docCollection, documents, search, uid, cancelled])
 
 
     //Não carregar os dados do componente quando "desmontar"

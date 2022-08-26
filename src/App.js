@@ -22,13 +22,10 @@ import Login from './pages/Login/Login';
 import Dashboard from './pages/Dashboard/Dashboard';
 import AdicionarProdutos from './pages/Adicionar_produtos/AdicionarProdutos';
 import Search from './pages/Search/Search';
+import Product from './pages/Product/Product';
 
 //CSS
 import './App.css';
-
-
-
-
 
 
 function App() {
@@ -65,6 +62,9 @@ function App() {
               <Route 
               path='/search' 
               element={<Search />} />
+              <Route 
+              path='/products/:id' 
+              element={<Product />} />
               <Route 
               path='/login' 
               element={!user ? <Login /> : <Navigate to="/" />} />

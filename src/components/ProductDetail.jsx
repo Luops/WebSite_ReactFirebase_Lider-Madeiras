@@ -14,7 +14,6 @@ const ProductDetail = ({products}) => {
     <div className={styles.product_detail}>
         <img src={products.image} alt={products.title} />
         <h2>{products.title}</h2>
-        <p className={styles.body}>{products.body}</p>
         <p className={styles.price}><span>R$</span> {products.price} <span>{products.unity}</span></p>
         <p className={styles.payment_method}>{products.method}</p>
         <Link to={`/products/${products.id}`} className='btn btn-outline'>Veja mais</Link>
