@@ -21,7 +21,7 @@ const AdicionarProdutos = () => {
 
   const {user} = useAuthValue();
 
-  const {insertDocument, response} = useInsertDocument('products');
+  const {insertDocument, response} = useInsertDocument('products'); //Enviar os dados para a coleção products
 
   const navigate = useNavigate();
 

@@ -39,6 +39,12 @@ export const useFetchDocuments = (docCollection, search = null, uid = null) => {
                         where('category','==', search), 
                         orderBy('createdAt', 'desc')
                     );
+                } else if(uid){
+                    queryComplex = await query(
+                        collectionRef, 
+                        where('uid','==', uid), 
+                        orderBy('createdAt', 'desc')
+                    );
                 } else {
                     queryComplex = await query(collectionRef, orderBy("createdAt", "desc"));
                 }
@@ -62,7 +68,7 @@ export const useFetchDocuments = (docCollection, search = null, uid = null) => {
 
         loadData();
 
-    },[docCollection, documents, search, uid, cancelled])
+    },[docCollection, search, uid, cancelled])
 
 
     //Não carregar os dados do componente quando "desmontar"

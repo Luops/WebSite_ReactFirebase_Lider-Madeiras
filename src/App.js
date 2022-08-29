@@ -23,9 +23,11 @@ import Dashboard from './pages/Dashboard/Dashboard';
 import AdicionarProdutos from './pages/Adicionar_produtos/AdicionarProdutos';
 import Search from './pages/Search/Search';
 import Product from './pages/Product/Product';
+import EditProducts from './pages/EditProducts/EditProducts';
 
 //CSS
 import './App.css';
+
 
 
 function App() {
@@ -71,6 +73,9 @@ function App() {
               <Route 
               path='/dashboard' 
               element={user ? <Dashboard /> : <Navigate to="/login" />} />
+              <Route 
+              path='/products/edit/:id' 
+              element={user ? <EditProducts/> : <Navigate to="/login" />} />
               <Route 
               path='/adicionarProdutos' 
               element={user ? <AdicionarProdutos /> : <Navigate to="/login" />} />
