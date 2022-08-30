@@ -1,4 +1,5 @@
 import React from 'react'
+import { Swiper } from 'swiper';
 
 //hooks
 import { useNavigate, Link, Navigate } from 'react-router-dom'
@@ -11,12 +12,14 @@ import ProductDetail from '../../components/ProductDetail'
 
 //CSS
 import styles from "./Home.module.css"
+import ProductOffDetail from '../../components/ProductOffDetail'
 
 
 
 const Home = () => {
   const [query, setQuery] = useState("");
   const {documents: products, loading} = useFetchDocuments("products");
+  const {documents: productsOff} = useFetchDocuments("productsOff");
 
   const navigate = useNavigate();
 
@@ -31,20 +34,33 @@ const Home = () => {
     }
   }
 
+  
+
  
 
   return (
     <main className={styles.home}>
       <div className={styles.divPromocoes}>
-
-        <div className={styles.tituloDaDiv}><h3>Aproveite as nossas promoções!</h3></div>
+        <div className={styles.tituloDaDiv}>
+          <h2>Aproveite as nossas promoções!</h2>
+        </div>
 
         <ul className={styles.promocoes}>
           
+            {loading && <p>Carregando...</p>}
+            {productsOff && productsOff.map((productOff) =>(
+              <ProductOffDetail key={productOff.id} productsOff={productOff} className={styles.promocao}/>
+            ))}
+            {productsOff && productsOff.length === 0 && (
+                <div className={styles.noproducts}>
+                  <p>Não foram encontrados produtos</p>
+                </div>
+              )}
+            
         </ul>
+
       </div>
       <div className={styles.divProdutos}>
-        <h1>Veja os nosso produtos</h1>
         <form onSubmit={handleSubmit} className={styles.search_form}>
           <input 
           type="text" 

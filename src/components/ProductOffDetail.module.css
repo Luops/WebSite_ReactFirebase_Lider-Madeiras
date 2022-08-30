@@ -1,0 +1,110 @@
+.product_detail {
+    width: 100%;
+    margin-bottom: 2em;
+    box-sizing: border-box;
+    padding: 0.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.containerPorcentOff {
+    width: 300px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1em;
+    -webkit-box-shadow: -4px 2px 15px 1px rgba(0,0,0,0.45); 
+    box-shadow: -4px 2px 15px 1px rgba(0,0,0,0.45);
+}
+
+.geral {
+    display: flex;
+    flex-direction: row;
+}
+
+.containerPorcentOff p {
+    color: white;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.product_detail img {
+    max-width: 350px;
+    border-radius: 10px;
+    -webkit-box-shadow: -8px 6px 23px 1px rgba(0,0,0,0.69); 
+    box-shadow: -8px 6px 23px 1px rgba(0,0,0,0.69);
+    object-fit: cover;
+}
+
+.product_detail h2 {
+    margin-bottom: .4em;
+    font-size: 2em;
+    align-self: flex-start;
+    color: white;
+    max-width: 400px;
+    overflow-wrap: break-word;  
+    word-wrap: break-word; 
+    word-break: break-word;
+}
+
+.prices {
+    margin-top: 2.5em;
+}
+
+.informations {
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+    max-height: 100%;
+    text-align: start;
+}
+
+.informations p {
+    margin-top: 5em;
+}
+
+.product_detail .payment_method {
+    align-self: flex-start;
+    color: white;
+    font-size: 1.25em;
+}
+
+.product_detail .price {
+    font-size: 1.35em;
+    align-self: flex-start;
+    margin-block: 0;
+    color: white;
+}
+
+.oldPrice {
+    text-decoration: line-through;
+}
+
+
+
+.product_detail .newPrice {
+    font-size: 1.65em;
+    font-weight: bold;
+    align-self: flex-start;
+    margin-block: 0;
+    color: white;
+}
+
+span {
+    font-size: .85em;
+}
+
+.product_detail > :last-child {
+    font-size: .7em;
+    
+}
+
+
+
+
+
+

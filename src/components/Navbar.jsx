@@ -46,6 +46,11 @@ const Navbar = () => {
               Adicionar
             </NavLink>
             </li>
+            <li>
+            <NavLink to="/adicionarProdutosOff" className={({isActive}) => (isActive ? styles.active : "")}>
+              Adicionar promoção
+            </NavLink>
+            </li>
           </>
         )}
       

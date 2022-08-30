@@ -1,0 +1,43 @@
+.create_product {
+    text-align: center;
+    padding-bottom: 2em;
+}
+
+.create_product form {
+}
+
+.create_product h2 {
+    font-size: 2.2em;
+}
+
+.create_product p {
+    color: #aaa;
+    margin-bottom: 2em;
+}
+
+.divPriceUnity {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.title_Price {
+    width: 100px;
+}
+
+.divPriceUnity :first-child {
+    width: 50%;
+    padding-right: 1em;
+}
+
+.divPriceUnity :last-child {
+    width: 50%;
+}
+
+.divPriceUnity :first-child input {
+    width: 100%;
+}
+
+.divPriceUnity :last-child input {
+    width: 100%;
+}

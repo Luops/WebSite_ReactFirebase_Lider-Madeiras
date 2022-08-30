@@ -24,9 +24,11 @@ import AdicionarProdutos from './pages/Adicionar_produtos/AdicionarProdutos';
 import Search from './pages/Search/Search';
 import Product from './pages/Product/Product';
 import EditProducts from './pages/EditProducts/EditProducts';
+import AdicionarProdutosOff from './pages/AdicionarProdutosOff/AdicionarProdutosOff';
 
 //CSS
 import './App.css';
+
 
 
 
@@ -79,6 +81,9 @@ function App() {
               <Route 
               path='/adicionarProdutos' 
               element={user ? <AdicionarProdutos /> : <Navigate to="/login" />} />
+              <Route 
+              path='/adicionarProdutosOff' 
+              element={user ? <AdicionarProdutosOff /> : <Navigate to="/login" />} />
             </Routes>
           </div>
           <Footer />
