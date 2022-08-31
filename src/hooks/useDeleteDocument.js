@@ -34,7 +34,33 @@ export const useDeleteDocument = (docColletion) => {
         }
     }
 
-    const deleteDocument = async (id) => {
+    //Deletar produto normal
+    const deleteDocumentNoOff = async (id) => {
+        checkCancelBeforeDispatch({
+            type: "LOADING"
+        })
+
+        try{
+            const deletedDocument = await deleteDoc(doc(db,docColletion, id)) //receber
+
+            checkCancelBeforeDispatch({
+                type: "DELETED_DOC",
+                payload: deletedDocument,
+            });
+
+        }catch(error){
+
+            checkCancelBeforeDispatch({
+                type: "ERROR",
+                payload: error.message,
+            });
+
+        }
+    }
+
+
+    //Deletar produto em promoção
+    const deleteDocumentOff = async (id) => {
         checkCancelBeforeDispatch({
             type: "LOADING"
         })
@@ -62,7 +88,8 @@ export const useDeleteDocument = (docColletion) => {
     },[]);
 
     return { 
-        deleteDocument, 
+        deleteDocumentNoOff,
+        deleteDocumentOff, 
         response 
     }
 

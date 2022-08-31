@@ -1,4 +1,5 @@
-main {    
+main {  
+    width: 100%;  
 }
 
 .divPromocoes {
@@ -24,6 +25,21 @@ main {
 }
 
 /*Carousel*/
+
+.slide {
+    width: 100%;
+}
+
+.mySwiper {
+    background-color: #510400;
+}
+
+.swiper-button-next {
+    color: white !important;
+}
+
+/*Carousel end*/
+
 
 
 .tituloDaDiv {

@@ -157,7 +157,7 @@ const AdicionarProdutosOff = () => {
           <textarea name="percent" 
           id="percent" 
           required 
-          placeholder='Insira a descrição do produto..'
+          placeholder='Insira a porcentagem de desconto do produto..'
           onChange={(e) => setPercent(e.target.value)}
           value={percent}>
           </textarea>

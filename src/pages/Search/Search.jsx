@@ -21,12 +21,12 @@ const Search = () => {
 
   return (
     <div className={styles.search_container}>
-        <h2>Search</h2>
+        <h1>Busca de produtos por categoria</h1>
         <div>
             {/*Vieram os produtos? se sim (&&) faça o mapeamento deles*/}
             {products && products.length === 0 && (
                 <div className={styles.noproducts}>
-                    <p>Não foram encontrados produtos a partir da sua busca...</p>
+                    <p>Não foi encontrado a categoria desejada a partir da sua busca.</p>
                     <Link to="/" className='btn btn-dark'>
                         Voltar
                     </Link>

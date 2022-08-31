@@ -26,6 +26,25 @@ h1 {
     font-size: 1.5em;
 }
 
+.fotoPromocao {
+    max-width: 40vw;
+    display: flex;
+    justify-content: center;
+}
+
+.fotoPromocao h2 {
+    position: absolute;
+    background-color: #840700;
+    padding: .45em .25em;
+    border-radius: 10px;
+    margin-top: .5em;
+    justify-content: center;
+    color: white;
+    font-size: 1.5em;
+    -webkit-box-shadow: 0px 3px 16px 2px rgba(0,0,0,0.85); 
+    box-shadow: 0px 3px 16px 2px rgba(0,0,0,0.85);
+}
+
 .container_imgTitleBodyCategory img {
     max-width: 40vw;
     border-radius: 10px;
@@ -39,14 +58,26 @@ h1 {
 }
 
 .container_titleBodyPriceUnityMethod .price span {
-    font-weight: bold;
-    font-size: 1.5em;
+    font-size: 1.1em;
     font-family: 'helvetica';
 }
 
-.price {
+.prices {
     margin-top: 3em;
 }
+
+.oldPrice {
+    text-decoration: line-through;
+}
+
+.newPrice {
+    font-size: 1.75em;
+    font-family: 'helvetica';
+    font-weight: bold;
+}
+
+
+
 .body {
     width: 27rem;
     text-align: justify;

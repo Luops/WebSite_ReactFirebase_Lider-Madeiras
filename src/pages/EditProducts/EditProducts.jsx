@@ -91,98 +91,98 @@ const EditProducts = () => {
             <p>Altere os dados do produto.</p>
             <form onSubmit={handleSubmit} 
             action="">
-            <p className={styles.preview_title}>Preview da imagem atual:</p>
-            <img 
-            className={styles.preview_image} 
-            src={product.image} 
-            alt={product.title} 
-            />
-            <label htmlFor="">
-              <span>Título:</span>
-              <input type="text" 
-              name="title" 
-              id="title" 
-              required 
-              placeholder='Título do produto..' 
-              onChange={(e) => setTitle(e.target.value)}
-              value={title}/>
-            </label>
-
-            <label htmlFor="">
-              <span>Categoria:</span>
-              <input type="text" 
-              name="category" 
-              id="category" 
-              required 
-              placeholder='Categoria do produto..' 
-              onChange={(e) => setCategory(e.target.value)}
-              value={category}/>
-            </label>
-
-            <div className={styles.divPriceUnity}>
+              <p className={styles.preview_title}>Preview da imagem atual:</p>
+              <img 
+              className={styles.preview_image} 
+              src={product.image} 
+              alt={product.title} 
+              />
               <label htmlFor="">
-                <span>Preço:</span>
+                <span>Título:</span>
                 <input type="text" 
-                name="price" 
-                id="price" 
+                name="title" 
+                id="title" 
                 required 
-                placeholder='Preço do produto..' 
-                onChange={(e) => setPrice(e.target.value)}
-                value={price}/>
+                placeholder='Título do produto..' 
+                onChange={(e) => setTitle(e.target.value)}
+                value={title}/>
               </label>
+
               <label htmlFor="">
-                <span>Unidade:</span>
+                <span>Categoria:</span>
                 <input type="text" 
-                name="unity" 
-                id="unity" 
+                name="category" 
+                id="category" 
                 required 
-                placeholder='Unidade a ser vendido..' 
-                onChange={(e) => setUnity(e.target.value)}
-                value={unity}/>
+                placeholder='Categoria do produto..' 
+                onChange={(e) => setCategory(e.target.value)}
+                value={category}/>
               </label>
-            </div>
 
-            <label htmlFor="">
-              <span>Método de pagamento:</span>
-              <textarea name="method" 
-              id="method" 
-              required 
-              placeholder='Insira o método de pagamento..'
-              onChange={(e) => setMethod(e.target.value)}
-              value={method}>
-              </textarea>
-            </label>
+              <div className={styles.divPriceUnity}>
+                <label htmlFor="">
+                  <span>Preço:</span>
+                  <input type="text" 
+                  name="price" 
+                  id="price" 
+                  required 
+                  placeholder='Preço do produto..' 
+                  onChange={(e) => setPrice(e.target.value)}
+                  value={price}/>
+                </label>
+                <label htmlFor="">
+                  <span>Unidade:</span>
+                  <input type="text" 
+                  name="unity" 
+                  id="unity" 
+                  required 
+                  placeholder='Unidade a ser vendido..' 
+                  onChange={(e) => setUnity(e.target.value)}
+                  value={unity}/>
+                </label>
+              </div>
 
-            <label htmlFor="">
-              <span>Descrição:</span>
-              <textarea name="body" 
-              id="body" 
-              required 
-              placeholder='Insira a descrição do produto..'
-              onChange={(e) => setBody(e.target.value)}
-              value={body}>
-              </textarea>
-            </label>
+              <label htmlFor="">
+                <span>Método de pagamento:</span>
+                <textarea name="method" 
+                id="method" 
+                required 
+                placeholder='Insira o método de pagamento..'
+                onChange={(e) => setMethod(e.target.value)}
+                value={method}>
+                </textarea>
+              </label>
 
-            <label htmlFor="">
-              <span>URL da imagem:</span>
-              <input type="text" 
-              name="image" 
-              id="image" 
-              required 
-              placeholder='Insira a URL da imagem do produto..' 
-              onChange={(e) => setImage(e.target.value)}
-              value={image}/>
-            </label>
-            
-            {!response.loading && <button className='btn'>Editar</button>}
-            {response.loading && (
-              <button className='btn' disabled>
-                Aguarde...
-              </button>
-            )}
-            {response.error && <p className='error'>{response.error}</p>}
-            {formError && <p className='error'>{formError}</p>}
+              <label htmlFor="">
+                <span>Descrição:</span>
+                <textarea name="body" 
+                id="body" 
+                required 
+                placeholder='Insira a descrição do produto..'
+                onChange={(e) => setBody(e.target.value)}
+                value={body}>
+                </textarea>
+              </label>
+
+              <label htmlFor="">
+                <span>URL da imagem:</span>
+                <input type="text" 
+                name="image" 
+                id="image" 
+                required 
+                placeholder='Insira a URL da imagem do produto..' 
+                onChange={(e) => setImage(e.target.value)}
+                value={image}/>
+              </label>
+              
+              {!response.loading && <button className='btn'>Editar</button>}
+              {response.loading && (
+                <button className='btn' disabled>
+                  Aguarde...
+                </button>
+              )}
+              {response.error && <p className='error'>{response.error}</p>}
+              {formError && <p className='error'>{formError}</p>}
           </form>
         </>
       )}

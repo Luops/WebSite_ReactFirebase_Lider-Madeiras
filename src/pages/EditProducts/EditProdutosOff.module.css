@@ -1,4 +1,4 @@
-.edit_product {
+.create_product {
     text-align: center;
     padding-bottom: 2em;
     display: flex;
@@ -7,20 +7,22 @@
     align-items: center;
 }
 
-.edit_product h2 {
+.create_product h2 {
     font-size: 1.5em;
     width: 60%;
 }
 
-.edit_product p {
+.create_product p {
     color: #aaa;
     margin-bottom: 2em;
 }
 
-.create_product form img {
-    max-width: 350px;
-    margin-bottom: 5em;
-    border-radius: 10px;
+.create_product form {
+    width: 85%;
+}
+
+.preview_image {
+    max-width: 300px;
 }
 
 .divPriceUnity {
