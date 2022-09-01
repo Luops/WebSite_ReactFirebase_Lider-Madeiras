@@ -18,11 +18,12 @@
 }
 
 .create_product form {
-    width: 85%;
+    width: 100%;
 }
 
 .preview_image {
     max-width: 300px;
+    text-align: center;
 }
 
 .divPriceUnity {

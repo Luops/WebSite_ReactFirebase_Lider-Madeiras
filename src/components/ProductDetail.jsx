@@ -18,6 +18,7 @@ const ProductDetail = ({products}) => {
         <p className={styles.payment_method}>{products.method}</p>
         <Link to={`/products/${products.id}`} className='btn btn-outline'>Veja mais</Link>
     </div>
+    
   )
 }
 

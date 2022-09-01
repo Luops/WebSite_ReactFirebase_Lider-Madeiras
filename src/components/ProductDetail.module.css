@@ -10,11 +10,12 @@
     align-items: center;
     width: 220px;
     border: 1px solid rgb(206, 206, 206);
-    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2)
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 
 .product_detail img {
     max-width: 150px;
+    margin-block: 0;
 }
 
 .product_detail h2 {

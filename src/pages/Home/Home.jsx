@@ -5,7 +5,11 @@ import { Navigation, Pagination, Autoplay } from 'swiper';
 //hooks
 import { useNavigate, Link, Navigate } from 'react-router-dom'
 import { useState } from 'react'
-import { useFetchDocuments, useFetchDocumentsCategory } from '../../hooks/useFetchDocuments'
+import { 
+  useFetchDocuments, 
+  useFetchDocumentsCategoryJanela, 
+  useFetchDocumentsCategoryTabua 
+} from '../../hooks/useFetchDocuments'
 
 
 //Components
@@ -26,7 +30,8 @@ import 'swiper/css/autoplay'
 const Home = () => {
   const [query, setQuery] = useState("");
   const {documents: products, loading} = useFetchDocuments("products");
-  const {documentsCategory: productsCategory} = useFetchDocumentsCategory("category");
+  const {documentsCategoryTabua: productsCategoryTabua} = useFetchDocumentsCategoryTabua("products");
+  const {documentsCategoryJanela: productsCategoryJanela} = useFetchDocumentsCategoryJanela("products");
   const {documents: productsOff} = useFetchDocuments("productsOff");
 
   const navigate = useNavigate();
@@ -76,7 +81,6 @@ const Home = () => {
               )}
           </Swiper>
         </div>
-        
       </div>
       
       <div className={styles.divProdutos}>
@@ -88,6 +92,7 @@ const Home = () => {
           />
           <button className='btn btn-dark'>Pesquisar</button>
         </form>
+        <h2 className={styles.lastFiveProducts}>Últimos produtos adicionados!</h2>
         <div className={styles.list_products}>
           {loading && <p>Carregando...</p>}
           {products && products.map((product) => (
@@ -101,22 +106,38 @@ const Home = () => {
         </div>
       </div>
 
-
-      {/*Tentativa
-      <div className={styles.categoryForro}>
-        <h2>Forro:</h2>
-        {loading && <p>Carregando...</p>}
-          {products && products.map((productCategory) => (
-            <ProductDetail key={productCategory.category} products={productCategory}/>
-          ))}
-          {productsCategory && productsCategory.length === 0 && (
-            <div className={styles.noproducts}>
-              <p>Não foram encontrados produtos</p>
-            </div>
-          )}
-
+      <div className={styles.byCategory}>
+        <h2 className={styles.categoryTitle}>Tábuas</h2>
+        <div className={styles.categoryCards}>
+          {loading && <p>Carregando...</p>}
+            {productsCategoryTabua && productsCategoryTabua.map((Tabua) => (
+              <ProductDetail key={Tabua.id} products={Tabua}/>
+            ))}
+            {productsCategoryTabua && productsCategoryTabua.length === 0 && (
+              <div className={styles.noproducts}>
+                <p>Não foram encontrados produtos</p>
+              </div>
+            )}
+          </div>
+        <hr />
       </div>
-      */}
+      
+      <div className={styles.byCategory}>
+        <h2 className={styles.categoryTitle}>Janelas</h2>
+        <div className={styles.categoryCards}>
+          {loading && <p>Carregando...</p>}
+            {productsCategoryJanela && productsCategoryJanela.map((Janela) => (
+              <ProductDetail key={Janela.id} products={Janela}/>
+            ))}
+            {productsCategoryTabua && productsCategoryTabua.length === 0 && (
+              <div className={styles.noproducts}>
+                <p>Não foram encontrados produtos</p>
+              </div>
+            )}
+          </div>
+        <hr />
+      </div>
+      
 
     </main>
   )
