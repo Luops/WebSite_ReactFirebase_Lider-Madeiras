@@ -1,6 +1,23 @@
 .login {
     text-align: center;
+    justify-content: center;
+}
 
+.login h1 {
+    margin: 0 auto;
+    margin-top: 1em;
+    width: fit-content;
+    padding: 5px 25px;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1em;
+    -webkit-box-shadow: -4px 2px 15px 1px rgba(0,0,0,0.45); 
+    box-shadow: -4px 2px 15px 1px rgba(0,0,0,0.45);
+    border-bottom: 2px solid rgb(116, 116, 116);
+    border-right: 1.5px solid rgb(116, 116, 116);
 }
 
 .login p {

@@ -48,6 +48,7 @@ h1 {
 .container_imgTitleBodyCategory img {
     max-width: 40vw;
     border-radius: 10px;
+    object-fit: cover;
 }
 
 .container_titleBodyPriceUnityMethod {
