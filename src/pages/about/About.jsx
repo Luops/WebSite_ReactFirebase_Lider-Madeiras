@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaFacebook, FaWhatsapp, FaEnvelope, FaLocationArrow} from 'react-icons/fa'
+import { FaFacebook, FaWhatsapp, FaMapMarkerAlt, FaGoogle} from 'react-icons/fa'
 
 //CSS
 import styles from "./About.module.css"
@@ -22,11 +22,11 @@ const About = () => {
   ]
 
   const networkEmail = [
-    {name: 'email', icon: <FaEnvelope/>, URL: 'mailto:eliana.lidermadeiras@gmail.com?Subject=Or%E7amento'}
+    {name: 'email', icon: <FaGoogle/>, URL: 'mailto:eliana.lidermadeiras@gmail.com?subject=orcamento'}
   ]
 
   const address = [
-    {name: 'address', icon: <FaLocationArrow/>, URL: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d864.6143673865794!2d-51.03808701038359!3d-29.90872946933981!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95197316e7a7a3e5%3A0x8d04ad19085291ea!2sFerragem%20Viaduto!5e0!3m2!1spt-BR!2sbr!4v1662384112421!5m2!1spt-BR!2sbr'}
+    {name: 'address', icon: <FaMapMarkerAlt/>, URL: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d864.6143673865794!2d-51.03808701038359!3d-29.90872946933981!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95197316e7a7a3e5%3A0x8d04ad19085291ea!2sFerragem%20Viaduto!5e0!3m2!1spt-BR!2sbr!4v1662384112421!5m2!1spt-BR!2sbr'}
   ]
 
   
@@ -35,66 +35,99 @@ const About = () => {
   return (
     
     <div className={styles.containerFather}>
-      <h2>Sobre</h2>
-      <div className={styles.containerImgText}>
-        {imgLider.map((image)=>(
-          <img src={image.image} alt="Lider Madeiras" className={styles.imgLider}/>
+      <div className={styles.containerAbout}>
+        <div className={styles.containerTitleAbout}>
+          <h2>Sobre nós</h2>
+          <p className={styles.conheca}>Conheça a nossa empresa</p>
+          <p className={styles.envieMensagem}>Entre em contato conosco para realizar um orçamento!</p>
+          {imgLider.map((image) => (
+          <img src={image.image} name={image.id} key={image.id} alt="Lider Madeiras" />
         ))}
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-        Facilis sint tempore cum quod harum placeat cumque labore enim! 
-        Iste tempora maxime velit quos cupiditate temporibus eveniet, 
-        voluptas commodi dignissimos beatae.</p>
+        </div>
+        <p className={styles.textAbout}>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+          Blanditiis pariatur veritatis quos sapiente officiis sed non rem, 
+          ducimus eius temporibus libero doloremque at, nam optio nisi minima, 
+          ea eos perspiciatis?Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+          Blanditiis pariatur veritatis quos sapiente officiis sed non rem, 
+          ducimus eius temporibus libero doloremque at, nam optio nisi minima, 
+          ea eos perspiciatis?
+        </p>
       </div>
-      <h2>Contatos</h2>
-      <div className={styles.containerContact}>
-
-        <div className={styles.containerWppOne}>
-          {networkWppOne.map((wpp) => (
-            <a href={wpp.URL} target="_blank" id={wpp.name} key={wpp.name}>
-              {wpp.icon}
-            </a>                   
-            ))}
-          <span>WhatsApp</span>
-          <p>(51)98460-2351</p>
-        </div>
-
-        <div className={styles.containerWppOne}>
-          {networkWppTwo.map((wpp) => (
-            <a href={wpp.URL} target="_blank" id={wpp.name} key={wpp.name}>
-              {wpp.icon}
-            </a>                   
-            ))}
-          <span>WhatsApp</span>
-          <p>(51)98193-3245</p>
-        </div>
-
-        <div className={styles.containerFacebook}>
-            {networkFace.map((facebook) => (
-              <a href={facebook.URL} target="_blank" id={facebook.name} key={facebook.name}>
-                {facebook.icon}
-              </a>
-            ))}
-            <span>Facebook</span>
-            <p>@LiderMadeirasGravatai</p>
-        </div>
-        
-        <div className={styles.containerGmail}>
-          {networkEmail.map((email) => (
-            <a href={email.URL} target="_blank" id={email.name} key={email.name}>
-              {email.icon}
-            </a>
-          ))}
-          <span>Email</span>
-          <p>Eliana.lidermadeiras@gmail.com</p>
-        </div>
       
+      <div className={styles.containerContact}>
+        <h2>Contato</h2>
+        <div className={styles.containerContactDescriptions}>
+          <div className={styles.containerWpp}>
+            {networkWppOne.map((wppOne) => (
+              <i>{wppOne.icon}</i>
+            ))}
+            <p className={styles.contactName}>Edmilson Lopes</p>
+            <p className={styles.contactNumber}>
+              {networkWppOne.map((WppOne) => (
+                <a href={WppOne.URL} target="_blank" 
+                  id={WppOne.name} 
+                  key={WppOne.name}>
+                    (51)98460-2351
+                </a>
+              ))}
+            </p>
+            <br />
+            <p className={styles.contactName}>Claudiomiro</p>
+            <p className={styles.contactNumber}>
+              {networkWppTwo.map((WppTwo) => (
+                <a href={WppTwo.URL} target="_blank" 
+                id={WppTwo.name} 
+                key={WppTwo.name}>
+                  (51)98193-3245
+                </a>
+              ))}
+            </p>
+          </div>
+            
+          <div className={styles.containerFacebook}>
+            {networkFace.map((Facebook) => (
+              <i>{Facebook.icon}</i>
+            ))}
+            <p className={styles.textFacebook}>Facebook</p>
+            <p>
+              {networkFace.map((Facebook) => (
+                <a href={Facebook.URL} target="_blank" 
+                id={Facebook.name} 
+                key={Facebook.name}>
+                  @LiderMadeirasGravatai
+                </a>
+              ))}
+            </p>
+          </div>
+            
+          <div className={styles.containerEmail}>
+            {networkEmail.map((Email) => (
+              <i>{Email.icon}</i>
+            ))}
+            <p className={styles.textGmail}>Gmail</p>
+            <p>
+              {networkEmail.map((Email) => (
+                <a href={Email.URL} target="_blank" 
+                id={Email.name} 
+                key={Email.name}>
+                  Eliana.lidermadeiras
+                </a>
+              ))}
+            </p>
+          </div>
+
+        </div>
       </div>
 
-      <h2>Endereço</h2>
-      <div className={styles.containerEndereco}>
-        <address><FaLocationArrow/>RS-020 Nº 3919, Loja 01 parada 67 / faixa de taquara</address>
-        {address.map((address) =>(
-          <iframe src={address.URL}></iframe>
+      <div className={styles.containerAddress}>
+        <address>
+          {address.map((Address) => (
+            <i>{Address.icon}</i>
+          ))}
+          RS-020, 3929 - Neópolis, Gravataí - RS, 94100-250
+        </address>
+        {address.map((Address) => (
+          <iframe src={Address.URL} frameborder="0" width="100%"></iframe>
         ))}
       </div>
     </div>

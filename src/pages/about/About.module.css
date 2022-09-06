@@ -3,132 +3,200 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 3em;
-    background-color: white;
     width: 100%;
-    border-radius: 10px;
 }
 
-.containerFather .containerImgText {
+.containerFather .containerAbout {
     display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
+    flex-direction: column;
     justify-content: center;
-    margin-top: 15px;
+    align-items: center;
+    width: 100%;
 }
 
-.containerFather .containerImgText img {
+.containerAbout .containerTitleAbout {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: rgb(52, 34, 34,0.7);
+}
+
+.containerAbout .containerTitleAbout h2,
+.containerAbout .containerTitleAbout p {
+    position: absolute;
+    color: white;
+}
+
+.containerAbout .containerTitleAbout p {
+    color: rgb(168, 168, 168);
+    font-weight: bold;
+}
+
+.containerAbout .containerTitleAbout h2 {
+    margin-bottom: 4em;
+    font-size: 2.5em;
+    
+}
+
+.containerAbout .containerTitleAbout .conheca {
+    margin-top: 5em;
+}
+
+
+.containerAbout .containerTitleAbout .envieMensagem {
+    margin-top: 9em;
+    padding: 0 25px;
+    text-align: center;
+}
+
+.containerAbout .containerTitleAbout img {
+    max-width: 100%;
+    width: 100%;
+    height: 65vh;
+    padding: 0;
+    border-radius: 0;
+    background-position: center;
+    background-size: cover;
+    z-index: -1;
     margin-bottom: 0;
-    max-width: 500px;
-    border: 1px solid #000;
+    filter: blur(2px);
 }
 
-.containerFather .containerImgText p {
-    width: 45vw;
-    margin-block: 0;
-    align-self: flex-start;
+.containerAbout .textAbout {
+    text-align: center;
+    margin: 5em 5%;
     text-align: justify;
+    font-size: 1.25em;
 }
 
 .containerContact {
+    background-color: black;
+    color: white;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3em 10em;
+}
+
+.containerContact h2 {
+    width: fit-content;
+    padding: 5px 25px;
+    background-color: white;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1em;
+    -webkit-box-shadow: -4px 2px 15px 1px rgba(127, 127, 127, 0.45); 
+    box-shadow: -4px 2px 15px 1px rgba(127, 127, 127, 0.45);
+    border-bottom: 2px solid rgb(154, 154, 154);
+    border-right: 1.5px solid rgb(154, 154, 154);
+}
+
+.containerContactDescriptions {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 15px;
-    justify-content: center;
-    align-items: center;
-    padding: 5px 10px;
+    justify-content: space-evenly;
+    width: 100%;
 }
 
-.containerFather h2 {
-    margin-top: 2em;
-    background-color: #000000;
-    color: white;
+.containerContact i {
+    font-size: 6em;
+}
+.containerContact p {
+    margin-block-start: .25em;
+    margin-block-end: .25em;
+}
+.containerWpp {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    padding: 5px 10px;
-    -webkit-box-shadow: -4px 2px 15px 1px rgba(0,0,0,0.45); 
-    box-shadow: -4px 2px 15px 1px rgba(0,0,0,0.45);
-    border-bottom: 2px solid rgb(116, 116, 116);
-    border-right: 1.5px solid rgb(116, 116, 116);;
-}
-
-.containerContact .containerWppOne {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: #56F672;
-    background: -moz-linear-gradient(left, #56F672 0%, #48CD5F 20%, #318D41 100%);
-    background: -webkit-linear-gradient(left, #56F672 0%, #48CD5F 20%, #318D41 100%);
-    background: linear-gradient(to right, #56F672 0%, #48CD5F 20%, #318D41 100%);
-    border-radius: 15px;
-    padding: 15px 10px;
-    font-weight: bold;
-    -webkit-box-shadow: 0px 0px 14px 1px rgba(0,0,0,0.77); 
-    box-shadow: 0px 0px 14px 1px rgba(0,0,0,0.77);
-    border: 1px solid #000000;
-}
-
-.containerContact .containerWppOne a {
-    font-size: 3em;
-}
-
-.containerContact .containerFacebook {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 15px;
-    padding: 15px 10px;
-    font-weight: bold;
-    -webkit-box-shadow: 0px 0px 14px 1px rgba(0,0,0,0.77); 
-    box-shadow: 0px 0px 14px 1px rgba(0,0,0,0.77);
-    border: 1px solid #000000;
-    background: #4867AA;
-    background: -moz-linear-gradient(left, #4867AA 0%, #4765A7 50%, #405C97 100%);
-    background: -webkit-linear-gradient(left, #4867AA 0%, #4765A7 50%, #405C97 100%);
-    background: linear-gradient(to right, #4867AA 0%, #4765A7 50%, #405C97 100%);
-}
-
-.containerContact .containerFacebook a {
-    font-size: 3em;
-}
-
-.containerContact .containerGmail {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 15px;
-    padding: 20px 10px;
-    font-weight: bold;
-    -webkit-box-shadow: 0px 0px 14px 1px rgba(0,0,0,0.77); 
-    box-shadow: 0px 0px 14px 1px rgba(0,0,0,0.77);
-    border: 1px solid #000000;
-}
-
-.containerContact .containerGmail a {
-    font-size: 3em;
-}
-
-.containerContact .containerGmail p {
-    font-size: .75em;
-}
-
-.containerEndereco {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     margin-top: 2em;
 }
 
-.containerEndereco address {
-    font-size: 85%;
+.containerWpp .contactName {
+    font-weight: bold;
 }
 
-.containerEndereco iframe {
+.contactNumber a,
+.containerFacebook p a,
+.containerEmail p a {
+    color: rgb(172, 172, 172);
+    transition: ease-in-out .4s;
+}
+
+.contactNumber a:hover,
+.containerFacebook p a:hover,
+.containerEmail p a:hover {
+    color: white;
+    font-size: 101% ;
+}
+
+.containerFacebook {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 2em;
+}
+
+.containerFacebook p a{
+    color: rgb(172, 172, 172);
+    transition: ease-in-out .4s;
+}
+
+.containerEmail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 2em;
+}
+
+.textGmail, .textFacebook {
+    font-weight: bold;
+}
+
+.containerEmail a {
+    font-size: .9em;
+}
+
+.containerAddress {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 4em
+}
+
+.containerAddress address {
+    width: fit-content;
+    padding: 5px 25px;
+    background-color: black;
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1em;
+    -webkit-box-shadow: -4px 2px 15px 1px rgba(127, 127, 127, 0.45); 
+    box-shadow: -4px 2px 15px 1px rgba(127, 127, 127, 0.45);
+    border-bottom: 2px solid rgb(154, 154, 154);
+    border-right: 1.5px solid rgb(154, 154, 154);
+}
+
+.containerAddress address i {
+    margin-right: .5em;
+}
+
+.containerAddress iframe {
     margin-top: 1em;
-    width: 93vw;
-    height: 450px;
+    height: 75vh;
 }
