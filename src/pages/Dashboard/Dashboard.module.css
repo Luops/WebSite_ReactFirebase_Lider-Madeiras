@@ -14,6 +14,30 @@
     justify-content: center;
     align-items: center;
 }
+.addProduct {
+    width: 80%;
+    text-decoration: none;
+    list-style: none;
+    font-size: 1.1em;
+    margin-bottom: .5em;
+    width: fit-content;
+    padding: 5px 25px;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    margin-bottom: 1em;
+    -webkit-box-shadow: -4px 2px 15px 1px rgba(0,0,0,0.45); 
+    box-shadow: -4px 2px 15px 1px rgba(0,0,0,0.45);
+    border-bottom: 2px solid rgb(116, 116, 116);
+    border-right: 1.5px solid rgb(116, 116, 116);
+}
+
+.opcoesAcoes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: center;
+}
 
 /*Product*/
 
@@ -44,7 +68,7 @@
     margin-bottom: 1em;
 }
 
-.product_header, .product_row {
+.product_headerOff, .product_rowOff {
     display: flex;
     justify-content: space-between;
     width: 80%;
@@ -52,24 +76,37 @@
 
 }
 
-.product_header {
+.product_header, .product_row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+
+}
+
+.product_header, 
+.product_headerOff {
     font-weight: bold;
     border-bottom: 2px solid #CCC;
 }
 
+.product_row,
 .product_row {
     align-items: center;
     border-bottom: 1px solid #eee;
 }
 
-.product_row p {
+.product_row p,
+.product_rowOff p {
     width: 30%;
     font-size: .8em;
     color: black;
 }
 
 .product_row button,
-.product_row a {
+.product_row a,
+.product_rowOff button,
+.product_rowOff a {
     margin: 0 5px;
     height: 30px;
     width: 100px;

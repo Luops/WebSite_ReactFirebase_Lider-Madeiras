@@ -27,9 +27,9 @@ const Navbar = () => {
         {!user && (
           <>
             <li>
-            <NavLink to="/login" className={({isActive}) => (isActive ? styles.active : "")}>
-              Entrar
-            </NavLink>
+              <NavLink to="/login" className={({isActive}) => (isActive ? styles.active : "")}>
+                Entrar
+              </NavLink>
             </li>
           </>
         )}
@@ -37,19 +37,9 @@ const Navbar = () => {
         {user && (
           <> 
             <li>
-            <NavLink to="/dashboard" className={({isActive}) => (isActive ? styles.active : "")}>
-              Dashboard
-            </NavLink>
-            </li>
-            <li>
-            <NavLink to="/adicionarProdutos" className={({isActive}) => (isActive ? styles.active : "")}>
-              Adicionar
-            </NavLink>
-            </li>
-            <li>
-            <NavLink to="/adicionarProdutosOff" className={({isActive}) => (isActive ? styles.active : "")}>
-              Adicionar promoção
-            </NavLink>
+              <NavLink to="/dashboard" className={({isActive}) => (isActive ? styles.active : "")}>
+                Dashboard
+              </NavLink>
             </li>
           </>
         )}

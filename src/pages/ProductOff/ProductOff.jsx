@@ -30,7 +30,6 @@ const ProductOff = () => {
                 <div className={styles.container_imgTitleBodyCategory}>
                     <div className={styles.fotoPromocao}>
                         <h2>Promoção!</h2>
-                        
                         <img src={productOff.image} alt={productOff.title} />
                     </div>
                     <div className={styles.container_titleBodyPriceUnityMethod}>
@@ -55,7 +54,6 @@ const ProductOff = () => {
                                     <a href={network.URL} target="_blank" id={network.name} key={network.name}>
                                         {network.icon}
                                     </a>
-                                    
                                 ))}
                             </div>
                         </div>

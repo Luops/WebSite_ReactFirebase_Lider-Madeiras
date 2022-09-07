@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom'
 
 //hooks
 import { useAuthValue} from '../../context/authContext'
@@ -35,15 +36,20 @@ const Dashboard = () => {
       <p>Gerencie os seus produtos</p>
       <div className={styles.dashboard_productOff}>
         <h2>Produtos em promoção!</h2>
-        <div className={styles.product_header}>
-            <span>Título</span>
-            <span>Ações</span>
-          </div>
+        <li className={styles.addProduct}>
+          <NavLink to="/adicionarProdutosOff">
+            + Adicionar
+          </NavLink>
+        </li>
+        <div className={styles.product_headerOff}>
+          <span>Título</span>
+          <span>Ações</span>
+        </div>
         {productsOff
           && productsOff.map((productOff) => (
-            <div key={productOff.id} className={styles.product_row}>
+            <div key={productOff.id} className={styles.product_rowOff}>
               <p>{productOff.title}</p>
-              <div>
+              <div className={styles.opcoesAcoes}>
                 <Link to={`/productsOff/${productOff.id}`} className="btn btn-outline">
                   Ver
                 </Link>
@@ -60,6 +66,11 @@ const Dashboard = () => {
 
       <div className={styles.dashboard_product}>
         <h2>Produtos com preço normal</h2>
+        <li className={styles.addProduct}>
+          <NavLink to="/adicionarProdutos">
+            + Adicionar
+          </NavLink>
+        </li>
           <div className={styles.product_header}>
             <span>Título</span>
             <span>Ações</span>
@@ -68,7 +79,7 @@ const Dashboard = () => {
           && products.map((product) => (
             <div key={product.id} className={styles.product_row}>
               <p>{product.title}</p>
-              <div>
+              <div className={styles.opcoesAcoes}>
                 <Link to={`/products/${product.id}`} className="btn btn-outline">
                   Ver
                 </Link>

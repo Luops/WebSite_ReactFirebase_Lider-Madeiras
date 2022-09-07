@@ -1,4 +1,5 @@
 .container_principal {
+    background-color: white;
 }
 
 .container_produto {
@@ -10,12 +11,11 @@
 }
 
 .container_imgTitleBodyCategory {
-    background-color: white;
     border-radius: 10px;
-    padding: 1em;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    width: 100%;
 }
 
 h1 {
@@ -27,9 +27,10 @@ h1 {
 }
 
 .fotoPromocao {
-    max-width: 40vw;
+    max-width: 80vw;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 .fotoPromocao h2 {
@@ -38,7 +39,6 @@ h1 {
     padding: .45em .25em;
     border-radius: 10px;
     margin-top: .5em;
-    justify-content: center;
     color: white;
     font-size: 1.5em;
     -webkit-box-shadow: 0px 3px 16px 2px rgba(0,0,0,0.85); 
@@ -49,6 +49,7 @@ h1 {
     max-width: 40vw;
     border-radius: 10px;
     object-fit: cover;
+    margin-block: 0;
 }
 
 .container_titleBodyPriceUnityMethod {
@@ -77,8 +78,6 @@ h1 {
     font-weight: bold;
 }
 
-
-
 .body {
     width: 27rem;
     text-align: justify;
@@ -100,5 +99,106 @@ h1 {
     font-size: 2em;
 }
 
+/*Media Querie*/
+  @media (max-width: 836px) {
+    .container_imgTitleBodyCategory img {
+        max-width: 60vw;
+    }
+
+    h1 {
+        text-align: justify;
+        font-size: 1.5em;
+        width: 100%;
+    }
+
+    .body {
+        font-size: 0.9em;
+        width: 100%;
+    }
+  }  
+
+  @media (max-width: 470px) {
+    .container_imgTitleBodyCategory img {
+        max-width: 70vw;
+    }
+
+    h1 {
+        padding: 0 10%;
+        text-align: justify;
+        font-size: 1em;
+        width: 100%;
+    }
+
+    .body {
+        padding: 0 10%;
+        font-size: 0.8em;
+        width: 100%;
+    }
+
+    .prices {
+        padding: 0 10%;
+        width: 100%;
+    }
+
+    .method {
+        padding: 0 10%;
+        width: 100%;
+    }
+
+    .categoryIcons {
+        padding: 0 10%;
+        width: 100%;
+    }
+
+    .fotoPromocao h2 {
+        font-size: 1em;
+    }
+
+    .newPrice {
+        font-size: 1.5em;
+    }
+  }
+
+  @media (max-width: 320px) {
+    .container_imgTitleBodyCategory img {
+        max-width: 75vw;
+    }
+
+    h1 {
+        width: 100%;
+        padding: 0 1em;
+        font-size: 1em;
+        width: 100%;
+    }
+
+    .body {
+        padding: 0 1em;
+        font-size: 0.8em;
+        width: 100%;
+    }
+
+    .prices {
+        padding: 0 1em;
+        width: 100%;
+    }
+
+    .method {
+        padding: 0 1em;
+        width: 100%;
+    }
+
+    .categoryIcons {
+        padding: 0 1em;
+        width: 100%;
+    }
+
+    .fotoPromocao h2 {
+        font-size: 1em;
+    }
+
+    .newPrice {
+        font-size: 1.5em;
+    }
+  }
 
 
