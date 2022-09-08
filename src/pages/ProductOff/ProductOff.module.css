@@ -1,5 +1,4 @@
 .container_principal {
-    background-color: white;
 }
 
 .container_produto {
@@ -11,6 +10,7 @@
 }
 
 .container_imgTitleBodyCategory {
+    background-color: white;
     border-radius: 10px;
     display: flex;
     flex-wrap: wrap;

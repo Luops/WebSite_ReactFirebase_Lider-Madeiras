@@ -200,3 +200,20 @@
     margin-top: 1em;
     height: 75vh;
 }
+
+/*Media Querie*/
+@media (max-width: 470px) {
+    .containerAbout .textAbout {
+        font-size: 1em;
+    }
+    
+}
+
+@media (max-width: 320px) {
+    .containerAbout .textAbout {
+        font-size: .9em;
+    }
+    
+}
+
+
