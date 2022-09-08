@@ -6,9 +6,15 @@ import { Navigation, Pagination, Autoplay } from 'swiper';
 import { useNavigate, Link, Navigate } from 'react-router-dom'
 import { useState } from 'react'
 import { 
-  useFetchDocuments, 
-  useFetchDocumentsCategoryJanela, 
-  useFetchDocumentsCategoryTabua 
+  useFetchDocuments,
+  useFetchDocumentsCategoryMadeiraBrutaEucalipto, 
+  useFetchDocumentsCategoryMadeiraBrutaCedrinho, 
+  useFetchDocumentsCategoryMadeiraBrutaPinus,
+  useFetchDocumentsCategoryMadeiraBeneficiadaPinus,
+  useFetchDocumentsCategoryMadeiraBeneficiadaEucalipto,
+  useFetchDocumentsCategoryMadeiraBeneficiadaNobre,
+  useFetchDocumentsCategoryAberturasEucalipto,
+  useFetchDocumentsCategoryPregos,
 } from '../../hooks/useFetchDocuments'
 
 
@@ -30,8 +36,14 @@ import 'swiper/css/autoplay'
 const Home = () => {
   const [query, setQuery] = useState("");
   const {documents: products, loading} = useFetchDocuments("products");
-  const {documentsCategoryTabua: productsCategoryTabua} = useFetchDocumentsCategoryTabua("products");
-  const {documentsCategoryJanela: productsCategoryJanela} = useFetchDocumentsCategoryJanela("products");
+  const {documentsCategoryMadeiraBrutaEucalipto: productsCategoryMadeiraBrutaEucalipto} = useFetchDocumentsCategoryMadeiraBrutaEucalipto("products");
+  const {documentsCategoryMadeiraBrutaCedrinho: productsCategoryMadeiraBrutaCedrinho} = useFetchDocumentsCategoryMadeiraBrutaCedrinho("products");
+  const {documentsCategoryMadeiraBrutaPinus: productsCategoryMadeiraBrutaPinus} = useFetchDocumentsCategoryMadeiraBrutaPinus("products");
+  const {documentsCategoryMadeiraBeneficiadaPinus: productsCategoryMadeiraBeneficiadaPinus} = useFetchDocumentsCategoryMadeiraBeneficiadaPinus("products");
+  const {documentsCategoryMadeiraBeneficiadaEucalipto: productsCategoryMadeiraBeneficiadaEucalipto} = useFetchDocumentsCategoryMadeiraBeneficiadaEucalipto("products");
+  const {documentsCategoryMadeiraBeneficiadaNobre: productsCategoryMadeiraBeneficiadaNobre} = useFetchDocumentsCategoryMadeiraBeneficiadaNobre("products");
+  const {documentsCategoryAberturasEucalipto: productsCategoryAberturasEucalipto}  = useFetchDocumentsCategoryAberturasEucalipto("products");
+  const {documentsCategoryPregos: productsCategoryPregos}  = useFetchDocumentsCategoryPregos("products");
   const {documents: productsOff} = useFetchDocuments("productsOff");
 
   const navigate = useNavigate();
@@ -107,13 +119,13 @@ const Home = () => {
       </div>
 
       <div className={styles.byCategory}>
-        <h2 className={styles.categoryTitle}>Tábuas</h2>
+        <h2 className={styles.categoryTitle}>Madeira Bruta de Eucalipto</h2>
         <div className={styles.categoryCards}>
           {loading && <p>Carregando...</p>}
-            {productsCategoryTabua && productsCategoryTabua.map((Tabua) => (
-              <ProductDetail key={Tabua.id} products={Tabua}/>
+            {productsCategoryMadeiraBrutaEucalipto && productsCategoryMadeiraBrutaEucalipto.map((MadeiraBrutaEucalipto) => (
+              <ProductDetail key={MadeiraBrutaEucalipto.id} products={MadeiraBrutaEucalipto}/>
             ))}
-            {productsCategoryTabua && productsCategoryTabua.length === 0 && (
+            {productsCategoryMadeiraBrutaEucalipto && productsCategoryMadeiraBrutaEucalipto.length === 0 && (
               <div className={styles.noproducts}>
                 <p>Não foram encontrados produtos</p>
               </div>
@@ -123,13 +135,109 @@ const Home = () => {
       </div>
       
       <div className={styles.byCategory}>
-        <h2 className={styles.categoryTitle}>Janelas</h2>
+        <h2 className={styles.categoryTitle}>Madeira Bruta de Cedrinho</h2>
         <div className={styles.categoryCards}>
           {loading && <p>Carregando...</p>}
-            {productsCategoryJanela && productsCategoryJanela.map((Janela) => (
-              <ProductDetail key={Janela.id} products={Janela}/>
+            {productsCategoryMadeiraBrutaCedrinho && productsCategoryMadeiraBrutaCedrinho.map((MadeiraBrutaCedrinho) => (
+              <ProductDetail key={MadeiraBrutaCedrinho.id} products={MadeiraBrutaCedrinho}/>
             ))}
-            {productsCategoryTabua && productsCategoryTabua.length === 0 && (
+            {productsCategoryMadeiraBrutaCedrinho && productsCategoryMadeiraBrutaCedrinho.length === 0 && (
+              <div className={styles.noproducts}>
+                <p>Não foram encontrados produtos</p>
+              </div>
+            )}
+          </div>
+        <hr />
+      </div>
+
+      <div className={styles.byCategory}>
+        <h2 className={styles.categoryTitle}>Madeira Bruta de Pinus</h2>
+        <div className={styles.categoryCards}>
+          {loading && <p>Carregando...</p>}
+            {productsCategoryMadeiraBrutaPinus && productsCategoryMadeiraBrutaPinus.map((MadeiraBrutaPinus) => (
+              <ProductDetail key={MadeiraBrutaPinus.id} products={MadeiraBrutaPinus}/>
+            ))}
+            {productsCategoryMadeiraBrutaPinus && productsCategoryMadeiraBrutaPinus.length === 0 && (
+              <div className={styles.noproducts}>
+                <p>Não foram encontrados produtos</p>
+              </div>
+            )}
+          </div>
+        <hr />
+      </div>
+
+      <div className={styles.byCategory}>
+        <h2 className={styles.categoryTitle}>Madeira Beneficiada de Pinus</h2>
+        <div className={styles.categoryCards}>
+          {loading && <p>Carregando...</p>}
+            {productsCategoryMadeiraBeneficiadaPinus && productsCategoryMadeiraBeneficiadaPinus.map((MadeiraBeneficiadaPinus) => (
+              <ProductDetail key={MadeiraBeneficiadaPinus.id} products={MadeiraBeneficiadaPinus}/>
+            ))}
+            {productsCategoryMadeiraBeneficiadaPinus && productsCategoryMadeiraBeneficiadaPinus.length === 0 && (
+              <div className={styles.noproducts}>
+                <p>Não foram encontrados produtos</p>
+              </div>
+            )}
+          </div>
+        <hr />
+      </div>
+
+      <div className={styles.byCategory}>
+        <h2 className={styles.categoryTitle}>Madeira Beneficiada de Eucalipto</h2>
+        <div className={styles.categoryCards}>
+          {loading && <p>Carregando...</p>}
+            {productsCategoryMadeiraBeneficiadaEucalipto && productsCategoryMadeiraBeneficiadaEucalipto.map((MadeiraBeneficiadaEucalipto) => (
+              <ProductDetail key={MadeiraBeneficiadaEucalipto.id} products={MadeiraBeneficiadaEucalipto}/>
+            ))}
+            {productsCategoryMadeiraBeneficiadaEucalipto && productsCategoryMadeiraBeneficiadaEucalipto.length === 0 && (
+              <div className={styles.noproducts}>
+                <p>Não foram encontrados produtos</p>
+              </div>
+            )}
+          </div>
+        <hr />
+      </div>
+
+      <div className={styles.byCategory}>
+        <h2 className={styles.categoryTitle}>Madeira Beneficiada Nobre</h2>
+        <div className={styles.categoryCards}>
+          {loading && <p>Carregando...</p>}
+            {productsCategoryMadeiraBeneficiadaNobre && productsCategoryMadeiraBeneficiadaNobre.map((MadeiraBeneficiadaNobre) => (
+              <ProductDetail key={MadeiraBeneficiadaNobre.id} products={MadeiraBeneficiadaNobre}/>
+            ))}
+            {productsCategoryMadeiraBeneficiadaNobre && productsCategoryMadeiraBeneficiadaNobre.length === 0 && (
+              <div className={styles.noproducts}>
+                <p>Não foram encontrados produtos</p>
+              </div>
+            )}
+          </div>
+        <hr />
+      </div>
+
+      <div className={styles.byCategory}>
+        <h2 className={styles.categoryTitle}>Aberturas de Eucalipto</h2>
+        <div className={styles.categoryCards}>
+          {loading && <p>Carregando...</p>}
+            {productsCategoryAberturasEucalipto && productsCategoryAberturasEucalipto.map((AberturasEucalipto) => (
+              <ProductDetail key={AberturasEucalipto.id} products={AberturasEucalipto}/>
+            ))}
+            {productsCategoryAberturasEucalipto && productsCategoryAberturasEucalipto.length === 0 && (
+              <div className={styles.noproducts}>
+                <p>Não foram encontrados produtos</p>
+              </div>
+            )}
+          </div>
+        <hr />
+      </div>
+
+      <div className={styles.byCategory}>
+        <h2 className={styles.categoryTitle}>Pregos</h2>
+        <div className={styles.categoryCards}>
+          {loading && <p>Carregando...</p>}
+            {productsCategoryPregos && productsCategoryPregos.map((Pregos) => (
+              <ProductDetail key={Pregos.id} products={Pregos}/>
+            ))}
+            {productsCategoryPregos && productsCategoryPregos.length === 0 && (
               <div className={styles.noproducts}>
                 <p>Não foram encontrados produtos</p>
               </div>
