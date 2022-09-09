@@ -24,7 +24,7 @@ const Search = () => {
         <div>
             <h1>Busca de produtos por categoria</h1>
         </div>
-        <div>
+        <div className={styles.products}>
             {/*Vieram os produtos? se sim (&&) faça o mapeamento deles*/}
             {products && products.length === 0 && (
                 <div className={styles.noproducts}>

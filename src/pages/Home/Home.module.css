@@ -38,6 +38,10 @@ main {
     color: white !important;
 }
 
+.swiper-button-prev {
+    
+}
+
 /*Carousel end*/
 
 
@@ -103,7 +107,7 @@ main {
 }
 
 .byCategory {
-    width:69%;
+    width:75%;
 }
 
 .byCategory .categoryTitle, .lastFiveProducts{
@@ -121,12 +125,36 @@ main {
     border-right: 1.5px solid rgb(116, 116, 116);
 }
 
+.slideCategorys {
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .categoryCards {
     display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
     justify-content: center;
+    gap: 10;
+}
+
+.mySwiperCategorys {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.categoryCards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiperSlide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 

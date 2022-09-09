@@ -1,6 +1,6 @@
 import React from 'react'
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay } from 'swiper';
+import { Swiper, SwiperSlide} from 'swiper/react';
+import { Navigation, Pagination, Autoplay, Mousewheel, Keyboard} from 'swiper';
 
 //hooks
 import { useNavigate, Link, Navigate } from 'react-router-dom'
@@ -30,6 +30,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import 'swiper/css/autoplay'
+import "swiper/css/bundle";
 
 
 
@@ -58,6 +59,8 @@ const Home = () => {
 
     }
   }
+
+  
 
   
 
@@ -120,129 +123,354 @@ const Home = () => {
 
       <div className={styles.byCategory}>
         <h2 className={styles.categoryTitle}>Madeira Bruta de Eucalipto</h2>
-        <div className={styles.categoryCards}>
-          {loading && <p>Carregando...</p>}
-            {productsCategoryMadeiraBrutaEucalipto && productsCategoryMadeiraBrutaEucalipto.map((MadeiraBrutaEucalipto) => (
-              <ProductDetail key={MadeiraBrutaEucalipto.id} products={MadeiraBrutaEucalipto}/>
-            ))}
-            {productsCategoryMadeiraBrutaEucalipto && productsCategoryMadeiraBrutaEucalipto.length === 0 && (
-              <div className={styles.noproducts}>
-                <p>Não foram encontrados produtos</p>
+        <div className={styles.slideCategorys}>
+          <Swiper
+            slidesPerView={4}
+            spaceBetween={10}
+            pagination={true}
+            breakpoints={{
+              320: {
+                slidesPerView: 1,
+              },
+              670: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              950: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+              },
+              1280: {
+                slidesPerView: 4,
+                spaceBetween: 20,
+              },
+            }}
+            modules={[ Pagination]}
+            className={styles.mySwiperCategorys}
+            >
+            <div className={styles.categoryCards}>
+              {loading && <p>Carregando...</p>}
+                {productsCategoryMadeiraBrutaEucalipto && productsCategoryMadeiraBrutaEucalipto.map((MadeiraBrutaEucalipto) => (
+                  <SwiperSlide className={styles.swiperSlide}>
+                    <ProductDetail key={MadeiraBrutaEucalipto.id} products={MadeiraBrutaEucalipto}/>
+                  </SwiperSlide>
+                ))}
+                {productsCategoryMadeiraBrutaEucalipto && productsCategoryMadeiraBrutaEucalipto.length === 0 && (
+                  <div className={styles.noproducts}>
+                    <p>Não foram encontrados produtos</p>
+                  </div>
+                )}
               </div>
-            )}
+            </Swiper>
           </div>
         <hr />
       </div>
       
       <div className={styles.byCategory}>
         <h2 className={styles.categoryTitle}>Madeira Bruta de Cedrinho</h2>
-        <div className={styles.categoryCards}>
-          {loading && <p>Carregando...</p>}
-            {productsCategoryMadeiraBrutaCedrinho && productsCategoryMadeiraBrutaCedrinho.map((MadeiraBrutaCedrinho) => (
-              <ProductDetail key={MadeiraBrutaCedrinho.id} products={MadeiraBrutaCedrinho}/>
-            ))}
-            {productsCategoryMadeiraBrutaCedrinho && productsCategoryMadeiraBrutaCedrinho.length === 0 && (
-              <div className={styles.noproducts}>
-                <p>Não foram encontrados produtos</p>
-              </div>
-            )}
-          </div>
+        <div className={styles.slideCategorys}>
+          <Swiper
+            slidesPerView={4}
+            spaceBetween={10}
+            pagination={true}
+            breakpoints={{
+              320: {
+                slidesPerView: 1,
+              },
+              670: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              950: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+              },
+              1280: {
+                slidesPerView: 4,
+                spaceBetween: 20,
+              },
+            }}
+            modules={[ Pagination]}
+            className={styles.mySwiperCategorys}
+          >
+            <div className={styles.categoryCards}>
+            {loading && <p>Carregando...</p>}
+              {productsCategoryMadeiraBrutaCedrinho && productsCategoryMadeiraBrutaCedrinho.map((MadeiraBrutaCedrinho) => (
+                <SwiperSlide className={styles.swiperSlide}>
+                  <ProductDetail key={MadeiraBrutaCedrinho.id} products={MadeiraBrutaCedrinho}/>
+                </SwiperSlide>
+              ))}
+              {productsCategoryMadeiraBrutaCedrinho && productsCategoryMadeiraBrutaCedrinho.length === 0 && (
+                <div className={styles.noproducts}>
+                  <p>Não foram encontrados produtos</p>
+                </div>
+              )}
+            </div>
+          </Swiper>
+        </div>
         <hr />
       </div>
 
       <div className={styles.byCategory}>
         <h2 className={styles.categoryTitle}>Madeira Bruta de Pinus</h2>
-        <div className={styles.categoryCards}>
-          {loading && <p>Carregando...</p>}
-            {productsCategoryMadeiraBrutaPinus && productsCategoryMadeiraBrutaPinus.map((MadeiraBrutaPinus) => (
-              <ProductDetail key={MadeiraBrutaPinus.id} products={MadeiraBrutaPinus}/>
-            ))}
-            {productsCategoryMadeiraBrutaPinus && productsCategoryMadeiraBrutaPinus.length === 0 && (
-              <div className={styles.noproducts}>
-                <p>Não foram encontrados produtos</p>
-              </div>
-            )}
-          </div>
+        <div className={styles.slideCategorys}>
+          <Swiper
+            slidesPerView={4}
+            spaceBetween={10}
+            pagination={true}
+            breakpoints={{
+              320: {
+                slidesPerView: 1,
+              },
+              670: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              950: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+              },
+              1280: {
+                slidesPerView: 4,
+                spaceBetween: 20,
+              },
+            }}
+            modules={[ Pagination]}
+            className={styles.mySwiperCategorys}
+          >
+            <div className={styles.categoryCards}>
+            {loading && <p>Carregando...</p>}
+              {productsCategoryMadeiraBrutaPinus && productsCategoryMadeiraBrutaPinus.map((MadeiraBrutaPinus) => (
+                <SwiperSlide className={styles.swiperSlide}>
+                  <ProductDetail key={MadeiraBrutaPinus.id} products={MadeiraBrutaPinus}/>
+                </SwiperSlide>
+              ))}
+              {productsCategoryMadeiraBrutaPinus && productsCategoryMadeiraBrutaPinus.length === 0 && (
+                <div className={styles.noproducts}>
+                  <p>Não foram encontrados produtos</p>
+                </div>
+              )}
+            </div>
+          </Swiper>
+        </div>
         <hr />
       </div>
 
       <div className={styles.byCategory}>
         <h2 className={styles.categoryTitle}>Madeira Beneficiada de Pinus</h2>
-        <div className={styles.categoryCards}>
-          {loading && <p>Carregando...</p>}
-            {productsCategoryMadeiraBeneficiadaPinus && productsCategoryMadeiraBeneficiadaPinus.map((MadeiraBeneficiadaPinus) => (
-              <ProductDetail key={MadeiraBeneficiadaPinus.id} products={MadeiraBeneficiadaPinus}/>
-            ))}
-            {productsCategoryMadeiraBeneficiadaPinus && productsCategoryMadeiraBeneficiadaPinus.length === 0 && (
-              <div className={styles.noproducts}>
-                <p>Não foram encontrados produtos</p>
-              </div>
-            )}
-          </div>
+        <div>
+          <Swiper
+            slidesPerView={4}
+            spaceBetween={10}
+            pagination={true}
+            breakpoints={{
+              320: {
+                slidesPerView: 1,
+              },
+              670: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              950: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+              },
+              1280: {
+                slidesPerView: 4,
+                spaceBetween: 20,
+              },
+            }}
+            modules={[ Pagination]}
+            className={styles.mySwiperCategorys}
+          >
+            <div className={styles.categoryCards}>
+            {loading && <p>Carregando...</p>}
+              {productsCategoryMadeiraBeneficiadaPinus && productsCategoryMadeiraBeneficiadaPinus.map((MadeiraBeneficiadaPinus) => (
+                <SwiperSlide className={styles.swiperSlide}>
+                  <ProductDetail key={MadeiraBeneficiadaPinus.id} products={MadeiraBeneficiadaPinus}/>
+                </SwiperSlide>
+              ))}
+              {productsCategoryMadeiraBeneficiadaPinus && productsCategoryMadeiraBeneficiadaPinus.length === 0 && (
+                <div className={styles.noproducts}>
+                  <p>Não foram encontrados produtos</p>
+                </div>
+              )}
+            </div>
+          </Swiper>
+        </div>
         <hr />
       </div>
 
       <div className={styles.byCategory}>
         <h2 className={styles.categoryTitle}>Madeira Beneficiada de Eucalipto</h2>
-        <div className={styles.categoryCards}>
-          {loading && <p>Carregando...</p>}
-            {productsCategoryMadeiraBeneficiadaEucalipto && productsCategoryMadeiraBeneficiadaEucalipto.map((MadeiraBeneficiadaEucalipto) => (
-              <ProductDetail key={MadeiraBeneficiadaEucalipto.id} products={MadeiraBeneficiadaEucalipto}/>
-            ))}
-            {productsCategoryMadeiraBeneficiadaEucalipto && productsCategoryMadeiraBeneficiadaEucalipto.length === 0 && (
-              <div className={styles.noproducts}>
-                <p>Não foram encontrados produtos</p>
-              </div>
-            )}
-          </div>
-        <hr />
+        <div className={styles.slideCategorys}>
+          <Swiper
+            slidesPerView={4}
+            spaceBetween={10}
+            pagination={true}
+            breakpoints={{
+              320: {
+                slidesPerView: 1,
+              },
+              670: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              950: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+              },
+              1280: {
+                slidesPerView: 4,
+                spaceBetween: 20,
+              },
+            }}
+            modules={[ Pagination]}
+            className={styles.mySwiperCategorys}
+          >
+            <div className={styles.categoryCards}>
+              {loading && <p>Carregando...</p>}
+              {productsCategoryMadeiraBeneficiadaEucalipto && productsCategoryMadeiraBeneficiadaEucalipto.map((MadeiraBeneficiadaEucalipto) => (
+                <SwiperSlide className={styles.swiperSlide}>
+                  <ProductDetail key={MadeiraBeneficiadaEucalipto.id} products={MadeiraBeneficiadaEucalipto}/>
+                </SwiperSlide>
+              ))}
+                {productsCategoryMadeiraBeneficiadaEucalipto && productsCategoryMadeiraBeneficiadaEucalipto.length === 0 && (
+                <div className={styles.noproducts}>
+                  <p>Não foram encontrados produtos</p>
+                </div>
+              )}
+            </div>
+          </Swiper>
+        </div>
       </div>
 
       <div className={styles.byCategory}>
         <h2 className={styles.categoryTitle}>Madeira Beneficiada Nobre</h2>
-        <div className={styles.categoryCards}>
-          {loading && <p>Carregando...</p>}
-            {productsCategoryMadeiraBeneficiadaNobre && productsCategoryMadeiraBeneficiadaNobre.map((MadeiraBeneficiadaNobre) => (
-              <ProductDetail key={MadeiraBeneficiadaNobre.id} products={MadeiraBeneficiadaNobre}/>
-            ))}
-            {productsCategoryMadeiraBeneficiadaNobre && productsCategoryMadeiraBeneficiadaNobre.length === 0 && (
-              <div className={styles.noproducts}>
-                <p>Não foram encontrados produtos</p>
-              </div>
-            )}
-          </div>
+        <div className={styles.slideCategorys}>
+          <Swiper
+          slidesPerView={4}
+          spaceBetween={10}
+          pagination={true}
+          breakpoints={{
+            320: {
+              slidesPerView: 1,
+            },
+            670: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            950: {
+              slidesPerView: 3,
+              spaceBetween: 20,
+            },
+            1280: {
+              slidesPerView: 4,
+              spaceBetween: 20,
+            },
+          }}
+          modules={[ Pagination]}
+          className={styles.mySwiperCategorys}
+          >
+            <div className={styles.categoryCards}>
+            {loading && <p>Carregando...</p>}
+              {productsCategoryMadeiraBeneficiadaNobre && productsCategoryMadeiraBeneficiadaNobre.map((MadeiraBeneficiadaNobre) => (
+                <SwiperSlide className={styles.swiperSlide}>
+                  <ProductDetail key={MadeiraBeneficiadaNobre.id} products={MadeiraBeneficiadaNobre}/>
+                </SwiperSlide>
+              ))}
+              {productsCategoryMadeiraBeneficiadaNobre && productsCategoryMadeiraBeneficiadaNobre.length === 0 && (
+                <div className={styles.noproducts}>
+                  <p>Não foram encontrados produtos</p>
+                </div>
+              )}
+            </div>
+          </Swiper>
+        </div>
         <hr />
       </div>
 
       <div className={styles.byCategory}>
         <h2 className={styles.categoryTitle}>Aberturas de Eucalipto</h2>
-        <div className={styles.categoryCards}>
-          {loading && <p>Carregando...</p>}
-            {productsCategoryAberturasEucalipto && productsCategoryAberturasEucalipto.map((AberturasEucalipto) => (
-              <ProductDetail key={AberturasEucalipto.id} products={AberturasEucalipto}/>
-            ))}
-            {productsCategoryAberturasEucalipto && productsCategoryAberturasEucalipto.length === 0 && (
-              <div className={styles.noproducts}>
-                <p>Não foram encontrados produtos</p>
-              </div>
-            )}
-          </div>
+        <div className={styles.slideCategorys}>
+          <Swiper
+            slidesPerView={4}
+            spaceBetween={10}
+            pagination={true}
+            modules={[ Pagination]}
+            breakpoints={{
+              320: {
+                slidesPerView: 1,
+              },
+              670: {
+                slidesPerView: 2,
+              },
+              950: {
+                slidesPerView: 3,
+              },
+              1280: {
+                slidesPerView: 4,
+              },
+            }}
+            className={styles.mySwiperCategorys}
+          >
+            <div className={styles.categoryCards}>
+            {loading && <p>Carregando...</p>}
+              {productsCategoryAberturasEucalipto && productsCategoryAberturasEucalipto.map((AberturasEucalipto) => (
+                <SwiperSlide className={styles.swiperSlide}>
+                  <ProductDetail key={AberturasEucalipto.id} products={AberturasEucalipto}/>
+                </SwiperSlide>
+              ))}
+              {productsCategoryAberturasEucalipto && productsCategoryAberturasEucalipto.length === 0 && (
+                <div className={styles.noproducts}>
+                  <p>Não foram encontrados produtos</p>
+                </div>
+              )}
+            </div>
+          </Swiper>
+        </div>
         <hr />
       </div>
 
       <div className={styles.byCategory}>
         <h2 className={styles.categoryTitle}>Pregos</h2>
-        <div className={styles.categoryCards}>
-          {loading && <p>Carregando...</p>}
-            {productsCategoryPregos && productsCategoryPregos.map((Pregos) => (
-              <ProductDetail key={Pregos.id} products={Pregos}/>
-            ))}
-            {productsCategoryPregos && productsCategoryPregos.length === 0 && (
-              <div className={styles.noproducts}>
-                <p>Não foram encontrados produtos</p>
-              </div>
-            )}
-          </div>
+        <div className={styles.slideCategorys}>
+          <Swiper
+            slidesPerView={3}
+            spaceBetween={10}
+            pagination={true}
+            modules={[Pagination]}
+            breakpoints={{
+              320: {
+                slidesPerView: 1,
+              },
+              670: {
+                slidesPerView: 2,
+              },
+              950: {
+                slidesPerView: 3,
+              },
+              1280: {
+                slidesPerView: 4,
+              },
+            }}
+            className={styles.mySwiperCategorys}
+          >
+            <div className={styles.categoryCards}>
+            {loading && <p>Carregando...</p>}
+              {productsCategoryPregos && productsCategoryPregos.map((Pregos) => (
+                <SwiperSlide className={styles.swiperSlide}>
+                  <ProductDetail key={Pregos.id} products={Pregos}/>
+                </SwiperSlide>
+              ))}
+              {productsCategoryPregos && productsCategoryPregos.length === 0 && (
+                <div className={styles.noproducts}>
+                  <p>Não foram encontrados produtos</p>
+                </div>
+              )}
+            </div>
+          </Swiper>
+        </div>
         <hr />
       </div>
       

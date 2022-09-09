@@ -3,7 +3,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
     padding: 0 10%;
 }
 
@@ -19,6 +18,14 @@
     -webkit-box-shadow: 0px 3px 16px 2px rgba(0,0,0,0.85); 
     box-shadow: 0px 3px 16px 2px rgba(0,0,0,0.45);
     text-align: center;
+}
+
+.products {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
 .noproducts {
