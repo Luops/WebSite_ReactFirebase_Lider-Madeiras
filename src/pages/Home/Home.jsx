@@ -4,7 +4,7 @@ import { Navigation, Pagination, Autoplay, Mousewheel, Keyboard} from 'swiper';
 
 //hooks
 import { useNavigate, Link, Navigate } from 'react-router-dom'
-import { useState } from 'react'
+import { useState,} from 'react'
 import { 
   useFetchDocuments,
   useFetchDocumentsCategoryMadeiraBrutaEucalipto, 
@@ -59,9 +59,6 @@ const Home = () => {
 
     }
   }
-
-  
-
   
 
   return (
@@ -99,14 +96,14 @@ const Home = () => {
       </div>
       
       <div className={styles.divProdutos}>
-        <form onSubmit={handleSubmit} className={styles.search_form}>
+        {/*<form onSubmit={handleSubmit} className={styles.search_form}>
           <input 
           type="text" 
-          placeholder='Busque por categoria... Exemplo: Forro'
+          placeholder='Busque por categoria. Exemplo: Madeira bruta eucalipto'
           onChange={(e) => setQuery(e.target.value[0].toUpperCase()+e.target.value.substring(1))}
-          />
+            />
           <button className='btn btn-dark'>Pesquisar</button>
-        </form>
+            </form>*/}
         <h2 className={styles.lastFiveProducts}>Últimos produtos adicionados!</h2>
         <div className={styles.list_products}>
           {loading && <p>Carregando...</p>}
@@ -127,6 +124,7 @@ const Home = () => {
           <Swiper
             slidesPerView={4}
             spaceBetween={10}
+            navigation={true}
             pagination={true}
             breakpoints={{
               320: {
@@ -145,7 +143,7 @@ const Home = () => {
                 spaceBetween: 20,
               },
             }}
-            modules={[ Pagination]}
+            modules={[Pagination, Navigation]}
             className={styles.mySwiperCategorys}
             >
             <div className={styles.categoryCards}>
@@ -173,6 +171,7 @@ const Home = () => {
             slidesPerView={4}
             spaceBetween={10}
             pagination={true}
+            navigation={true}
             breakpoints={{
               320: {
                 slidesPerView: 1,
@@ -190,7 +189,7 @@ const Home = () => {
                 spaceBetween: 20,
               },
             }}
-            modules={[ Pagination]}
+            modules={[Pagination, Navigation]}
             className={styles.mySwiperCategorys}
           >
             <div className={styles.categoryCards}>
@@ -218,6 +217,7 @@ const Home = () => {
             slidesPerView={4}
             spaceBetween={10}
             pagination={true}
+            navigation={true}
             breakpoints={{
               320: {
                 slidesPerView: 1,
@@ -235,7 +235,7 @@ const Home = () => {
                 spaceBetween: 20,
               },
             }}
-            modules={[ Pagination]}
+            modules={[Pagination, Navigation]}
             className={styles.mySwiperCategorys}
           >
             <div className={styles.categoryCards}>
@@ -263,6 +263,7 @@ const Home = () => {
             slidesPerView={4}
             spaceBetween={10}
             pagination={true}
+            navigation={true}
             breakpoints={{
               320: {
                 slidesPerView: 1,
@@ -280,7 +281,7 @@ const Home = () => {
                 spaceBetween: 20,
               },
             }}
-            modules={[ Pagination]}
+            modules={[Pagination, Navigation]}
             className={styles.mySwiperCategorys}
           >
             <div className={styles.categoryCards}>
@@ -308,6 +309,7 @@ const Home = () => {
             slidesPerView={4}
             spaceBetween={10}
             pagination={true}
+            navigation={true}
             breakpoints={{
               320: {
                 slidesPerView: 1,
@@ -325,7 +327,7 @@ const Home = () => {
                 spaceBetween: 20,
               },
             }}
-            modules={[ Pagination]}
+            modules={[Pagination, Navigation]}
             className={styles.mySwiperCategorys}
           >
             <div className={styles.categoryCards}>
@@ -352,6 +354,7 @@ const Home = () => {
           slidesPerView={4}
           spaceBetween={10}
           pagination={true}
+          navigation={true}
           breakpoints={{
             320: {
               slidesPerView: 1,
@@ -369,7 +372,7 @@ const Home = () => {
               spaceBetween: 20,
             },
           }}
-          modules={[ Pagination]}
+          modules={[Pagination, Navigation]}
           className={styles.mySwiperCategorys}
           >
             <div className={styles.categoryCards}>
@@ -397,7 +400,8 @@ const Home = () => {
             slidesPerView={4}
             spaceBetween={10}
             pagination={true}
-            modules={[ Pagination]}
+            navigation={true}
+            modules={[Pagination, Navigation]}
             breakpoints={{
               320: {
                 slidesPerView: 1,
@@ -439,7 +443,8 @@ const Home = () => {
             slidesPerView={3}
             spaceBetween={10}
             pagination={true}
-            modules={[Pagination]}
+            navigation={true}
+            modules={[Pagination, Navigation]}
             breakpoints={{
               320: {
                 slidesPerView: 1,

@@ -1,4 +1,5 @@
 .container_principal {
+    background-color: white;
 }
 
 .container_produto {
@@ -7,7 +8,8 @@
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
-    
+    position: relative;
+    margin-bottom: 15%;
 }
 
 .container_imgTitleBodyCategory {

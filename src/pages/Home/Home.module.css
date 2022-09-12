@@ -1,5 +1,7 @@
 main {  
     width: 100%;  
+    position: relative;
+    z-index: 0;
 }
 
 .divPromocoes {
@@ -158,3 +160,48 @@ main {
 }
 
 
+/*Media querie*/
+
+@media screen and (max-width: 660px) {
+    .byCategory h2 {
+        font-size: 1em; 
+        width: 100% !important;
+    }
+    
+}
+
+@media screen and (max-width: 470px) {
+    .tituloDaDiv h2 {
+        font-size: 1em;
+    }
+
+    .lastFiveProducts {
+        font-size: 1.2em;
+    }
+    
+    .byCategory {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .byCategory h2 {
+        font-size: 1em; 
+        align-self: center;
+        width: 100% !important;
+    }
+    
+}
+
+@media screen and (max-width: 400px) {
+    .byCategory h2 {
+        font-size: .75em; 
+    }
+    
+}
+
+@media screen and (max-width: 359px) {
+    .lastFiveProducts {
+        font-size: 1em;
+    }
+    
+}

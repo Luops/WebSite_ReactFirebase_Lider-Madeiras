@@ -103,8 +103,25 @@ span {
     
 }
 
+/*Media querie*/
+@media screen and (max-width: 660px) {
+    .geral {
+        flex-direction: column;
+        justify-content: center !important;
+        align-items: center !important;
+    }
 
+    .product_detail {
+        justify-content: center !important;
+        align-items: center !important;
+    }
+}
 
+@media screen and (max-width: 400px) {
+    .geral img {
+        max-width: 85%;
+    }
+}
 
 
 

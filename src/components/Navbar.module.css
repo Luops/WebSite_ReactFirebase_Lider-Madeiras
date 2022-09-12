@@ -1,4 +1,4 @@
-.navbar {
+.navbar{
     width: 100%;
     display: flex;
     box-shadow: rgba(0, 0, 0, .15) 0px -2px 10px 0px;
@@ -6,6 +6,8 @@
     align-items: center;
     padding: .5em 2em;
     background-color: #EDf3f6;
+    position: relative;
+    z-index: 1;
 }
 
 .brand {
@@ -15,18 +17,26 @@
     text-transform: uppercase;
 }
 
-.links_list {
+.navbar_menu {
     display: flex;
+    text-decoration: none;
+    list-style: none;
+}
+
+.navbar_menu ul {
+    display: flex;
+    padding: 0;
     list-style: none;
     overflow-wrap: normal;
 }
 
-.links_list li {
+.navbar_menu li {
     margin-right: 1em;
 }
 
-.links_list li a {
+.navbar_menu li a {
     padding: .4em .6em;
+    display: block;
 }
 
 .active {
@@ -34,3 +44,95 @@
     color: #fff;
 }
 
+.hamburger {
+    border: 0;
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    position: absolute;
+    top: 50%;
+    right: 25px;
+    transform: translateY(-50%);
+    display: none;
+}
+
+hamburger:hover {
+    background-color: #2642af;
+  }
+
+/*Media querie*/
+@media screen and (max-width: 550px){
+    .hamburger {
+        display: block;
+        color: black;
+        font-size: 1.6em;
+    }
+
+    .navbar_menu ul {
+        position: absolute;
+        top: 25px;
+        left: 0;
+        flex-direction: column;
+        width: 100%;
+        height: calc(100vh - 1px);
+        background-color: white;
+        border-top: 1px solid black;
+        display: block;
+    }
+
+    .navbar_menu_expanded ul {
+        display: none;
+    }
+
+    .navbar_menu li{
+        text-align: center;
+        margin: 0;
+    }
+
+    .navbar_menu li a {
+        color: black;
+        width: 100%;
+        padding: 1.5rem 0;
+    }
+
+    .navbar_menu li a:hover {
+        background-color: #eee;
+    }
+
+    /*
+    .navbar_menu ul{
+        position: absolute;
+        top: 25px;
+        left: 0;
+        flex-direction: column;
+        width: 100%;
+        height: calc(100vh - 77px);
+        background-color: white;
+        border-top: 1px solid black;
+        display: none;
+        padding-inline-start: 0 !important;
+        margin-block-end: 0 !important;
+        margin-block-start: 0 !important;
+    }
+
+    .navbar_menu_expanded ul {
+        display: block;
+    }
+
+    .navbar_menu ul li {
+        text-align: center;
+        margin: 0;
+    }
+
+    .navbar_menu ul li a {
+        color: #cd0c02;
+        font-weight: bold;
+        width: 100%;
+        padding: 1.5rem 0;
+    }
+
+    .navbar_menu a:hover{
+        background-color: rgb(184, 184, 184);
+    }*/
+
+}

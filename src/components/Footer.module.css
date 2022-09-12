@@ -6,3 +6,15 @@
     justify-content: center;
     background-color: #EDf3f6;
 }
+
+.lider {
+    font-weight: bold;
+}
+
+.facebookIcon {
+    font-size: 3em;
+}
+
+.developedBy {
+    font-size: .75em;
+}
