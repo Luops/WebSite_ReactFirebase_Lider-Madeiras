@@ -33,6 +33,14 @@ const Navbar = () => {
           {bar.icon}
         </button>
       ))}
+      <div className={isNavExpanded ? 
+          styles.exitBar : 
+          styles.exitBarExpanded}>
+        <button 
+        onClick={() => {
+          setIsNavExpanded(!isNavExpanded);
+        }}>x</button>
+      </div>
 
       <div 
         className={
@@ -43,7 +51,13 @@ const Navbar = () => {
               <NavLink to="/" className={({isActive}) => (isActive ? styles.active : "")}>
                 Home
               </NavLink>
-            </li>
+          </li>
+
+          <li>
+              <NavLink to="/casas" className={({isActive}) => (isActive ? styles.active : "")}>
+                Casas
+              </NavLink>
+          </li>
 
             {!user && (
               <>

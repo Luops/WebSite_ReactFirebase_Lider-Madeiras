@@ -26,11 +26,15 @@ import Product from './pages/Product/Product';
 import EditProducts from './pages/EditProducts/EditProducts';
 import AdicionarProdutosOff from './pages/AdicionarProdutosOff/AdicionarProdutosOff';
 import ProductOff from './pages/ProductOff/ProductOff';
+import EditProdutosOff from './pages/EditProducts/EditProdutosOff';
+import Casas from './pages/Casas/Casas';
+import AdicionarCasas from './pages/AdicionarCasas/AdicionarCasas';
 
 
 //CSS
 import './App.css';
-import EditProdutosOff from './pages/EditProducts/EditProdutosOff';
+
+
 
 
 
@@ -72,6 +76,9 @@ function App() {
               path='/search' 
               element={<Search />} />
               <Route 
+              path='/casas' 
+              element={<Casas />} />
+              <Route 
               path='/products/:id' 
               element={<Product />} />
               <Route 
@@ -95,6 +102,9 @@ function App() {
               <Route 
               path='/adicionarProdutosOff' 
               element={user ? <AdicionarProdutosOff /> : <Navigate to="/login" />} />
+              <Route 
+              path='/adicionarCasas' 
+              element={user ? <AdicionarCasas/> : <Navigate to="/login" />} />
             </Routes>
           </div>
           <Footer />
