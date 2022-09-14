@@ -21,6 +21,11 @@ const AdicionarCasas = () => {
     const [price, setPrice] = useState("");
     const [size, setSize] = useState("");
     const [method, setMethod] = useState("");
+    const [city, setCity] = useState("");
+    const [uf, setUf] = useState("");
+    const [bedRooms, setBedRooms] = useState("");
+    const [bathRooms, setBathRooms] = useState("");
+    const [car, setCar] = useState("");
     const [formError, setFormError] = useState("");
     
   
@@ -73,7 +78,8 @@ const AdicionarCasas = () => {
   
       //Checar todos os valores
       if (!title || !imageOne || !imageTwo || !imageThree
-        || !imageFour || !imageFive || !imageSix || !body || !price || !category || !size || !method) {
+        || !imageFour || !imageFive || !imageSix || !body || !price || !category || !size || !method
+        || !city || !uf || !bedRooms || !bathRooms || !car) {
         setFormError("Por favor preencha todos os campos!")
       }
   
@@ -89,6 +95,11 @@ const AdicionarCasas = () => {
         size,
         method,
         body,
+        city,
+        car,
+        uf,
+        bedRooms,
+        bathRooms,
         imageOne,
         imageTwo,
         imageThree,
@@ -143,10 +154,10 @@ const AdicionarCasas = () => {
             value={price}/>
           </label>
           <label htmlFor="">
-            <span>Unidade:</span>
+            <span>Tamanho:</span>
             <input type="text" 
-            name="unity" 
-            id="unity" 
+            name="size" 
+            id="size" 
             required 
             placeholder='Tamanho da casa.' 
             onChange={(e) => setSize(e.target.value)}
@@ -174,6 +185,63 @@ const AdicionarCasas = () => {
           onChange={(e) => setBody(e.target.value)}
           value={body}>
           </textarea>
+        </label>
+
+        <div className={styles.divPriceUnity}>
+          <label htmlFor="">
+            <span>Cidade:</span>
+            <input type="text" 
+            name="city" 
+            id="city" 
+            required 
+            placeholder='Cidade que foi feita.' 
+            onChange={(e) => setCity(e.target.value)}
+            value={city}/>
+          </label>
+          <label htmlFor="">
+            <span>UF:</span>
+            <input type="text" 
+            name="uf" 
+            id="uf" 
+            required 
+            placeholder='Estado que foi feita.' 
+            onChange={(e) => setUf(e.target.value)}
+            value={uf}/>
+          </label>
+        </div>
+
+        <div className={styles.divPriceUnity}>
+          <label htmlFor="">
+            <span>Quartos:</span>
+            <input type="text" 
+            name="bedrooms" 
+            id="bedrooms" 
+            required 
+            placeholder='Quantidade de quartos.' 
+            onChange={(e) => setBedRooms(e.target.value)}
+            value={bedRooms}/>
+          </label>
+          <label htmlFor="">
+            <span>Banheiros:</span>
+            <input type="text" 
+            name="bathrooms" 
+            id="bathrooms" 
+            required 
+            placeholder='Quantidade de banheiros.' 
+            onChange={(e) => setBathRooms(e.target.value)}
+            value={bathRooms}/>
+          </label>
+        </div>
+
+        <label htmlFor="">
+          <span>Banheiros:</span>
+          <input type="text" 
+          name="car" 
+          id="car" 
+          required 
+          placeholder='Tamanho da garagem.' 
+          onChange={(e) => setCar(e.target.value)}
+          value={car}/>
         </label>
 
         <label htmlFor="">

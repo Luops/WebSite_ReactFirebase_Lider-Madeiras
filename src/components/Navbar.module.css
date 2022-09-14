@@ -84,7 +84,7 @@ hamburger:hover {
 }
 
 /*Media querie*/
-@media screen and (max-width: 550px){
+@media screen and (max-width: 590px){
     .hamburger {
         display: block;
         color: black;

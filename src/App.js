@@ -29,14 +29,11 @@ import ProductOff from './pages/ProductOff/ProductOff';
 import EditProdutosOff from './pages/EditProducts/EditProdutosOff';
 import Casas from './pages/Casas/Casas';
 import AdicionarCasas from './pages/AdicionarCasas/AdicionarCasas';
+import CasasId from './pages/Casas/CasasId';
 
 
 //CSS
 import './App.css';
-
-
-
-
 
 
 
@@ -84,6 +81,10 @@ function App() {
               <Route 
               path='/productsOff/:id' 
               element={<ProductOff />} />
+              <Route 
+              path='/casas/:id'
+              element={<CasasId />}
+              />
               <Route 
               path='/login' 
               element={!user ? <Login /> : <Navigate to="/" />} />
