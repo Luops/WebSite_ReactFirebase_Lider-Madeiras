@@ -1,0 +1,186 @@
+.containerFather {
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1% 3%;
+}
+
+    .titleLiderMadeiras {
+        font-size: 3em;
+        font-weight: bold;
+        color: #CD0C02;
+    }
+
+    .containerSlideDescription {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+    }
+        .containerSlide {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+            .mySwiper2 {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                align-self: center;
+                text-align: center;
+                width: 750px;
+            }
+                    .imageOne img,
+                    .imageTwo img,
+                    .imageThree img,
+                    .imageFour img,
+                    .imageFive img,
+                    .imageSix img
+                    {
+                        max-width: none;
+                        width: 650px;
+                        height: 380px;
+                        border-radius: 0;
+                        background-position: center;
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        background-clip: border-box;
+                        border: 1px solid rgb(197, 197, 197);
+                        -webkit-box-shadow: 0px 0px 4px -2px #000000; 
+                        box-shadow: 0px 0px 4px -2px #000000;
+                    }
+            
+            .containerPriceContact{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+                .price {
+                    background-color: white;
+                    -webkit-box-shadow: 0px 0px 17px 1px rgba(0,0,0,0.35); 
+                    box-shadow: 0px 0px 17px 1px rgba(0,0,0,0.35);
+                    width: 300px;
+                    padding: 5% 1%;
+                    font-size: 1.9em;
+                    text-align: center;
+                    margin-top: 0;
+                }
+
+                .containerContact {
+                    background-color: white;
+                    -webkit-box-shadow: 0px 0px 17px 1px rgba(0,0,0,0.35); 
+                    box-shadow: 0px 0px 17px 1px rgba(0,0,0,0.35);
+                    height: fit-content;
+                    width: 300px;
+                    padding: 1%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                    .containerContact p {
+                        font-weight: 400;
+                    }
+
+                    .callUs {
+                        margin-top: -5px;
+                    }
+
+                    .facebook {
+                        border: 1px solid #3b5998;
+                        border-radius: 5px;
+                        padding: 0px 30px;
+                        color: #3b5998;
+                        display: flex;
+                        align-items: center;
+                        font-size: 1.1em;
+                        transition: 0.4s ease-in-out;
+                    }
+
+                    .facebook:hover {
+                        background-color: #3b5998;
+                        color: white
+                    }
+
+                        .facebook p {
+                            margin-left: 5px;
+                        }
+
+                    .wpp {
+                            border: 1px solid #34af23;
+                            border-radius: 5px;
+                            padding: 0px 27px;
+                            color: #34af23;
+                            display: flex;
+                            align-items: center;
+                            font-size: 1.1em;
+                            margin-top: 5px;
+                    }
+
+                    .wpp:hover {
+                        background-color: #34af23;
+                        color: white;
+                        transition: 0.4s ease-in-out;
+                    }
+        
+                        .wpp p {
+                                margin-left: 5px;
+                        }
+
+        .containerDescription {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin-top: -80px;
+        }
+
+            .containerCategory {
+                color: rgb(114, 114, 114);
+                margin-left: 5%;
+                font-weight: 400;
+                margin-bottom: 1em;
+            }
+
+            .attributesHouse {
+                display: flex;
+                justify-content: space-between;
+                text-align: start;
+                width: 400px;
+                margin-left: 5%;
+                margin-top: 2em;
+            }
+            
+                .bedRooms,
+                .bathRooms,
+                .car,
+                .size {
+                    text-align: center;
+                    color: rgb(114, 114, 114);
+                }
+
+                    .attributesHouse i {
+                        font-size: 2em;
+                    }
+
+            .containerBody {
+                margin-left: 5%;
+                background-color: white;
+                -webkit-box-shadow: 0px 0px 17px 1px rgba(0,0,0,0.35); 
+                box-shadow: 0px 0px 17px 1px rgba(0,0,0,0.35);
+                padding: 2% 0.2%;
+                text-align: justify;
+                word-break: break-all;
+            }
+
+                .containerBody p {
+                    color: rgb(114, 114, 114);
+                    font-weight: 500;
+                }
