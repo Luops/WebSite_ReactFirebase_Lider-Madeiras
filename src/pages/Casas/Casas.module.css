@@ -1,0 +1,6 @@
+.list_products {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 2% 0;
+}

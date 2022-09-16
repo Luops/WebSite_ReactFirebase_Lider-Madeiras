@@ -1,12 +1,13 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState, useNavigate } from 'react'
 import 
   { FaFacebook, 
-    FaWhatsapp, 
-    FaMapMarkerAlt, 
+    FaWhatsapp,
     FaBed, 
     FaBath, 
     FaExpandArrowsAlt, 
-    FaCarAlt 
+    FaCarAlt,
+    FaArrowLeft,
+    FaMapMarkerAlt
   } from 'react-icons/fa'
 
 //hooks
@@ -14,22 +15,26 @@ import { Link, useParams } from 'react-router-dom'
 import { useFetchDocument } from '../../hooks/useFetchDocument'
 
 
+//Components
+
+
 //
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
+import "swiper/css/pagination";
 import "swiper/css/thumbs";
 
-import { FreeMode, Navigation, Thumbs } from "swiper";
+import { FreeMode, Navigation, Thumbs, Pagination } from "swiper";
 
 //CSS
 import styles from './CasasId.module.css'
 
+
 const CasasId = () => {
   const { id } = useParams();
   const { document: casa, loading } = useFetchDocument("casas", id); //Carregar o documento que vem do db(products, id) e renomeia para product
-  
 
   //Icones e targets das redes sociais
   const facebook = [
@@ -56,7 +61,13 @@ const CasasId = () => {
       {name: 'car', icon: <FaCarAlt/>}
   ]
 
+  const arrowLeft = [
+    {name: 'arrowleft', icon: <FaArrowLeft/>}
+  ]
 
+  const address = [
+    {name: 'address', icon: <FaMapMarkerAlt/>, URL: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d864.6143673865794!2d-51.03808701038359!3d-29.90872946933981!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95197316e7a7a3e5%3A0x8d04ad19085291ea!2sFerragem%20Viaduto!5e0!3m2!1spt-BR!2sbr!4v1662384112421!5m2!1spt-BR!2sbr'}
+  ]
 
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
@@ -134,7 +145,7 @@ const CasasId = () => {
           </div>
           <div className={styles.containerDescription}>
             <p className={styles.containerCategory}>
-              Categoria: {casa.category}
+              Categoria: {casa.category} / Cidade: {casa.city} - {casa.uf}
             </p>
             <div className={styles.attributesHouse}>
                 <div className={styles.bedRooms}>
@@ -165,7 +176,31 @@ const CasasId = () => {
           </div>
         </div>
       )}
+      
+      <div className={styles.containerAddress}>
+        <address>
+          <h4>Venha conversar conosco!</h4>
+          <div className={styles.addressIcon}>
+            {address.map((Address) => (
+              <i>{Address.icon}</i>
+            ))}
+            RS-020, 3929 - Neópolis, Gravataí - RS, 94100-250
+          </div>
+        </address>
+        {address.map((Address) => (
+          <iframe src={Address.URL} frameborder="0" width="100%"></iframe>
+        ))}
+      </div>
+
+      {arrowLeft.map((arrow) =>(
+        <div className={styles.containerArrow}>
+          <a href={`/casas`}>
+            {arrow.icon} <p>Voltar</p>
+          </a>
+        </div>
+      ))}
     </div>
+    
   )
 }
 

@@ -71,6 +71,10 @@ const Home = () => {
 
         <div className={styles.slide}>
           <Swiper 
+          style={{
+            "--swiper-navigation-color": "white",
+            "--swiper-navigation-size": "45px",
+          }}
             modules={[Navigation, Pagination, Autoplay]}
             navigation
             speed={800}
@@ -122,6 +126,10 @@ const Home = () => {
         <h2 className={styles.categoryTitle}>Madeira Bruta de Eucalipto</h2>
         <div className={styles.slideCategorys}>
           <Swiper
+           style={{
+            "--swiper-navigation-color": "black",
+            "--swiper-navigation-size": "30px",
+          }}
             slidesPerView={4}
             spaceBetween={10}
             navigation={true}
@@ -168,6 +176,10 @@ const Home = () => {
         <h2 className={styles.categoryTitle}>Madeira Bruta de Cedrinho</h2>
         <div className={styles.slideCategorys}>
           <Swiper
+            style={{
+              "--swiper-navigation-color": "black",
+              "--swiper-navigation-size": "30px",
+            }}
             slidesPerView={4}
             spaceBetween={10}
             pagination={true}
@@ -214,6 +226,10 @@ const Home = () => {
         <h2 className={styles.categoryTitle}>Madeira Bruta de Pinus</h2>
         <div className={styles.slideCategorys}>
           <Swiper
+            style={{
+              "--swiper-navigation-color": "black",
+              "--swiper-navigation-size": "30px",
+            }}
             slidesPerView={4}
             spaceBetween={10}
             pagination={true}
@@ -260,6 +276,10 @@ const Home = () => {
         <h2 className={styles.categoryTitle}>Madeira Beneficiada de Pinus</h2>
         <div>
           <Swiper
+            style={{
+              "--swiper-navigation-color": "black",
+              "--swiper-navigation-size": "30px",
+            }}
             slidesPerView={4}
             spaceBetween={10}
             pagination={true}
@@ -306,6 +326,10 @@ const Home = () => {
         <h2 className={styles.categoryTitle}>Madeira Beneficiada de Eucalipto</h2>
         <div className={styles.slideCategorys}>
           <Swiper
+            style={{
+              "--swiper-navigation-color": "black",
+              "--swiper-navigation-size": "30px",
+            }}
             slidesPerView={4}
             spaceBetween={10}
             pagination={true}
@@ -351,29 +375,33 @@ const Home = () => {
         <h2 className={styles.categoryTitle}>Madeira Beneficiada Nobre</h2>
         <div className={styles.slideCategorys}>
           <Swiper
-          slidesPerView={4}
-          spaceBetween={10}
-          pagination={true}
-          navigation={true}
-          breakpoints={{
-            320: {
-              slidesPerView: 1,
-            },
-            670: {
-              slidesPerView: 2,
-              spaceBetween: 20,
-            },
-            950: {
-              slidesPerView: 3,
-              spaceBetween: 20,
-            },
-            1280: {
-              slidesPerView: 4,
-              spaceBetween: 20,
-            },
-          }}
-          modules={[Pagination, Navigation]}
-          className={styles.mySwiperCategorys}
+            style={{
+              "--swiper-navigation-color": "black",
+              "--swiper-navigation-size": "30px",
+            }}
+            slidesPerView={4}
+            spaceBetween={10}
+            pagination={true}
+            navigation={true}
+            breakpoints={{
+              320: {
+                slidesPerView: 1,
+              },
+              670: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              950: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+              },
+              1280: {
+                slidesPerView: 4,
+                spaceBetween: 20,
+              },
+            }}
+            modules={[Pagination, Navigation]}
+            className={styles.mySwiperCategorys}
           >
             <div className={styles.categoryCards}>
             {loading && <p>Carregando...</p>}
@@ -397,6 +425,10 @@ const Home = () => {
         <h2 className={styles.categoryTitle}>Aberturas de Eucalipto</h2>
         <div className={styles.slideCategorys}>
           <Swiper
+            style={{
+              "--swiper-navigation-color": "black",
+              "--swiper-navigation-size": "30px",
+            }}
             slidesPerView={4}
             spaceBetween={10}
             pagination={true}
@@ -440,6 +472,10 @@ const Home = () => {
         <h2 className={styles.categoryTitle}>Pregos</h2>
         <div className={styles.slideCategorys}>
           <Swiper
+            style={{
+              "--swiper-navigation-color": "black",
+              "--swiper-navigation-size": "30px",
+            }}
             slidesPerView={3}
             spaceBetween={10}
             pagination={true}
