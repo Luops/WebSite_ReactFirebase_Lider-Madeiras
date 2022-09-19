@@ -30,10 +30,11 @@ import EditProdutosOff from './pages/EditProducts/EditProdutosOff';
 import Casas from './pages/Casas/Casas';
 import AdicionarCasas from './pages/AdicionarCasas/AdicionarCasas';
 import CasasId from './pages/Casas/CasasId';
-
+import EditCasas from './pages/EditProducts/EditCasas';
 
 //CSS
 import './App.css';
+
 
 
 
@@ -97,6 +98,9 @@ function App() {
               <Route 
               path='/productsOff/edit/:id' 
               element={user ? <EditProdutosOff/> : <Navigate to="/login" />} />
+              <Route 
+              path='/casas/edit/:id' 
+              element={user ? <EditCasas/> : <Navigate to="/login" />} />
               <Route 
               path='/adicionarProdutos' 
               element={user ? <AdicionarProdutos /> : <Navigate to="/login" />} />

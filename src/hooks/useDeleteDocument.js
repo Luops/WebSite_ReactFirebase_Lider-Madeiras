@@ -83,6 +83,30 @@ export const useDeleteDocument = (docColletion) => {
         }
     }
 
+    //Deletar casa
+    const deleteHouse = async (id) => {
+        checkCancelBeforeDispatch({
+            type: "LOADING"
+        })
+
+        try{
+            const deletedDocument = await deleteDoc(doc(db,docColletion, id)) //receber
+
+            checkCancelBeforeDispatch({
+                type: "DELETED_DOC",
+                payload: deletedDocument,
+            });
+
+        }catch(error){
+
+            checkCancelBeforeDispatch({
+                type: "ERROR",
+                payload: error.message,
+            });
+
+        }
+    }
+
     useEffect(() => {
         return () => setCancelled(true)
     },[]);
@@ -90,6 +114,7 @@ export const useDeleteDocument = (docColletion) => {
     return { 
         deleteDocumentNoOff,
         deleteDocumentOff, 
+        deleteHouse,
         response 
     }
 

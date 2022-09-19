@@ -33,27 +33,31 @@ p {
         }
 
         .image {
-            width: 380px;
+            width: 370px;
             border-radius: 5px;
             position: absolute;
             max-width: none;
-            filter: brightness(55%);
+            filter: brightness(45%);
             -webkit-box-shadow: 0px 0px 6px -1px #000000; 
             box-shadow: 0px 0px 6px -1px #000000;
             transition: .5s ease-in-out;
         }
 
         .image:hover {
-            width: 385px;
+            width: 375px;
         }
 
         .category {
             position: relative;
             align-self: flex-end;
-            margin-top: 105%;
+            margin-top: 110%;
             color: white;
             font-weight: 500;
         }
+
+    .title {
+        margin-top: 50px;
+    }
     
     .containerInformations{
         position: relative;

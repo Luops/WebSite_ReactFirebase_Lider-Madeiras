@@ -19,10 +19,11 @@ const Dashboard = () => {
   //produtos adicionados do usuário
   const {documents: products, loading} = useFetchDocuments("products", null, uid);  //Produtos cadastrados pelo usuário
   const {documents: productsOff} = useFetchDocuments("productsOff", null, uid);  //Produtos cadastrados pelo usuário
-
+  const {documents: casas} = useFetchDocuments("casas", null, uid);  //Produtos cadastrados pelo usuário
 
   const {deleteDocumentNoOff} = useDeleteDocument("products"); //Deletar produto normal
   const {deleteDocumentOff} = useDeleteDocument("productsOff"); //Deletar produto em promoção
+  const {deleteHouse} = useDeleteDocument("casas");//Deletar casa
 
 
   if(loading) {
@@ -34,13 +35,26 @@ const Dashboard = () => {
       
       <h2>Dashboard</h2>
       <p>Gerencie os seus produtos</p>
-      <div className={styles.dashboard_productOff}>
-        <h2>Produtos em promoção!</h2>
+      <div className={styles.btnAdd}>
         <li className={styles.addProduct}>
-          <NavLink to="/adicionarProdutosOff">
-            + Adicionar
+            <NavLink to="/adicionarProdutosOff">
+              + Adicionar promoção
+            </NavLink>
+        </li>
+        <li className={styles.addProduct}>
+          <NavLink to="/adicionarProdutos">
+            + Adicionar produto
           </NavLink>
         </li>
+        <li className={styles.addProduct}>
+          <NavLink to="/adicionarCasas">
+            + Adicionar casas
+          </NavLink>
+        </li>
+      </div>
+      <div className={styles.dashboard_productOff}>
+        <h2>Produtos em promoção!</h2>
+        
         <div className={styles.product_headerOff}>
           <span>Título</span>
           <span>Ações</span>
@@ -66,11 +80,6 @@ const Dashboard = () => {
 
       <div className={styles.dashboard_product}>
         <h2>Produtos com preço normal</h2>
-        <li className={styles.addProduct}>
-          <NavLink to="/adicionarProdutos">
-            + Adicionar
-          </NavLink>
-        </li>
           <div className={styles.product_header}>
             <span>Título</span>
             <span>Ações</span>
@@ -87,6 +96,31 @@ const Dashboard = () => {
                   Editar
                 </Link>
                 <button onClick={() => deleteDocumentNoOff(product.id)} className="btn btn-outline btn-danger">
+                  Excluir
+                </button>
+              </div>
+            </div>
+        ))}
+      </div>
+
+      <div className={styles.dashboard_product}>
+        <h2>Casas</h2>
+          <div className={styles.product_header}>
+            <span>Título</span>
+            <span>Ações</span>
+          </div>
+        {casas 
+          && casas.map((casas) => (
+            <div key={casas.id} className={styles.product_row}>
+              <p>{casas.title}</p>
+              <div className={styles.opcoesAcoes}>
+                <Link to={`/casas/${casas.id}`} className="btn btn-outline">
+                  Ver
+                </Link>
+                <Link to={`/casas/edit/${casas.id}`} className="btn btn-outline">
+                  Editar
+                </Link>
+                <button onClick={() => deleteHouse(casas.id)} className="btn btn-outline btn-danger">
                   Excluir
                 </button>
               </div>
