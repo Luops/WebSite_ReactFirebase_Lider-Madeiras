@@ -169,10 +169,10 @@ const CasasId = () => {
                   ))} <p>{casa.size}</p>
                 </div>
             </div>
-            <p className={styles.containerBody}>
+            <div className={styles.containerBody}>
               <h2>Descrição da {casa.title}</h2>
               <p>{casa.body}</p>
-            </p>
+            </div>
           </div>
         </div>
       )}

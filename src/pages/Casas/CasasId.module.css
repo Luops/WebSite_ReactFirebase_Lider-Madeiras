@@ -179,7 +179,7 @@
                 background-color: white;
                 -webkit-box-shadow: 0px 0px 17px 1px rgba(0,0,0,0.35); 
                 box-shadow: 0px 0px 17px 1px rgba(0,0,0,0.35);
-                padding: 2% 0.2%;
+                padding: 2% 0.8%;
                 text-align: justify;
                 word-break: break-all;
             }
@@ -263,6 +263,36 @@
         }
 
 /*Media Querie*/
+@media screen and (min-width: 1600px) {
+    .containerPriceContact {
+        margin-left: -20px;
+        margin-right: 200px;
+    }
+    
+        .mySwiper2 {
+            width: 950px;
+        }
+                    .imageOne img,
+                    .imageTwo img,
+                    .imageThree img,
+                    .imageFour img,
+                    .imageFive img,
+                    .imageSix img
+                    {
+                        max-width: none;
+                        width: 850px;
+                        height: 580px;
+                        border-radius: 0;
+                        background-position: center;
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        background-clip: border-box;
+                        border: 1px solid rgb(197, 197, 197);
+                        -webkit-box-shadow: 0px 0px 4px -2px #000000; 
+                        box-shadow: 0px 0px 4px -2px #000000;
+                    }
+}
+
 
 @media screen and (max-width: 1116px) {
     .containerPriceContact {

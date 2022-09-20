@@ -62,6 +62,10 @@
             margin-top: 15px;
         }
 
+        .containerLocationsProjectsPhone {
+            display: none;
+        }
+
             .containerLocationsProjects h2 {
                 color: white;
                 text-transform: uppercase;
@@ -121,9 +125,263 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
         margin: 2% 0;
     }
 
+        .txtWeWorkWith {
+            font-size: 2em;
+            background-color: white;
+            border: 1px solid black;
+            padding: 10px 37px;
+            -webkit-box-shadow: 0px 0px 17px 5px rgba(0,0,0,0.4); 
+            box-shadow: 0px 0px 17px 5px rgba(0, 0, 0, 0.4);
+        }
+
         .weWorkWith {
             display: flex;
+            margin-top: -30px;
         }
+
+            .weWorkWith button {
+                background-color: white;
+                border: 1px solid black;
+                cursor: pointer;
+                padding: 15px 45px;
+                font-size: 1.5em;
+                font-weight: bold;
+                -webkit-box-shadow: 0px 0px 17px 5px rgba(0,0,0,0.4); 
+                box-shadow: 0px 0px 17px 5px rgba(0, 0, 0, 0.4);
+                transition: .4s ease-in-out
+            }
+
+            .weWorkWith button:hover {
+                background-color: black;
+                color: white;
+            }
+
+        .options{
+            margin-bottom: 25px;
+        }
+
+        .containerAlvenaria,
+        .containerMadeira {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid #ccc;
+            width: 100%;
+        }
+
+            .containerAlvenaria h2,
+            .containerMadeira h2 {
+                -webkit-box-shadow: -4px 2px 15px 1px rgba(0,0,0,0.45); 
+                box-shadow: -4px 2px 15px 1px rgba(0,0,0,0.45);
+                border-bottom: 2px solid rgb(116, 116, 116);
+                border-right: 1.5px solid rgb(116, 116, 116);
+                width: fit-content;
+                padding: 5px 25px;
+                background-color: black;
+                color: white;
+            }
+
+            .containerCards {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 20px;
+                margin-bottom: 10px;
+            }
+
+
+/*Media Querie*/
+@media screen and (min-width: 1600px) {
+    .background img {
+        width: 80% !important;
+        height: 650px;
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    .txtBackground {
+        margin-right: 30%;
+    }
+
+    .containerLocationsProjects {
+        margin-left: 50%;
+    }
+}
+
+@media screen and (max-width: 940px) {
+    .txtBackground {
+        margin-right: 0%;
+    }
+
+    .containerLocationsProjects {
+        display: none;
+    }
+
+    .containerLocationsProjectsPhone {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        margin-top: 50px;
+        background-color: black;
+        color: white;
+        -webkit-box-shadow: -4px 2px 15px 1px rgba(0,0,0,0.45); 
+        box-shadow: -4px 2px 15px 1px rgba(0,0,0,0.45);
+    }
+
+        .containerLocationsProjectsPhone h2 {
+            font-size: .9em;
+            background-color: white;
+            border: 1px solid black;
+            width: 300px;
+            text-align: center;
+            padding: 15px 0;
+            margin-block-end: 0;
+            margin-block-start: 0;
+            color: black;
+        }
+
+            .containerLocationsProjectsPhone h2 span {
+                color: #cd0c02;    
+                font-size: 1em;
+            }
+
+        .containerLocationsProjectsPhone i {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+}
+
+@media screen and (max-width: 680px) {
+    .background img {
+        width: 80% !important;
+        height: 350px;
+    }
+
+    .txtBackground {
+        font-size: .7em;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    .background img {
+        width: 80% !important;
+        height: 250px;
+    }
+
+    .txtBackground {
+        font-size: .4em;
+        text-align: center;
+    }
+
+        .txtBackground p {
+          font-size: 3.5em;  
+        }
+
+        .txtBackground h2 {
+            width: fit-content;
+            margin: 0 auto;
+        }
+    
+    .txtProjects {
+        height: 30px;
+        margin-top: -95px;
+        font-size: .8em;
+    }
+
+        .txtProjects i {
+            font-size: 1.2em;
+            height: 30px;
+            width: 30px;
+        }
+
+        .txtWeWorkWith {
+            font-size: 1em;
+        }
+
+            .weWorkWith button{
+                padding: 5px 24px;
+                font-size: .98em;
+                margin-top: 15px;
+            }
+}
+
+@media screen and (max-width: 480px) {
+            .txtBackground h2 {
+                font-size: 1.8em;
+            }
+
+        .containerLocationsProjectsPhone {
+            font-size: .7em;
+            width: 220px;
+        }
+
+            .containerLocationsProjectsPhone h2 {
+               width: 220px; 
+            }
+
+        .background img {
+            height: 200px;
+        }
+       
+        .containerCards {
+            width: 350px;
+            margin-right: 8%;
+        }
+
+            .containerCards img {
+                width: 300px;
+            }
+        
+        .containerAlvenaria,
+        .containerMadeira {
+            border-bottom: 1px solid #ccc;
+        }
+
+        .txtBackground {
+            margin-top: 10px;
+            width: 250px;
+            margin-block-start: 0.83em;
+            margin-block-end: 0.83em
+        }
+
+        .options {
+            font-size: .75em;
+        }
+}
+
+@media screen and (max-width: 380px) {
+    .txtProjects {
+        font-size: .6em;
+    }
+
+    .options {
+        font-size: .6em;
+    }
+
+        .background img {
+            height: 150px;
+        }
+
+    .containerCards {
+        width: 300px;
+    }
+
+        .containerCards img {
+            width: 240px;
+            height: 210px;
+        }
+}
+
+        
+
+
+            

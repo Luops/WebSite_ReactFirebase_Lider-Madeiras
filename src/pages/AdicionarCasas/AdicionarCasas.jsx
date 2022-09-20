@@ -234,7 +234,7 @@ const AdicionarCasas = () => {
         </div>
 
         <label htmlFor="">
-          <span>Banheiros:</span>
+          <span>Espaço da garagem:</span>
           <input type="text" 
           name="car" 
           id="car" 
