@@ -209,6 +209,10 @@
     .containerAbout .textAbout {
         font-size: 1em;
     }
+
+    .containerContactDescriptions {
+        width: 300px;
+    }
     
 }
 

@@ -37,7 +37,7 @@ const About = () => {
     <div className={styles.containerFather}>
       <div className={styles.containerAbout}>
         <div className={styles.containerTitleAbout}>
-          <h2>Sobre nós</h2>
+          <h2>Lider Madeiras</h2>
           <p className={styles.conheca}>Conheça a nossa empresa</p>
           <p className={styles.envieMensagem}>Entre em contato conosco para realizar um orçamento!</p>
           {imgLider.map((image) => (

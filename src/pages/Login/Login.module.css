@@ -1,6 +1,9 @@
 .login {
+    display: flex;
+    flex-direction: column;
     text-align: center;
     justify-content: center;
+    align-items: center;
     position: relative;
     z-index: 0;
 }
@@ -24,4 +27,8 @@
 
 .login p {
     color: #AAA
+}
+
+.btnLogin {
+    margin-bottom: 50px;
 }

@@ -9,6 +9,11 @@ import
     FaArrowLeft,
     FaMapMarkerAlt
   } from 'react-icons/fa'
+import 
+  { Visa,
+    Mastercard,
+    Caixa 
+  } from 'react-pay-icons'
 
 //hooks
 import { Link, useParams } from 'react-router-dom'
@@ -67,6 +72,13 @@ const CasasId = () => {
 
   const address = [
     {name: 'address', icon: <FaMapMarkerAlt/>, URL: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d864.6143673865794!2d-51.03808701038359!3d-29.90872946933981!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95197316e7a7a3e5%3A0x8d04ad19085291ea!2sFerragem%20Viaduto!5e0!3m2!1spt-BR!2sbr!4v1662384112421!5m2!1spt-BR!2sbr'}
+  ]
+
+  //Icones de pagamentos
+  const cartoes = [
+    {name: 'visa', icon: <Visa />},
+    {name: 'mastercard', icon: <Mastercard />},
+    {name: 'caixa', icon: <Caixa />},
   ]
 
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
@@ -172,6 +184,18 @@ const CasasId = () => {
             <div className={styles.containerBody}>
               <h2>Descrição da {casa.title}</h2>
               <p>{casa.body}</p>
+              <p>{casa.method}</p>
+            </div>
+
+            <div className={styles.containerBody}>
+              <h2 className={styles.cartoes}>
+                Cartões que trabalhamos
+              </h2>
+              <div className={styles.creditCards}>
+                {cartoes.map((cartoes) => (
+                  <i>{cartoes.icon}</i>
+                ))}
+              </div>   
             </div>
           </div>
         </div>

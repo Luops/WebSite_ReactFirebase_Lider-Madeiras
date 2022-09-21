@@ -85,6 +85,14 @@ h1 {
 .body {
     width: 27rem;
     text-align: justify;
+    font-weight: 500;
+}
+
+.method,
+.category,
+.icons p
+{
+    font-weight: 500;
 }
 
 .icons{
@@ -176,7 +184,7 @@ h1 {
     }
 
     .body {
-        padding: 0 1em;
+        padding: 0 1.2em;
         font-size: 0.8em;
         width: 100%;
     }

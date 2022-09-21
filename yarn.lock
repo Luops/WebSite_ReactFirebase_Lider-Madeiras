@@ -7975,6 +7975,11 @@
   "resolved" "https://registry.npmjs.org/react-is/-/react-is-18.2.0.tgz"
   "version" "18.2.0"
 
+"react-pay-icons@^3.0.0":
+  "integrity" "sha512-tYBimRszTfuDLc+hDvIE2sssdioXv56rnrTOLNg93MKIhq4pTTDAYmchxDC50fSgtiIfvV9xSve+g1APKrivIg=="
+  "resolved" "https://registry.npmjs.org/react-pay-icons/-/react-pay-icons-3.0.0.tgz"
+  "version" "3.0.0"
+
 "react-refresh@^0.11.0", "react-refresh@>=0.10.0 <1.0.0":
   "integrity" "sha512-F27qZr8uUqwhWZboondsPx8tnC3Ct3SxZA3V5WyEvujRyyNv0VYPhoBg1gZ8/MV5tubQp76Trw8lTv9hzRBa+A=="
   "resolved" "https://registry.npmjs.org/react-refresh/-/react-refresh-0.11.0.tgz"

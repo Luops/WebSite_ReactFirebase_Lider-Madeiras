@@ -173,12 +173,14 @@ const AdicionarProdutosOff = () => {
           onChange={(e) => setImage(e.target.value)}
           value={image}/>
         </label>
-        {!response.loading && <button className='btn'>Cadastrar</button>}
-        {response.loading && (
-          <button className='btn' disabled>
-            Aguarde...
-          </button>
-        )}
+        <div className={styles.btnCadastrar}>
+          {!response.loading && <button className='btn'>Cadastrar</button>}
+          {response.loading && (
+            <button className='btn' disabled>
+              Aguarde...
+            </button>
+          )}
+        </div>
         {response.error && <p className='error'>{response.error}</p>}
         {formError && <p className='error'>{formError}</p>}
       </form>

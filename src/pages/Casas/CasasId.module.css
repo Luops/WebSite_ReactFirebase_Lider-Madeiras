@@ -182,12 +182,30 @@
                 padding: 2% 0.8%;
                 text-align: justify;
                 word-break: break-all;
+                margin-top: 10px;
             }
 
                 .containerBody p {
                     color: rgb(114, 114, 114);
                     font-weight: 500;
                 }
+
+                .cartoes {
+                    width: 100%;
+                }
+
+                .creditCards {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 15px;
+                }
+
+                    .creditCards i {
+                        width: 80px;
+                    }
 
     .containerAddress {
         display: flex;
@@ -269,9 +287,9 @@
         margin-right: 200px;
     }
     
-        .mySwiper2 {
-            width: 950px;
-        }
+            .mySwiper2 {
+                width: 950px;
+            }
                     .imageOne img,
                     .imageTwo img,
                     .imageThree img,

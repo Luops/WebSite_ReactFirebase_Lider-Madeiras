@@ -8,8 +8,9 @@
 
 .btnAdd{
     display: flex;
+    flex-wrap: wrap;
     gap: 10px;
-    width: 600px;
+    width: 100%;
     text-align: center;
     align-items: center;
     justify-content: center;
@@ -99,7 +100,6 @@
     border-bottom: 2px solid #CCC;
 }
 
-.product_row,
 .product_row {
     align-items: center;
     border-bottom: 1px solid #eee;
@@ -107,7 +107,7 @@
 
 .product_row p,
 .product_rowOff p {
-    width: 30%;
+    width: 35%;
     font-size: .8em;
     color: black;
 }
@@ -120,5 +120,16 @@
     height: 30px;
     width: 100px;
     font-size: .7em;
+}
+
+
+/*Media Querie*/
+@media screen and (max-width: 480px) {
+        .product_row p,
+        .product_rowOff p {
+            font-size: .6em;
+            font-weight: 600;
+            width: 200px;
+        }
 }
 

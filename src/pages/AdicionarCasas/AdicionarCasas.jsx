@@ -309,12 +309,14 @@ const AdicionarCasas = () => {
           onChange={(e) => setImageSix(e.target.value)}
           value={imageSix}/>
         </label>
-        {!response.loading && <button className='btn'>Cadastrar</button>}
-        {response.loading && (
-          <button className='btn' disabled>
-            Aguarde...
-          </button>
-        )}
+        <div className={styles.btnCadastrar}>
+          {!response.loading && <button className='btn'>Cadastrar</button>}
+          {response.loading && (
+            <button className='btn' disabled>
+              Aguarde...
+            </button>
+          )}
+        </div>
         {response.error && <p className='error'>{response.error}</p>}
         {formError && <p className='error'>{formError}</p>}
       </form>

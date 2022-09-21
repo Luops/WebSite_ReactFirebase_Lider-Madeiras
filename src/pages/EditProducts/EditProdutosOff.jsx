@@ -98,11 +98,13 @@ const EditProdutosOff = () => {
           <form onSubmit={handleSubmit} 
           action="">
             <p className={styles.preview_title}>Preview da imagem atual:</p>
-            <img 
-            className={styles.preview_image} 
-            src={productOff.image} 
-            alt={productOff.title} 
-            />
+            <div className={styles.containerPreview}>
+              <img 
+              className={styles.preview_image} 
+              src={productOff.image} 
+              alt={productOff.title} 
+              />
+            </div>
             <label htmlFor="">
               <span>Título:</span>
               <input type="text" 
@@ -202,12 +204,14 @@ const EditProdutosOff = () => {
               onChange={(e) => setImage(e.target.value)}
               value={image}/>
             </label>
-            {!response.loading && <button className='btn'>Editar</button>}
-            {response.loading && (
-              <button className='btn' disabled>
-                Aguarde...
-              </button>
-            )}
+            <div className={styles.btnEditar}>
+              {!response.loading && <button className='btn'>Editar</button>}
+              {response.loading && (
+                <button className='btn' disabled>
+                  Aguarde...
+                </button>
+              )}
+            </div>
             {response.error && <p className='error'>{response.error}</p>}
             {formError && <p className='error'>{formError}</p>}
           </form>

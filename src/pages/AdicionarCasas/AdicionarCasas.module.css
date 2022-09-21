@@ -47,3 +47,9 @@
 .divPriceUnity :last-child input {
     width: 100%;
 }
+
+.btnCadastrar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

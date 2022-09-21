@@ -58,10 +58,11 @@ const Login = () => {
                  value={password}
                  onChange={(e) => setPassword(e.target.value)}/>
             </label>
-           
-            {!loading && <button className='btn'>Entrar</button>}
-            {loading && (<button className='btn'>Aguarde...</button>)}
-            {error && <p className='error'>{error}</p>}
+           <div className={styles.btnLogin}>
+                {!loading && <button className='btn'>Entrar</button>}
+                {loading && (<button className='btn'>Aguarde...</button>)}
+                {error && <p className='error'>{error}</p>}
+            </div>
         </form>
     </div>
   )

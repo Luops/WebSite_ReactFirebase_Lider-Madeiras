@@ -7,6 +7,11 @@
     align-items: center;
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+}
+
 .create_product h2 {
     font-size: 2.2em;
     width: fit-content;
@@ -46,4 +51,10 @@
 
 .divPriceUnity :last-child input {
     width: 100%;
+}
+
+.btnCadastrar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

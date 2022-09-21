@@ -88,7 +88,10 @@ const Navbar = () => {
             {user && (
               
                 <li>
-                  <button onClick={logout}>
+                  <button 
+                  onClick={logout}
+                  className={styles.btnLogout}
+                  >
                     Sair
                   </button>
                 </li>
