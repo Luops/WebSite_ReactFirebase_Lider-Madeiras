@@ -73,6 +73,11 @@
     font-size: 1.25em;
 }
 
+.textAbout p {
+    font-weight: 400;
+    text-indent: 1em;
+}
+
 .containerContact {
     background-color: black;
     color: white;

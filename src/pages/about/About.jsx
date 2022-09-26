@@ -44,14 +44,18 @@ const About = () => {
           <img src={image.image} name={image.id} key={image.id} alt="Lider Madeiras" />
         ))}
         </div>
-        <p className={styles.textAbout}>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-          Blanditiis pariatur veritatis quos sapiente officiis sed non rem, 
-          ducimus eius temporibus libero doloremque at, nam optio nisi minima, 
-          ea eos perspiciatis?Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-          Blanditiis pariatur veritatis quos sapiente officiis sed non rem, 
-          ducimus eius temporibus libero doloremque at, nam optio nisi minima, 
-          ea eos perspiciatis?
+        <div className={styles.textAbout}>
+        <p>
+          Atuando desde 2010, nos localizamos na cidade de Gravataí - Rio Grande do Sul. 
+          Além de construir casas em todo nosso estado, também construímos em Santa Catarina.
+          Trabalhamos em projetos de casas de alvenaria ou madeira.
         </p>
+        <p>
+          Contamos com madeira própria, o que torna muito mais ágil e competitivo em termos financeiros.
+          Nosso beneficiamento de madeiras garante os melhores preços para quem deseja adquirir a casa pronta ou 
+          somente o madeiramento.
+        </p>
+        </div>
       </div>
       
       <div className={styles.containerContact}>

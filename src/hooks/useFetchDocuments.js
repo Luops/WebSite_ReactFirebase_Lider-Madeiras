@@ -87,8 +87,6 @@ export const useFetchDocuments = (docCollection, search = null, uid = null) => {
 
 }
 
-
-
 //Puxar somente Madeira Bruta de Eucalipto
 export const useFetchDocumentsCategoryMadeiraBrutaEucalipto = (docCollection, uid = null) => {
     const [documentsCategoryMadeiraBrutaEucalipto, setDocumentsCategoryMadeiraBrutaEucalipto] = useState(null);

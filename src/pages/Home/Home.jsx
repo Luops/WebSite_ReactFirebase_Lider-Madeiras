@@ -1,6 +1,6 @@
 import React from 'react'
 import { Swiper, SwiperSlide} from 'swiper/react';
-import { Navigation, Pagination, Autoplay, Mousewheel, Keyboard} from 'swiper';
+import { Navigation, Pagination, Autoplay} from 'swiper';
 
 //hooks
 import { useNavigate, Link, Navigate } from 'react-router-dom'
@@ -108,7 +108,10 @@ const Home = () => {
             />
           <button className='btn btn-dark'>Pesquisar</button>
             </form>*/}
-        <h2 className={styles.lastFiveProducts}>Últimos produtos adicionados!</h2>
+        <h2 className={styles.lastFiveProducts}>
+          Últimos produtos adicionados!
+        </h2>
+        
         <div className={styles.list_products}>
           {loading && <p>Carregando...</p>}
           {products && products.map((product) => (
