@@ -12,7 +12,8 @@ import
 import 
   { Visa,
     Mastercard,
-    Caixa 
+    Hiper,
+    Elo
   } from 'react-pay-icons'
 
 //hooks
@@ -78,7 +79,7 @@ const CasasId = () => {
   const cartoes = [
     {name: 'visa', icon: <Visa />},
     {name: 'mastercard', icon: <Mastercard />},
-    {name: 'caixa', icon: <Caixa />},
+    {name: 'elo', icon: <Elo />},
   ]
 
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
@@ -189,12 +190,13 @@ const CasasId = () => {
 
             <div className={styles.containerBody}>
               <h2 className={styles.cartoes}>
-                Cartões que trabalhamos
+                Cartões aceitos
               </h2>
               <div className={styles.creditCards}>
                 {cartoes.map((cartoes) => (
                   <i>{cartoes.icon}</i>
                 ))}
+                <p>Entre outros</p>
               </div>   
             </div>
           </div>

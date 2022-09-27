@@ -199,12 +199,21 @@
                     flex-direction: row;
                     flex-wrap: wrap;
                     align-items: center;
-                    justify-content: center;
                     gap: 15px;
                 }
 
                     .creditCards i {
                         width: 80px;
+                    }
+
+                    .creditCards p {
+                        background-color: black;
+                        color: white;
+                        height: 50px;
+                        padding: 0 10px;
+                        padding-top: 15px;
+                        border-radius: 2px;
+                        margin-bottom: 20px;
                     }
 
     .containerAddress {

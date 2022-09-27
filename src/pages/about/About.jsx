@@ -48,7 +48,7 @@ const About = () => {
         <p>
           Atuando desde 2010, nos localizamos na cidade de Gravataí - Rio Grande do Sul. 
           Além de construir casas em todo nosso estado, também construímos em Santa Catarina.
-          Trabalhamos em projetos de casas de alvenaria ou madeira.
+          Trabalhamos com projetos de casas de alvenaria ou madeira.
         </p>
         <p>
           Contamos com madeira própria, o que torna muito mais ágil e competitivo em termos financeiros.

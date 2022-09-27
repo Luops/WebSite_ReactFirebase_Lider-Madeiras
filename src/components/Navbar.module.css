@@ -100,15 +100,10 @@ hamburger:hover {
         top: 180%;
         z-index: inherit;
         right: 50px;
-        background-color: rgb(151, 151, 151);
         width: 50px;
         height: 60px;
         text-align: center;
         transition: background-color 0.2s ease-in-out;
-    }
-
-    .exitBar:hover{
-        background-color: rgb(72, 72, 72);
     }
 
     .navbar_menu ul {

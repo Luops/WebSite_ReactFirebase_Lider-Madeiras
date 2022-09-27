@@ -48,13 +48,20 @@ const Navbar = () => {
       }>
         <ul>
           <li>
-              <NavLink to="/" className={({isActive}) => (isActive ? styles.active : "")}>
+              <NavLink to="/" className={({isActive}) => (isActive ? styles.active : "")}
+                onClick={() => {
+                  isNavExpanded(false)
+                }}
+              >
                 Home
               </NavLink>
           </li>
 
           <li>
-              <NavLink to="/casas" className={({isActive}) => (isActive ? styles.active : "")}>
+              <NavLink to="/casas" className={({isActive}) => (isActive ? styles.active : "")}
+              onClick={() => {
+                isNavExpanded(false)
+              }}>
                 Casas
               </NavLink>
           </li>
@@ -62,7 +69,10 @@ const Navbar = () => {
             {!user && (
               <>
                 <li>
-                  <NavLink to="/login" className={({isActive}) => (isActive ? styles.active : "")}>
+                  <NavLink to="/login" className={({isActive}) => (isActive ? styles.active : "")}
+                  onClick={() => {
+                    isNavExpanded(false)
+                  }}>
                     Entrar
                   </NavLink>
                 </li>
@@ -72,7 +82,10 @@ const Navbar = () => {
             {user && (
               <> 
                 <li>
-                  <NavLink to="/dashboard" className={({isActive}) => (isActive ? styles.active : "")}>
+                  <NavLink to="/dashboard" className={({isActive}) => (isActive ? styles.active : "")}
+                  onClick={() => {
+                    isNavExpanded(false)
+                  }}>
                     Dashboard
                   </NavLink>
                 </li>
@@ -80,14 +93,20 @@ const Navbar = () => {
             )}
           
             <li>
-              <NavLink to="/about" className={({isActive}) => (isActive ? styles.active : "")}>
+              <NavLink to="/about" className={({isActive}) => (isActive ? styles.active : "")}
+              onClick={() => {
+                isNavExpanded(false)
+              }}>
                 Sobre
               </NavLink>
             </li>
 
             {user && (
               
-                <li>
+                <li
+                onClick={() => {
+                  isNavExpanded(false)
+                }}>
                   <button 
                   onClick={logout}
                   className={styles.btnLogout}
