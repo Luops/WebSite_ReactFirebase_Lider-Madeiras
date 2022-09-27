@@ -210,7 +210,7 @@ const CasasId = () => {
             {address.map((Address) => (
               <i>{Address.icon}</i>
             ))}
-            RS-020, 3929 - Neópolis, Gravataí - RS, 94100-250
+            RS-020, 3919 - Neópolis, Gravataí - RS, 94100-250
           </div>
         </address>
         {address.map((Address) => (

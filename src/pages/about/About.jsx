@@ -14,7 +14,7 @@ const About = () => {
   ]
 
   const networkWppTwo = [
-    {name: 'wppTwo', icon: <FaWhatsapp/>, URL: 'https://api.whatsapp.com/send?phone=5551981933245&text=Inicie%20uma%20conversa%20com%20um%20vendendor%20da%20Lider%20Madeiras!'}
+    {name: 'wppTwo', icon: <FaWhatsapp/>, URL: 'https://api.whatsapp.com/send/?phone=5551984778212&text&type=phone_number&app_absent=0'}
   ]
 
   const networkFace = [
@@ -82,7 +82,7 @@ const About = () => {
                 <a href={WppTwo.URL} target="_blank" 
                 id={WppTwo.name} 
                 key={WppTwo.name}>
-                  (51)98193-3245
+                  (51)98477-8212
                 </a>
               ))}
             </p>
@@ -128,7 +128,7 @@ const About = () => {
           {address.map((Address) => (
             <i>{Address.icon}</i>
           ))}
-          RS-020, 3929 - Neópolis, Gravataí - RS, 94100-250
+          RS-020, 3919 - Neópolis, Gravataí - RS, 94100-250
         </address>
         {address.map((Address) => (
           <iframe src={Address.URL} frameborder="0" width="100%"></iframe>
