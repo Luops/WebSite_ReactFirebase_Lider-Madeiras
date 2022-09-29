@@ -4,6 +4,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 5%;
 }
 
 .btnAdd{
@@ -23,6 +24,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 80%;
 }
 .addProduct {
     width: 80%;
@@ -57,6 +59,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 80%;
 }
 
 .dashboard h2 {
@@ -81,17 +84,15 @@
 .product_headerOff, .product_rowOff {
     display: flex;
     justify-content: space-between;
-    width: 80%;
+    width: 100%;
     padding: 10px;
-
 }
 
 .product_header, .product_row {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    padding: 10px;
-
+    padding: 10px
 }
 
 .product_header, 

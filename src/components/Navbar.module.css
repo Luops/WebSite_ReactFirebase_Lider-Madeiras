@@ -66,6 +66,10 @@
     display: none;
 }
 
+.login {
+    display: none;
+}
+
 hamburger:hover {
     background-color: #2642af;
   }

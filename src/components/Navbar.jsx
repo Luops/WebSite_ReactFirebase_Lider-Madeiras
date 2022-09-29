@@ -68,7 +68,7 @@ const Navbar = () => {
 
             {!user && (
               <>
-                <li>
+                <li className={styles.login}>
                   <NavLink to="/login" className={({isActive}) => (isActive ? styles.active : "")}
                   onClick={() => {
                     isNavExpanded(false)
