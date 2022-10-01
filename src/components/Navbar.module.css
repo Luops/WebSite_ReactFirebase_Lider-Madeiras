@@ -89,6 +89,10 @@ hamburger:hover {
 
 /*Media querie*/
 @media screen and (max-width: 590px){
+    .login {
+        display: none !important;
+    }
+
     .hamburger {
         display: block;
         color: black;
@@ -163,5 +167,7 @@ hamburger:hover {
         margin-top: 40px;
         padding-bottom: 50px;
     }
+
+    
     
 }
