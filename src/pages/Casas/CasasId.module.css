@@ -22,6 +22,11 @@
         margin: 0 auto;
         width: 100%;
     }
+
+        .titleHouse {
+           text-align: center; 
+        }
+
         .containerSlide {
             display: flex;
             flex-wrap: wrap;
@@ -329,10 +334,6 @@
 }
 
 @media screen and (max-width: 750px) {
-    .containerSlide {
-        
-    }
-
         .mySwiper2 {
             max-width: 100%;
         } 
@@ -346,7 +347,7 @@
             {
                 max-width: none;
                 width: 75%;
-                height: 50%;
+                max-height: 400px;
             }
 }
 
@@ -370,6 +371,16 @@
     .containerBody h2 {
         font-size: 1em;
     } 
+
+            .imageOne img,
+            .imageTwo img,
+            .imageThree img,
+            .imageFour img,
+            .imageFive img,
+            .imageSix img
+            {
+                max-height: 300px;
+            }
 }
 
 @media screen and (max-width: 520px) {
@@ -422,15 +433,25 @@
         font-size: .80em;
     }
 
-    .imageOne,
-    .imageTwo,
-    .imageThree,
-    .imageFour,
-    .imageFive,
-    .imageSix
-    {
-        margin-top: 60px;
-    }
+        .imageOne,
+        .imageTwo,
+        .imageThree,
+        .imageFour,
+        .imageFive,
+        .imageSix
+        {
+            margin-top: 60px;
+        }
+
+            .imageOne img,
+            .imageTwo img,
+            .imageThree img,
+            .imageFour img,
+            .imageFive img,
+            .imageSix img
+            {
+                max-height: 250px;
+            }
  
 }
 
@@ -455,15 +476,25 @@
         font-size: .55em;
     }
 
-    .imageOne,
-    .imageTwo,
-    .imageThree,
-    .imageFour,
-    .imageFive,
-    .imageSix
-    {
-        margin-top: 60px;
-    }
+        .imageOne,
+        .imageTwo,
+        .imageThree,
+        .imageFour,
+        .imageFive,
+        .imageSix
+        {
+            margin-top: 60px;
+        }
+
+            .imageOne img,
+            .imageTwo img,
+            .imageThree img,
+            .imageFour img,
+            .imageFive img,
+            .imageSix img
+            {
+                max-height: 200px;
+            }
 }
 
 @media screen and (max-width: 360px) {

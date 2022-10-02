@@ -40,11 +40,7 @@ p {
             filter: brightness(45%);
             -webkit-box-shadow: 0px 0px 6px -1px #000000; 
             box-shadow: 0px 0px 6px -1px #000000;
-            transition: .5s ease-in-out;
-        }
-
-        .image:hover {
-            width: 375px;
+            cursor: pointer;
         }
 
         .category {

@@ -89,7 +89,7 @@ const CasasId = () => {
       {loading && <p>Carregando produto...</p>}
       {casa && (
         <div className={styles.containerSlideDescription}>
-          <h2>{casa.title}</h2>
+          <h2 className={styles.titleHouse}>{casa.title}</h2>
           <div className={styles.containerSlide}>
             <Swiper
             style={{
