@@ -6,6 +6,8 @@ import { useNavigate, useParams } from 'react-router-dom'; //redirecionar quando
 import { useAuthValue } from '../../context/authContext';
 import { useFetchDocument } from '../../hooks/useFetchDocument';
 import { useUpdateDocument } from '../../hooks/useUpdateDocument';
+import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
+import { storage } from '../../firebase/config';
 
 import styles from './EditProducts.module.css'
 
@@ -22,13 +24,15 @@ const EditProducts = () => {
   const [method, setMethod] = useState("");
   const [formError, setFormError] = useState("");
 
+  const [progressImagem, setProgressImagem] = useState(0)
+
   useEffect(() =>{
 
     if(product){
       setTitle(product.title);
       setCategory(product.category);
-      setImage(product.image);
       setBody(product.body);
+      setImage(product.image);
       setPrice(product.price);
       setUnity(product.unity);
       setMethod(product.method);
@@ -81,17 +85,41 @@ const EditProducts = () => {
     navigate("/dashboard");
   };
 
+  const handleUploadImagem = (e) => {
+    e.preventDefault();
+
+    const file = e.target[0]?.files[0]
+    if(!file) return;
+
+    const storageRef = ref(storage, `Produtos/${file.name}`);
+    const uploadTask = uploadBytesResumable(storageRef, file);
+
+    uploadTask.on(
+      "state_changed",
+      snapshot => {
+        const progress = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100)
+        setProgressImagem(progress)
+      },
+      error => {
+        alert(error)
+      },
+      () => {
+        getDownloadURL(uploadTask.snapshot.ref).then(urlImagem => {
+          setImage(urlImagem);
+        })
+      }
+    )
+  }
+
   
 
   return (
     <div className={styles.edit_product}>
       {product && (
         <>
-            <h2>Editando produto: {product.title}</h2>
-            <p>Altere os dados do produto.</p>
-            <form onSubmit={handleSubmit} 
-            action="">
-              <p className={styles.preview_title}>Preview da imagem atual:</p>
+          <h2>Editando produto: {product.title}</h2>
+          <p>Altere os dados do produto.</p>
+          <p className={styles.preview_title}>Preview da imagem atual:</p>
               <div className={styles.containerPreview}>
                 <img 
                 className={styles.preview_image} 
@@ -99,6 +127,17 @@ const EditProducts = () => {
                 alt={product.title} 
                 />
               </div>
+
+          <form onSubmit={handleUploadImagem} className={styles.formImagem}>
+            <label htmlFor="imagem">Selecionar imagem:</label>
+              <div className={styles.containerInputImagem}>
+                <input type="file" name="imagem" id="imagem" />
+                <button type="submit" className="btn">Anexar imagem</button>
+              </div>
+          </form>
+          
+          <form onSubmit={handleSubmit} 
+            action="">
               <label htmlFor="">
                 <span>Título:</span>
                 <input type="text" 
@@ -112,6 +151,24 @@ const EditProducts = () => {
 
               <label htmlFor="">
                 <span>Categoria:</span>
+                <select 
+                name="category" 
+                id="category"
+                required
+                onChange={(e) => setCategory(e.target.value)}
+                value={category}
+                >
+                  <option value="">Selecionar</option>
+                  <option value="Madeira bruta de eucalipto">Madeira bruta de eucalipto</option>
+                  <option value="Madeira bruta de cedrinho">Madeira bruta de cedrinho</option>
+                  <option value="Madeira bruta de pinus">Madeira bruta de pinus</option>
+                  <option value="Madeira beneficiada de pinus">Madeira beneficiada de pinus</option>
+                  <option value="Madeira beneficiada de eucalipto">Madeira beneficiada de eucalipto</option>
+                  <option value="Madeira beneficiada nobre">Madeira beneficiada nobre</option>
+                  <option value="Aberturas de eucalipto">Aberturas de eucalipto</option>
+                  <option value="Pregos">Pregos</option>
+                </select>
+                {/* 
                 <input type="text" 
                 name="category" 
                 id="category" 
@@ -119,6 +176,7 @@ const EditProducts = () => {
                 placeholder='Categoria do produto..' 
                 onChange={(e) => setCategory(e.target.value)}
                 value={category}/>
+                */}
               </label>
 
               <div className={styles.divPriceUnity}>
@@ -134,6 +192,19 @@ const EditProducts = () => {
                 </label>
                 <label htmlFor="">
                   <span>Unidade:</span>
+                  <select 
+                  name="unity" 
+                  id="unity"
+                  required
+                  onChange={(e) => setUnity(e.target.value)}
+                  value={unity}
+                  >
+                    <option value="">Selecionar</option>
+                    <option value="m²">Metro quadrado</option>
+                    <option value="m">Metro</option>
+                    <option value="Unidade">Unidade</option>
+                  </select>
+                  {/* 
                   <input type="text" 
                   name="unity" 
                   id="unity" 
@@ -141,6 +212,7 @@ const EditProducts = () => {
                   placeholder='Unidade a ser vendido..' 
                   onChange={(e) => setUnity(e.target.value)}
                   value={unity}/>
+                  */}
                 </label>
               </div>
 
@@ -172,7 +244,7 @@ const EditProducts = () => {
                 name="image" 
                 id="image" 
                 required 
-                placeholder='Insira a URL da imagem do produto..' 
+                placeholder='Escolha acima a imagem desejada.'
                 onChange={(e) => setImage(e.target.value)}
                 value={image}/>
               </label>

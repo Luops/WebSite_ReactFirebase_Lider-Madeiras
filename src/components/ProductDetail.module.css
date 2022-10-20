@@ -16,6 +16,7 @@
 
 .product_detail img {
     max-width: 150px;
+    height: 180px;
     margin-block: 0;
     object-fit: cover;
 }

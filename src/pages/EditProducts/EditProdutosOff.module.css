@@ -73,3 +73,25 @@
     align-items: center;
 }
 
+.formImagem {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    text-align: start;
+ }
+ 
+ .formImagem label {
+     font-weight: bold;
+     align-self: flex-start;
+ }
+ 
+ .containerInputImagem {
+     display: flex;
+     gap: 20px;
+ }
+ 
+ .containerInputImagem button{
+     font-size: .8em;
+     padding: 5px 5px;
+ }
+

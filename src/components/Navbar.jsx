@@ -57,6 +57,7 @@ const Navbar = () => {
               </NavLink>
           </li>
 
+          {/* 
           <li>
               <NavLink to="/casas" className={({isActive}) => (isActive ? styles.active : "")}
               onClick={() => {
@@ -65,6 +66,7 @@ const Navbar = () => {
                 Casas
               </NavLink>
           </li>
+          */}
 
             {!user && (
               <>

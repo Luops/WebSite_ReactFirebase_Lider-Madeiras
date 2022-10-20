@@ -6,6 +6,8 @@ import { useNavigate, useParams } from 'react-router-dom'; //redirecionar quando
 import { useAuthValue } from '../../context/authContext'; //context que verifica a autenticação do usuário na página
 import { useFetchDocument } from '../../hooks/useFetchDocument';
 import { useUpdateDocument } from '../../hooks/useUpdateDocument';
+import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
+import { storage } from '../../firebase/config';
 
 import styles from './EditProdutosOff.module.css'
 
@@ -24,14 +26,16 @@ const EditProdutosOff = () => {
   const [method, setMethod] = useState("");
   const [formError, setFormError] = useState("");
 
+  const [progressImagem, setProgressImagem] = useState(0)
+
   useEffect(() => {
 
   if(productOff){
     setTitle(productOff.title);
     setPercent(productOff.percent)
     setCategory(productOff.category);
-    setImage(productOff.image);
     setBody(productOff.body);
+    setImage(productOff.image);
     setOldPrice(productOff.oldPrice);
     setNewPrice(productOff.newPrice);
     setUnity(productOff.unity);
@@ -87,7 +91,31 @@ const EditProdutosOff = () => {
     navigate("/dashboard");
   };
 
-  
+  const handleUploadImagem = (e) => {
+    e.preventDefault();
+
+    const file = e.target[0]?.files[0]
+    if(!file) return;
+
+    const storageRef = ref(storage, `Produtos com desconto/${file.name}`);
+    const uploadTask = uploadBytesResumable(storageRef, file);
+
+    uploadTask.on(
+      "state_changed",
+      snapshot => {
+        const progress = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100)
+        setProgressImagem(progress)
+      },
+      error => {
+        alert(error)
+      },
+      () => {
+        getDownloadURL(uploadTask.snapshot.ref).then(urlImagem => {
+          setImage(urlImagem);
+        })
+      }
+    )
+  }
 
   return (
     <div className={styles.create_product}>
@@ -95,9 +123,7 @@ const EditProdutosOff = () => {
         <>
           <h2>Editando produto: {productOff.title}</h2>
           <p>Altere os dados do produto em promoção.</p>
-          <form onSubmit={handleSubmit} 
-          action="">
-            <p className={styles.preview_title}>Preview da imagem atual:</p>
+          <p className={styles.preview_title}>Preview da imagem atual:</p>
             <div className={styles.containerPreview}>
               <img 
               className={styles.preview_image} 
@@ -105,6 +131,17 @@ const EditProdutosOff = () => {
               alt={productOff.title} 
               />
             </div>
+
+          <form onSubmit={handleUploadImagem} className={styles.formImagem}>
+            <label htmlFor="imagem">Selecionar imagem:</label>
+              <div className={styles.containerInputImagem}>
+                <input type="file" name="imagem" id="imagem" />
+                <button type="submit" className="btn">Anexar imagem</button>
+              </div>
+          </form>
+
+          <form onSubmit={handleSubmit} 
+          action="">
             <label htmlFor="">
               <span>Título:</span>
               <input type="text" 
@@ -118,6 +155,24 @@ const EditProdutosOff = () => {
 
             <label htmlFor="">
               <span>Categoria:</span>
+              <select 
+                name="category" 
+                id="category"
+                required
+                onChange={(e) => setCategory(e.target.value)}
+                value={category}
+                >
+                  <option value="">Selecionar</option>
+                  <option value="Madeira bruta de eucalipto">Madeira bruta de eucalipto</option>
+                  <option value="Madeira bruta de cedrinho">Madeira bruta de cedrinho</option>
+                  <option value="Madeira bruta de pinus">Madeira bruta de pinus</option>
+                  <option value="Madeira beneficiada de pinus">Madeira beneficiada de pinus</option>
+                  <option value="Madeira beneficiada de eucalipto">Madeira beneficiada de eucalipto</option>
+                  <option value="Madeira beneficiada nobre">Madeira beneficiada nobre</option>
+                  <option value="Aberturas de eucalipto">Aberturas de eucalipto</option>
+                  <option value="Pregos">Pregos</option>
+                </select>
+              {/* 
               <input type="text" 
               name="category" 
               id="category" 
@@ -125,6 +180,7 @@ const EditProdutosOff = () => {
               placeholder='Categoria do produto..' 
               onChange={(e) => setCategory(e.target.value)}
               value={category}/>
+              */}
             </label>
 
             <div className={styles.divPriceUnity}>
@@ -152,6 +208,19 @@ const EditProdutosOff = () => {
 
             <label htmlFor="">
                 <span>Unidade do produto:</span>
+                <select 
+                  name="unity" 
+                  id="unity"
+                  required
+                  onChange={(e) => setUnity(e.target.value)}
+                  value={unity}
+                  >
+                    <option value="">Selecionar</option>
+                    <option value="m²">Metro quadrado</option>
+                    <option value="m">Metro</option>
+                    <option value="Unidade">Unidade</option>
+                  </select>
+                {/* 
                 <input type="text" 
                 name="unity" 
                 id="unity" 
@@ -159,6 +228,7 @@ const EditProdutosOff = () => {
                 placeholder='Unidade a ser vendido..' 
                 onChange={(e) => setUnity(e.target.value)}
                 value={unity}/>
+                */}
             </label>
 
             <label htmlFor="">
@@ -195,14 +265,15 @@ const EditProdutosOff = () => {
             </label>
 
             <label htmlFor="">
-              <span>URL da imagem:</span>
+              <span>Imagem:</span>
               <input type="text" 
               name="image" 
               id="image" 
               required 
-              placeholder='Insira a URL da imagem do produto..' 
+              placeholder='Escolha acima a imagem desejada.'
               onChange={(e) => setImage(e.target.value)}
-              value={image}/>
+              value={image}
+              />
             </label>
             <div className={styles.btnEditar}>
               {!response.loading && <button className='btn'>Editar</button>}

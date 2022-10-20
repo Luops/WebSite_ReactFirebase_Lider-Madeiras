@@ -5,6 +5,8 @@ import { useState, useEffect } from 'react'; //utilizar para salvar o produto no
 import { useNavigate } from 'react-router-dom'; //redirecionar quando criar o produto
 import { useAuthValue } from '../../context/authContext';
 import { useInsertDocument } from '../../hooks/useInsertDocument';
+import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
+import { storage } from '../../firebase/config';
 
 import styles from './AdicionarProdutos.module.css'
 
@@ -17,6 +19,8 @@ const AdicionarProdutos = () => {
   const [unity, setUnity] = useState("");
   const [method, setMethod] = useState("");
   const [formError, setFormError] = useState("");
+
+  const [progressImagem, setProgressImagem] = useState(0)
   
 
   const {user} = useAuthValue();
@@ -62,12 +66,45 @@ const AdicionarProdutos = () => {
     navigate("/");
   };
 
-  
+  const handleUploadImagem = (e) => {
+    e.preventDefault();
+
+    const file = e.target[0]?.files[0]
+    if(!file) return;
+
+    const storageRef = ref(storage, `Produtos/${file.name}`);
+    const uploadTask = uploadBytesResumable(storageRef, file);
+
+    uploadTask.on(
+      "state_changed",
+      snapshot => {
+        const progress = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100)
+        setProgressImagem(progress)
+      },
+      error => {
+        alert(error)
+      },
+      () => {
+        getDownloadURL(uploadTask.snapshot.ref).then(urlImagem => {
+          setImage(urlImagem);
+        })
+      }
+    )
+  }
 
   return (
     <div className={styles.create_product}>
       <h2>Adicionar produto</h2>
       <p>Adicione um produto ao sistema.</p>
+
+      <form onSubmit={handleUploadImagem} className={styles.formImagem}>
+        <label htmlFor="imagem">Selecionar imagem:</label>
+          <div className={styles.containerInputImagem}>
+            <input type="file" name="imagem" id="imagem"/>
+            <button type="submit" className="btn">Anexar imagem</button>
+          </div>
+      </form>
+
       <form onSubmit={handleSubmit} 
       action="">
         <label htmlFor="">
@@ -83,6 +120,24 @@ const AdicionarProdutos = () => {
 
         <label htmlFor="">
           <span>Categoria:</span>
+          <select 
+          name="category" 
+          id="category"
+          required
+          onChange={(e) => setCategory(e.target.value)}
+          value={category}
+          >
+            <option value="">Selecionar</option>
+            <option value="Madeira bruta de eucalipto">Madeira bruta de eucalipto</option>
+            <option value="Madeira bruta de cedrinho">Madeira bruta de cedrinho</option>
+            <option value="Madeira bruta de pinus">Madeira bruta de pinus</option>
+            <option value="Madeira beneficiada de pinus">Madeira beneficiada de pinus</option>
+            <option value="Madeira beneficiada de eucalipto">Madeira beneficiada de eucalipto</option>
+            <option value="Madeira beneficiada nobre">Madeira beneficiada nobre</option>
+            <option value="Aberturas de eucalipto">Aberturas de eucalipto</option>
+            <option value="Pregos">Pregos</option>
+          </select>
+          {/* 
           <input type="text" 
           name="category" 
           id="category" 
@@ -90,6 +145,7 @@ const AdicionarProdutos = () => {
           placeholder='Categoria do produto..' 
           onChange={(e) => setCategory(e.target.value)}
           value={category}/>
+          */}
         </label>
 
         <div className={styles.divPriceUnity}>
@@ -99,12 +155,25 @@ const AdicionarProdutos = () => {
             name="price" 
             id="price" 
             required 
-            placeholder='Preço do produto..' 
+            placeholder='Preço do produto sem R$ ..' 
             onChange={(e) => setPrice(e.target.value)}
             value={price}/>
           </label>
           <label htmlFor="">
             <span>Unidade:</span>
+            <select 
+            name="unity" 
+            id="unity"
+            required
+            onChange={(e) => setUnity(e.target.value)}
+            value={unity}
+            >
+              <option value="">Selecionar</option>
+              <option value="m²">Metro quadrado</option>
+              <option value="m">Metro</option>
+              <option value="Unidade">Unidade</option>
+            </select>
+            {/* 
             <input type="text" 
             name="unity" 
             id="unity" 
@@ -112,6 +181,7 @@ const AdicionarProdutos = () => {
             placeholder='Unidade a ser vendido..' 
             onChange={(e) => setUnity(e.target.value)}
             value={unity}/>
+            */}
           </label>
         </div>
 
@@ -120,7 +190,7 @@ const AdicionarProdutos = () => {
           <textarea name="method" 
           id="method" 
           required 
-          placeholder='Insira o método de pagamento..'
+          placeholder='Insira o método de pagamento. Em até 2x sem juros..'
           onChange={(e) => setMethod(e.target.value)}
           value={method}>
           </textarea>
@@ -137,14 +207,13 @@ const AdicionarProdutos = () => {
           </textarea>
         </label>
 
-        <label htmlFor="">
-          <span>URL da imagem:</span>
+        <label htmlFor="" className={styles.inputImagem}>
+          <span>Imagem:</span>
           <input type="text" 
           name="image" 
           id="image" 
           required 
-          placeholder='Insira a URL da imagem do produto..' 
-          onChange={(e) => setImage(e.target.value)}
+          placeholder='Insira a URL da imagem do produto..'
           value={image}/>
         </label>
         <div className={styles.btnCadastrar}>

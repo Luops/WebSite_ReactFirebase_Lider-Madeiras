@@ -1,6 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getAnalytics } from "firebase/analytics";
+import {getStorage, ref, listAll} from "firebase/storage"
 
 
 const firebaseConfig = {
@@ -19,3 +20,4 @@ const analytics = getAnalytics(app);
 
 const db = getFirestore(app); //banco de dados
 export { db };
+export const storage = getStorage(app)
