@@ -591,6 +591,510 @@ export const useFetchDocumentsCategoryPregos = (docCollection, uid = null) => {
 
 }
 
+//Puxar somente Parede
+export const useFetchDocumentsCategoryParede = (docCollection, uid = null) => {
+    const [documentsCategoryParede, setDocumentsCategoryParede] = useState(null);
+    const [error, setError] = useState(null);
+    const [loading, setLoading] = useState(null);
+
+    const [cancelled, setCancelled] = useState(false);
+    
+    
+
+    useEffect(() => {
+
+               async function loadData() {
+            if(cancelled) return
+
+            setLoading(true);
+
+            const collectionRef = await collection(db, docCollection);
+            
+            //Variavel que pega somente uma coisa: const byCategoryByParede = query(collectionRef, where("title", "==", "Janela de madeira"));
+            //Após declarar deve-se inseri-la após o await onSnapShot, no lugar do querycomplex
+
+            try {
+
+                let byCategoryByParede= query(collectionRef, where("category", "==", "Parede"));
+                
+                await onSnapshot(byCategoryByParede, (querySnapshot) => {
+                    setDocumentsCategoryParede(
+                        querySnapshot.docs.map((doc) => ({
+                            id: doc.id,
+                            ...doc.data(),
+                        }))
+                    )
+                })
+
+                
+                setLoading(false);
+            } catch (error) {
+                console.log(error);
+                setError(error.message);
+
+                setLoading(false);
+            }
+        }
+
+        loadData();
+
+    },[docCollection, uid, cancelled])
+
+
+    //Não carregar os dados do componente quando "desmontar"
+    useEffect(() => {
+        return () => setCancelled(true);
+    }, []);
+
+    return {
+        documentsCategoryParede,
+        loading,
+        error
+    };
+
+}
+
+//Puxar somente Forro
+export const useFetchDocumentsCategoryForro = (docCollection, uid = null) => {
+    const [documentsCategoryForro, setDocumentsCategoryForro] = useState(null);
+    const [error, setError] = useState(null);
+    const [loading, setLoading] = useState(null);
+
+    const [cancelled, setCancelled] = useState(false);
+    
+    
+
+    useEffect(() => {
+
+               async function loadData() {
+            if(cancelled) return
+
+            setLoading(true);
+
+            const collectionRef = await collection(db, docCollection);
+            
+            //Variavel que pega somente uma coisa: const byCategoryByForro = query(collectionRef, where("title", "==", "Janela de madeira"));
+            //Após declarar deve-se inseri-la após o await onSnapShot, no lugar do querycomplex
+
+            try {
+
+                let byCategoryByForro= query(collectionRef, where("category", "==", "Forro"));
+                
+                await onSnapshot(byCategoryByForro, (querySnapshot) => {
+                    setDocumentsCategoryForro(
+                        querySnapshot.docs.map((doc) => ({
+                            id: doc.id,
+                            ...doc.data(),
+                        }))
+                    )
+                })
+
+                
+                setLoading(false);
+            } catch (error) {
+                console.log(error);
+                setError(error.message);
+
+                setLoading(false);
+            }
+        }
+
+        loadData();
+
+    },[docCollection, uid, cancelled])
+
+
+    //Não carregar os dados do componente quando "desmontar"
+    useEffect(() => {
+        return () => setCancelled(true);
+    }, []);
+
+    return {
+        documentsCategoryForro,
+        loading,
+        error
+    };
+
+}
+
+//Puxar somente Assoalho
+export const useFetchDocumentsCategoryAssoalho = (docCollection, uid = null) => {
+    const [documentsCategoryAssoalho, setDocumentsCategoryAssoalho] = useState(null);
+    const [error, setError] = useState(null);
+    const [loading, setLoading] = useState(null);
+
+    const [cancelled, setCancelled] = useState(false);
+    
+    
+
+    useEffect(() => {
+
+               async function loadData() {
+            if(cancelled) return
+
+            setLoading(true);
+
+            const collectionRef = await collection(db, docCollection);
+            
+            //Variavel que pega somente uma coisa: const byCategoryByAssoalho = query(collectionRef, where("title", "==", "Janela de madeira"));
+            //Após declarar deve-se inseri-la após o await onSnapShot, no lugar do querycomplex
+
+            try {
+
+                let byCategoryByAssoalho= query(collectionRef, where("category", "==", "Assoalho"));
+                
+                await onSnapshot(byCategoryByAssoalho, (querySnapshot) => {
+                    setDocumentsCategoryAssoalho(
+                        querySnapshot.docs.map((doc) => ({
+                            id: doc.id,
+                            ...doc.data(),
+                        }))
+                    )
+                })
+
+                
+                setLoading(false);
+            } catch (error) {
+                console.log(error);
+                setError(error.message);
+
+                setLoading(false);
+            }
+        }
+
+        loadData();
+
+    },[docCollection, uid, cancelled])
+
+
+    //Não carregar os dados do componente quando "desmontar"
+    useEffect(() => {
+        return () => setCancelled(true);
+    }, []);
+
+    return {
+        documentsCategoryAssoalho,
+        loading,
+        error
+    };
+
+}
+
+//Puxar somente Deck
+export const useFetchDocumentsCategoryDeck = (docCollection, uid = null) => {
+    const [documentsCategoryDeck, setDocumentsCategoryDeck] = useState(null);
+    const [error, setError] = useState(null);
+    const [loading, setLoading] = useState(null);
+
+    const [cancelled, setCancelled] = useState(false);
+    
+    
+
+    useEffect(() => {
+
+               async function loadData() {
+            if(cancelled) return
+
+            setLoading(true);
+
+            const collectionRef = await collection(db, docCollection);
+            
+            //Variavel que pega somente uma coisa: const byCategoryByDeck = query(collectionRef, where("title", "==", "Janela de madeira"));
+            //Após declarar deve-se inseri-la após o await onSnapShot, no lugar do querycomplex
+
+            try {
+
+                let byCategoryByDeck= query(collectionRef, where("category", "==", "Deck"));
+                
+                await onSnapshot(byCategoryByDeck, (querySnapshot) => {
+                    setDocumentsCategoryDeck(
+                        querySnapshot.docs.map((doc) => ({
+                            id: doc.id,
+                            ...doc.data(),
+                        }))
+                    )
+                })
+
+                
+                setLoading(false);
+            } catch (error) {
+                console.log(error);
+                setError(error.message);
+
+                setLoading(false);
+            }
+        }
+
+        loadData();
+
+    },[docCollection, uid, cancelled])
+
+
+    //Não carregar os dados do componente quando "desmontar"
+    useEffect(() => {
+        return () => setCancelled(true);
+    }, []);
+
+    return {
+        documentsCategoryDeck,
+        loading,
+        error
+    };
+
+}
+
+//Puxar somente MeiaCana
+export const useFetchDocumentsCategoryMeiaCana = (docCollection, uid = null) => {
+    const [documentsCategoryMeiaCana, setDocumentsCategoryMeiaCana] = useState(null);
+    const [error, setError] = useState(null);
+    const [loading, setLoading] = useState(null);
+
+    const [cancelled, setCancelled] = useState(false);
+    
+    
+
+    useEffect(() => {
+
+               async function loadData() {
+            if(cancelled) return
+
+            setLoading(true);
+
+            const collectionRef = await collection(db, docCollection);
+            
+            //Variavel que pega somente uma coisa: const byCategoryByMeiaCana = query(collectionRef, where("title", "==", "Janela de madeira"));
+            //Após declarar deve-se inseri-la após o await onSnapShot, no lugar do querycomplex
+
+            try {
+
+                let byCategoryByMeiaCana= query(collectionRef, where("category", "==", "Meia cana"));
+                
+                await onSnapshot(byCategoryByMeiaCana, (querySnapshot) => {
+                    setDocumentsCategoryMeiaCana(
+                        querySnapshot.docs.map((doc) => ({
+                            id: doc.id,
+                            ...doc.data(),
+                        }))
+                    )
+                })
+
+                
+                setLoading(false);
+            } catch (error) {
+                console.log(error);
+                setError(error.message);
+
+                setLoading(false);
+            }
+        }
+
+        loadData();
+
+    },[docCollection, uid, cancelled])
+
+
+    //Não carregar os dados do componente quando "desmontar"
+    useEffect(() => {
+        return () => setCancelled(true);
+    }, []);
+
+    return {
+        documentsCategoryMeiaCana,
+        loading,
+        error
+    };
+
+}
+
+//Puxar somente Rodape
+export const useFetchDocumentsCategoryRodape = (docCollection, uid = null) => {
+    const [documentsCategoryRodape, setDocumentsCategoryRodape] = useState(null);
+    const [error, setError] = useState(null);
+    const [loading, setLoading] = useState(null);
+
+    const [cancelled, setCancelled] = useState(false);
+    
+    
+
+    useEffect(() => {
+
+               async function loadData() {
+            if(cancelled) return
+
+            setLoading(true);
+
+            const collectionRef = await collection(db, docCollection);
+            
+            //Variavel que pega somente uma coisa: const byCategoryByMeiaRodape = query(collectionRef, where("title", "==", "Janela de madeira"));
+            //Após declarar deve-se inseri-la após o await onSnapShot, no lugar do querycomplex
+
+            try {
+
+                let byCategoryByRodape= query(collectionRef, where("category", "==", "Rodape"));
+                
+                await onSnapshot(byCategoryByRodape, (querySnapshot) => {
+                    setDocumentsCategoryRodape(
+                        querySnapshot.docs.map((doc) => ({
+                            id: doc.id,
+                            ...doc.data(),
+                        }))
+                    )
+                })
+
+                
+                setLoading(false);
+            } catch (error) {
+                console.log(error);
+                setError(error.message);
+
+                setLoading(false);
+            }
+        }
+
+        loadData();
+
+    },[docCollection, uid, cancelled])
+
+
+    //Não carregar os dados do componente quando "desmontar"
+    useEffect(() => {
+        return () => setCancelled(true);
+    }, []);
+
+    return {
+        documentsCategoryRodape,
+        loading,
+        error
+    };
+
+}
+
+//Puxar somente Vista5cm
+export const useFetchDocumentsCategoryVista5cm = (docCollection, uid = null) => {
+    const [documentsCategoryVista5cm, setDocumentsCategoryVista5cm] = useState(null);
+    const [error, setError] = useState(null);
+    const [loading, setLoading] = useState(null);
+
+    const [cancelled, setCancelled] = useState(false);
+    
+    
+
+    useEffect(() => {
+
+               async function loadData() {
+            if(cancelled) return
+
+            setLoading(true);
+
+            const collectionRef = await collection(db, docCollection);
+            
+            //Variavel que pega somente uma coisa: const byCategoryByVista5cm = query(collectionRef, where("title", "==", "Janela de madeira"));
+            //Após declarar deve-se inseri-la após o await onSnapShot, no lugar do querycomplex
+
+            try {
+
+                let byCategoryByVista5cm= query(collectionRef, where("category", "==", "Vista de 5cm"));
+                
+                await onSnapshot(byCategoryByVista5cm, (querySnapshot) => {
+                    setDocumentsCategoryVista5cm(
+                        querySnapshot.docs.map((doc) => ({
+                            id: doc.id,
+                            ...doc.data(),
+                        }))
+                    )
+                })
+
+                
+                setLoading(false);
+            } catch (error) {
+                console.log(error);
+                setError(error.message);
+
+                setLoading(false);
+            }
+        }
+
+        loadData();
+
+    },[docCollection, uid, cancelled])
+
+
+    //Não carregar os dados do componente quando "desmontar"
+    useEffect(() => {
+        return () => setCancelled(true);
+    }, []);
+
+    return {
+        documentsCategoryVista5cm,
+        loading,
+        error
+    };
+
+}
+
+//Puxar somente Vista7cm
+export const useFetchDocumentsCategoryVista7cm = (docCollection, uid = null) => {
+    const [documentsCategoryVista7cm, setDocumentsCategoryVista7cm] = useState(null);
+    const [error, setError] = useState(null);
+    const [loading, setLoading] = useState(null);
+
+    const [cancelled, setCancelled] = useState(false);
+    
+    
+
+    useEffect(() => {
+
+               async function loadData() {
+            if(cancelled) return
+
+            setLoading(true);
+
+            const collectionRef = await collection(db, docCollection);
+            
+            //Variavel que pega somente uma coisa: const byCategoryByVista7cm = query(collectionRef, where("title", "==", "Janela de madeira"));
+            //Após declarar deve-se inseri-la após o await onSnapShot, no lugar do querycomplex
+
+            try {
+
+                let byCategoryByVista7cm= query(collectionRef, where("category", "==", "Vista de 7cm"));
+                
+                await onSnapshot(byCategoryByVista7cm, (querySnapshot) => {
+                    setDocumentsCategoryVista7cm(
+                        querySnapshot.docs.map((doc) => ({
+                            id: doc.id,
+                            ...doc.data(),
+                        }))
+                    )
+                })
+
+                
+                setLoading(false);
+            } catch (error) {
+                console.log(error);
+                setError(error.message);
+
+                setLoading(false);
+            }
+        }
+
+        loadData();
+
+    },[docCollection, uid, cancelled])
+
+
+    //Não carregar os dados do componente quando "desmontar"
+    useEffect(() => {
+        return () => setCancelled(true);
+    }, []);
+
+    return {
+        documentsCategoryVista7cm,
+        loading,
+        error
+    };
+
+}
+
 //Puxar somente Casas de alvenaria
 export const useFetchDocumentsAlvenaria = (docCollection, uid = null) => {
     const [documentsAlvenaria, setDocumentsAlvenaria] = useState(null);
