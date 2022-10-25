@@ -6,7 +6,7 @@ import styles from "./About.module.css"
 
 const About = () => {
   const imgLider = [
-    {name: 'lider', image: 'https://scontent.fpoa41-1.fna.fbcdn.net/v/t1.6435-9/91157888_102176614777665_722806325486026752_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=174925&_nc_ohc=mq8gXNARNokAX_iZg2n&tn=KrqVGr2wlT6MRQSs&_nc_ht=scontent.fpoa41-1.fna&oh=00_AT8P-Bz6PUWB6_nAH8u196B-_2x5CaKmARXZ0OE6OaH_og&oe=633CACCE' }
+    {name: 'lider', image: 'https://scontent.fpoa41-1.fna.fbcdn.net/v/t1.6435-9/91594065_102176844777642_2347709680400203776_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=e3f864&_nc_ohc=DxjF0MUq-9QAX9v3w0N&_nc_ht=scontent.fpoa41-1.fna&oh=00_AT8FKll8tr7SP5eidV5rdQ4uP16y_8-Xxo0LfkFKINJpxw&oe=637B9AEB' }
   ]
 
   const networkWppOne = [
@@ -49,6 +49,9 @@ const About = () => {
           Atuando desde 2010, nos localizamos na cidade de Gravataí - Rio Grande do Sul. 
           Além de construir casas em todo nosso estado, também construímos em Santa Catarina.
           Trabalhamos com projetos de casas de alvenaria ou madeira.
+        </p>
+        <p>
+          Hoje atuando também na venda de madeiras brutas e beneficiadas, entregando para construtoras, lojas de amteriais de construção e cliente final.
         </p>
         <p>
           Contamos com madeira própria, o que torna muito mais ágil e competitivo em termos financeiros.
