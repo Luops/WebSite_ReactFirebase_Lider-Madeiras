@@ -1221,4 +1221,67 @@ export const useFetchDocumentsMadeira = (docCollection, uid = null) => {
 
 }
 
+//Puxar somente Kit casa
+export const useFetchDocumentsCategoryKitCasa = (docCollection, uid = null) => {
+    const [documentsCategoryKitCasa, setDocumentsCategoryKitCasa] = useState(null);
+    const [error, setError] = useState(null);
+    const [loading, setLoading] = useState(null);
+
+    const [cancelled, setCancelled] = useState(false);
+    
+    
+
+    useEffect(() => {
+
+               async function loadData() {
+            if(cancelled) return
+
+            setLoading(true);
+
+            const collectionRef = await collection(db, docCollection);
+            
+            //Variavel que pega somente uma coisa: const byKitCasa = query(collectionRef, where("title", "==", "Janela de madeira"));
+            //Após declarar deve-se inseri-la após o await onSnapShot, no lugar do querycomplex
+
+            try {
+
+                let byKitCasa= query(collectionRef, where("category", "==", "Kit casa"));
+                
+                await onSnapshot(byKitCasa, (querySnapshot) => {
+                    setDocumentsCategoryKitCasa(
+                        querySnapshot.docs.map((doc) => ({
+                            id: doc.id,
+                            ...doc.data(),
+                        }))
+                    )
+                })
+
+                
+                setLoading(false);
+            } catch (error) {
+                console.log(error);
+                setError(error.message);
+
+                setLoading(false);
+            }
+        }
+
+        loadData();
+
+    },[docCollection, uid, cancelled])
+
+
+    //Não carregar os dados do componente quando "desmontar"
+    useEffect(() => {
+        return () => setCancelled(true);
+    }, []);
+
+    return {
+        documentsCategoryKitCasa,
+        loading,
+        error
+    };
+
+}
+
 

@@ -102,6 +102,7 @@ const AdicionarProdutos = () => {
           <div className={styles.containerInputImagem}>
             <input type="file" name="imagem" id="imagem"/>
             <button type="submit" className="btn">Anexar imagem</button>
+            {image && <p className={styles.msgSucesso}>Anexado com sucesso!</p>}
           </div>
       </form>
 
@@ -143,6 +144,7 @@ const AdicionarProdutos = () => {
             <option value="Rodape">Rodapé</option>
             <option value="Vista de 5cm">Vista de 5cm</option>
             <option value="Vista de 7cm">Vista de 7cm</option>
+            <option value="Kit casa">Kit casa</option>
             <option value="Pregos">Pregos</option>
           </select>
           {/* 

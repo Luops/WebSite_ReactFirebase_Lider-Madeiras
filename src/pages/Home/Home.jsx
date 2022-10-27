@@ -23,6 +23,7 @@ import {
   useFetchDocumentsCategoryRodape,
   useFetchDocumentsCategoryVista5cm,
   useFetchDocumentsCategoryVista7cm,
+  useFetchDocumentsCategoryKitCasa,
 } from '../../hooks/useFetchDocuments'
 
 
@@ -61,6 +62,7 @@ const Home = () => {
   const {documentsCategoryRodape: productsCategoryRodape}  = useFetchDocumentsCategoryRodape("products");
   const {documentsCategoryVista5cm: productsCategoryVista5cm}  = useFetchDocumentsCategoryVista5cm("products");
   const {documentsCategoryVista7cm: productsCategoryVista7cm}  = useFetchDocumentsCategoryVista7cm("products");
+  const {documentsCategoryKitCasa: productsCategoryKitCasa}  = useFetchDocumentsCategoryKitCasa("products");
   const {documents: productsOff} = useFetchDocuments("productsOff");
 
   const navigate = useNavigate();
@@ -290,7 +292,7 @@ const Home = () => {
         </div>
         <hr />
       </div>
-
+      {/* 
       <div className={styles.byCategory}>
         <h2 className={styles.categoryTitle}>Madeira Beneficiada de Pinus</h2>
         <div>
@@ -439,7 +441,7 @@ const Home = () => {
         </div>
         <hr />
       </div>
-
+      */}
       <div className={styles.byCategory}>
         <h2 className={styles.categoryTitle}>Aberturas de Eucalipto</h2>
         <div className={styles.slideCategorys}>
@@ -864,6 +866,53 @@ const Home = () => {
       </div>
 
       <div className={styles.byCategory}>
+        <h2 className={styles.categoryTitle}>Kit Casa</h2>
+        <div className={styles.slideCategorys}>
+          <Swiper
+            style={{
+              "--swiper-navigation-color": "black",
+              "--swiper-navigation-size": "30px",
+            }}
+            slidesPerView={3}
+            spaceBetween={10}
+            pagination={true}
+            navigation={true}
+            modules={[Pagination, Navigation]}
+            breakpoints={{
+              320: {
+                slidesPerView: 1,
+              },
+              670: {
+                slidesPerView: 2,
+              },
+              950: {
+                slidesPerView: 3,
+              },
+              1280: {
+                slidesPerView: 4,
+              },
+            }}
+            className={styles.mySwiperCategorys}
+          >
+            <div className={styles.categoryCards}>
+            {loading && <p>Carregando...</p>}
+              {productsCategoryKitCasa && productsCategoryKitCasa.map((Kit) => (
+                <SwiperSlide className={styles.swiperSlide}>
+                  <ProductDetail key={Kit.id} products={Kit}/>
+                </SwiperSlide>
+              ))}
+              {productsCategoryKitCasa && productsCategoryKitCasa.length === 0 && (
+                <div className={styles.noproducts}>
+                  <p>Não foram encontrados produtos</p>
+                </div>
+              )}
+            </div>
+          </Swiper>
+        </div>
+        <hr />
+      </div>
+
+      <div className={styles.byCategory}>
         <h2 className={styles.categoryTitle}>Pregos</h2>
         <div className={styles.slideCategorys}>
           <Swiper
@@ -909,7 +958,6 @@ const Home = () => {
         </div>
         <hr />
       </div>
-      
 
     </main>
   )

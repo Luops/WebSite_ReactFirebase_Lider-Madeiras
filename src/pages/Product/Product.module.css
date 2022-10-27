@@ -31,6 +31,7 @@ h1 {
 
 .container_imgTitleBodyCategory img {
     max-width: 40vw;
+    max-height: 80vh;
     border-radius: 10px;
     object-fit: cover;
 }
@@ -84,7 +85,8 @@ h1 {
 /*Media Querie*/
 @media (max-width: 860px) {
     .container_imgTitleBodyCategory img {
-        max-width: 60vw;
+        max-width: 50vw;
+        max-height: 80vh;
     }
 
     h1 {
@@ -104,10 +106,9 @@ h1 {
         max-width: 70vw;
     }
 
-    h1 {
+    .titleBodyPriceUnityMethod h1 {
         padding: 0 10%;
-        text-align: justify;
-        font-size: 1em;
+        font-size: 1.40em;
         width: 100%;
     }
 

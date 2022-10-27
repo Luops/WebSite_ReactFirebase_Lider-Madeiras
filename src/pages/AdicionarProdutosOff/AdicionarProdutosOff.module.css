@@ -84,3 +84,10 @@
     padding: 5px 5px;
 }
 
+.msgSucesso {
+    color: green !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    align-self: center;
+}
+

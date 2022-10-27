@@ -34,6 +34,7 @@
 
 .product_detail img {
     max-width: 350px;
+    height: 350px;
     border-radius: 10px;
     -webkit-box-shadow: -8px 6px 23px 1px rgba(0,0,0,0.69); 
     box-shadow: -8px 6px 23px 1px rgba(0,0,0,0.69);
