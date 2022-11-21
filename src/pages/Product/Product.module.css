@@ -103,33 +103,33 @@ h1 {
 
   @media (max-width: 470px) {
     .container_imgTitleBodyCategory img {
-        max-width: 70vw;
+        max-width: 45vw;
     }
 
     .titleBodyPriceUnityMethod h1 {
-        padding: 0 10%;
+        padding: 0 0%;
         font-size: 1.40em;
         width: 100%;
     }
 
     .body {
-        padding: 0 10%;
+        padding: 0 0%;
         font-size: 0.8em;
         width: 100%;
     }
 
     .price {
-        padding: 0 10%;
+        padding: 0 0%;
         width: 100%;
     }
 
     .method {
-        padding: 0 10%;
+        padding: 0 0%;
         width: 100%;
     }
 
     .categoryIcons {
-        padding: 0 10%;
+        padding: 0 0%;
         width: 100%;
     }
 
