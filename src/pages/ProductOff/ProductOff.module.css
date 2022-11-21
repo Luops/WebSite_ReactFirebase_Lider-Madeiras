@@ -132,34 +132,45 @@ h1 {
   }  
 
   @media (max-width: 470px) {
+    .container_principal {
+        width: 100%;
+    }
+
+    .container_imgTitleBodyCategory {
+        width: 100% !important;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
     .container_imgTitleBodyCategory img {
-        max-width: 50vw;
+        max-width: 40vw;
     }
 
     .titleBodyPriceUnityMethod h1 {
-        padding: 0 10%;
+        padding: 0 0%;
         font-size: 1.40em;
         width: 100%;
     }
 
     .body {
-        padding: 0 10%;
+        padding: 0 0%;
         font-size: 0.8em;
         width: 100%;
     }
 
     .prices {
-        padding: 0 10%;
+        padding: 0 0%;
         width: 100%;
     }
 
     .method {
-        padding: 0 10%;
+        padding: 0 0%;
         width: 100%;
     }
 
     .categoryIcons {
-        padding: 0 10%;
+        padding: 0 0%;
         width: 100%;
     }
 
@@ -174,7 +185,7 @@ h1 {
 
   @media (max-width: 320px) {
     .container_imgTitleBodyCategory img {
-        max-width: 75vw;
+        max-width: 50vw;
     }
 
     h1 {
