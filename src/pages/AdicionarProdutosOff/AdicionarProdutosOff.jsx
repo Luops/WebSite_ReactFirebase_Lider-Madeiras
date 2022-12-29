@@ -139,7 +139,7 @@ const AdicionarProdutosOff = () => {
             <option value="Madeira beneficiada de pinus">Madeira beneficiada de pinus</option>
             <option value="Madeira beneficiada de eucalipto">Madeira beneficiada de eucalipto</option>
             <option value="Madeira beneficiada nobre">Madeira beneficiada nobre</option>
-            <option value="Aberturas de eucalipto">Aberturas de eucalipto</option>
+            <option value="Aberturas">Aberturas</option>
             <option value="Parede">Parede</option>
             <option value="Forro">Forro</option>
             <option value="Assoalho">Assoalho</option>

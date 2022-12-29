@@ -13,7 +13,7 @@ import {
   useFetchDocumentsCategoryMadeiraBeneficiadaPinus,
   useFetchDocumentsCategoryMadeiraBeneficiadaEucalipto,
   useFetchDocumentsCategoryMadeiraBeneficiadaNobre,
-  useFetchDocumentsCategoryAberturasEucalipto,
+  useFetchDocumentsCategoryAberturas,
   useFetchDocumentsCategoryPregos,
   useFetchDocumentsCategoryParede,
   useFetchDocumentsCategoryForro,
@@ -52,7 +52,7 @@ const Home = () => {
   const {documentsCategoryMadeiraBeneficiadaPinus: productsCategoryMadeiraBeneficiadaPinus} = useFetchDocumentsCategoryMadeiraBeneficiadaPinus("products");
   const {documentsCategoryMadeiraBeneficiadaEucalipto: productsCategoryMadeiraBeneficiadaEucalipto} = useFetchDocumentsCategoryMadeiraBeneficiadaEucalipto("products");
   const {documentsCategoryMadeiraBeneficiadaNobre: productsCategoryMadeiraBeneficiadaNobre} = useFetchDocumentsCategoryMadeiraBeneficiadaNobre("products");
-  const {documentsCategoryAberturasEucalipto: productsCategoryAberturasEucalipto}  = useFetchDocumentsCategoryAberturasEucalipto("products");
+  const {documentsCategoryAberturas: productsCategoryAberturas}  = useFetchDocumentsCategoryAberturas("products");
   const {documentsCategoryPregos: productsCategoryPregos}  = useFetchDocumentsCategoryPregos("products");
   const {documentsCategoryParede: productsCategoryParede}  = useFetchDocumentsCategoryParede("products");
   const {documentsCategoryForro: productsCategoryForro}  = useFetchDocumentsCategoryForro("products");
@@ -443,7 +443,7 @@ const Home = () => {
       </div>
       */}
       <div className={styles.byCategory}>
-        <h2 className={styles.categoryTitle}>Aberturas de Eucalipto</h2>
+        <h2 className={styles.categoryTitle}>Aberturas</h2>
         <div className={styles.slideCategorys}>
           <Swiper
             style={{
@@ -473,12 +473,12 @@ const Home = () => {
           >
             <div className={styles.categoryCards}>
             {loading && <p>Carregando...</p>}
-              {productsCategoryAberturasEucalipto && productsCategoryAberturasEucalipto.map((AberturasEucalipto) => (
+              {productsCategoryAberturas && productsCategoryAberturas.map((AberturasEucalipto) => (
                 <SwiperSlide className={styles.swiperSlide}>
                   <ProductDetail key={AberturasEucalipto.id} products={AberturasEucalipto}/>
                 </SwiperSlide>
               ))}
-              {productsCategoryAberturasEucalipto && productsCategoryAberturasEucalipto.length === 0 && (
+              {productsCategoryAberturas && productsCategoryAberturas.length === 0 && (
                 <div className={styles.noproducts}>
                   <p>Não foram encontrados produtos</p>
                 </div>
@@ -525,7 +525,7 @@ const Home = () => {
                   <ProductDetail key={Parede.id} products={Parede}/>
                 </SwiperSlide>
               ))}
-              {productsCategoryAberturasEucalipto && productsCategoryAberturasEucalipto.length === 0 && (
+              {productsCategoryParede && productsCategoryParede.length === 0 && (
                 <div className={styles.noproducts}>
                   <p>Não foram encontrados produtos</p>
                 </div>
@@ -572,7 +572,7 @@ const Home = () => {
                   <ProductDetail key={Forro.id} products={Forro}/>
                 </SwiperSlide>
               ))}
-              {productsCategoryAberturasEucalipto && productsCategoryAberturasEucalipto.length === 0 && (
+              {productsCategoryForro && productsCategoryForro.length === 0 && (
                 <div className={styles.noproducts}>
                   <p>Não foram encontrados produtos</p>
                 </div>
@@ -619,7 +619,7 @@ const Home = () => {
                   <ProductDetail key={Assoalho.id} products={Assoalho}/>
                 </SwiperSlide>
               ))}
-              {productsCategoryAberturasEucalipto && productsCategoryAberturasEucalipto.length === 0 && (
+              {productsCategoryAssoalho && productsCategoryAssoalho.length === 0 && (
                 <div className={styles.noproducts}>
                   <p>Não foram encontrados produtos</p>
                 </div>
@@ -666,7 +666,7 @@ const Home = () => {
                   <ProductDetail key={Deck.id} products={Deck}/>
                 </SwiperSlide>
               ))}
-              {productsCategoryAberturasEucalipto && productsCategoryAberturasEucalipto.length === 0 && (
+              {productsCategoryDeck && productsCategoryDeck.length === 0 && (
                 <div className={styles.noproducts}>
                   <p>Não foram encontrados produtos</p>
                 </div>
@@ -713,7 +713,7 @@ const Home = () => {
                   <ProductDetail key={MeiaCana.id} products={MeiaCana}/>
                 </SwiperSlide>
               ))}
-              {productsCategoryAberturasEucalipto && productsCategoryAberturasEucalipto.length === 0 && (
+              {productsCategoryMeiaCana && productsCategoryMeiaCana.length === 0 && (
                 <div className={styles.noproducts}>
                   <p>Não foram encontrados produtos</p>
                 </div>
@@ -760,7 +760,7 @@ const Home = () => {
                   <ProductDetail key={Rodape.id} products={Rodape}/>
                 </SwiperSlide>
               ))}
-              {productsCategoryAberturasEucalipto && productsCategoryAberturasEucalipto.length === 0 && (
+              {productsCategoryRodape && productsCategoryRodape.length === 0 && (
                 <div className={styles.noproducts}>
                   <p>Não foram encontrados produtos</p>
                 </div>
@@ -807,7 +807,7 @@ const Home = () => {
                   <ProductDetail key={Vista5cm.id} products={Vista5cm}/>
                 </SwiperSlide>
               ))}
-              {productsCategoryAberturasEucalipto && productsCategoryAberturasEucalipto.length === 0 && (
+              {productsCategoryVista5cm && productsCategoryVista5cm.length === 0 && (
                 <div className={styles.noproducts}>
                   <p>Não foram encontrados produtos</p>
                 </div>
@@ -854,7 +854,7 @@ const Home = () => {
                   <ProductDetail key={Vista7cm.id} products={Vista7cm}/>
                 </SwiperSlide>
               ))}
-              {productsCategoryAberturasEucalipto && productsCategoryAberturasEucalipto.length === 0 && (
+              {productsCategoryVista7cm && productsCategoryVista7cm.length === 0 && (
                 <div className={styles.noproducts}>
                   <p>Não foram encontrados produtos</p>
                 </div>

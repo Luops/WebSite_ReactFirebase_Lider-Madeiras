@@ -466,8 +466,8 @@ export const useFetchDocumentsCategoryMadeiraBeneficiadaNobre = (docCollection, 
 }
 
 //Puxar somente Aberturas de Eucalipto
-export const useFetchDocumentsCategoryAberturasEucalipto = (docCollection, uid = null) => {
-    const [documentsCategoryAberturasEucalipto, setDocumentsCategoryAberturasEucalipto] = useState(null);
+export const useFetchDocumentsCategoryAberturas = (docCollection, uid = null) => {
+    const [documentsCategoryAberturas, setDocumentsCategoryAberturas] = useState(null);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(null);
 
@@ -484,15 +484,15 @@ export const useFetchDocumentsCategoryAberturasEucalipto = (docCollection, uid =
 
             const collectionRef = await collection(db, docCollection);
             
-            //Variavel que pega somente uma coisa: const byCategoryByAberturasEucalipto = query(collectionRef, where("title", "==", "Janela de madeira"));
+            //Variavel que pega somente uma coisa: const byCategoryByAberturas = query(collectionRef, where("title", "==", "Janela de madeira"));
             //Após declarar deve-se inseri-la após o await onSnapShot, no lugar do querycomplex
 
             try {
 
-                let byCategoryByAberturasEucalipto= query(collectionRef, where("category", "==", "Aberturas de eucalipto"));
+                let byCategoryByAberturas= query(collectionRef, where("category", "==", "Aberturas"));
                 
-                await onSnapshot(byCategoryByAberturasEucalipto, (querySnapshot) => {
-                    setDocumentsCategoryAberturasEucalipto(
+                await onSnapshot(byCategoryByAberturas, (querySnapshot) => {
+                    setDocumentsCategoryAberturas(
                         querySnapshot.docs.map((doc) => ({
                             id: doc.id,
                             ...doc.data(),
@@ -521,7 +521,7 @@ export const useFetchDocumentsCategoryAberturasEucalipto = (docCollection, uid =
     }, []);
 
     return {
-        documentsCategoryAberturasEucalipto,
+        documentsCategoryAberturas,
         loading,
         error
     };

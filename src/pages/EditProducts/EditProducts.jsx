@@ -165,7 +165,7 @@ const EditProducts = () => {
                   <option value="Madeira beneficiada de pinus">Madeira beneficiada de pinus</option>
                   <option value="Madeira beneficiada de eucalipto">Madeira beneficiada de eucalipto</option>
                   <option value="Madeira beneficiada nobre">Madeira beneficiada nobre</option>
-                  <option value="Aberturas de eucalipto">Aberturas de eucalipto</option>
+                  <option value="Aberturas">Aberturas</option>
                   <option value="Parede">Parede</option>
                   <option value="Forro">Forro</option>
                   <option value="Assoalho">Assoalho</option>
@@ -174,6 +174,7 @@ const EditProducts = () => {
                   <option value="Rodape">Rodapé</option>
                   <option value="Vista de 5cm">Vista de 5cm</option>
                   <option value="Vista de 7cm">Vista de 7cm</option>
+                  <option value="Kit casa">Kit casa</option>
                   <option value="Pregos">Pregos</option>
                 </select>
                 {/* 
